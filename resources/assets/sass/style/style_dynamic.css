@@ -1,0 +1,1839 @@
+
+    /* Webkit */
+    ::selection {
+    background: #636363;
+    }
+    /* Gecko/Mozilla */
+    ::-moz-selection {
+    background: #636363;
+    }
+
+
+    h6, h6 a,h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover,h5 a:hover,h6 a:hover,a,p a,
+    header:not(.with_hover_bg_color) nav.main_menu > ul > li:hover > a,
+    nav.main_menu>ul>li.active > a,
+    .drop_down .second .inner > ul > li > a:hover,
+    .drop_down .second .inner ul li.sub ul li a:hover,
+    nav.mobile_menu ul li a:hover,
+    nav.mobile_menu ul li.active > a,
+    .side_menu_button > a:hover,
+    .mobile_menu_button span:hover,
+    .vertical_menu ul li a:hover,
+    .vertical_menu_toggle .second .inner ul li a:hover,
+    nav.popup_menu ul li a:hover,
+    nav.popup_menu ul li ul li a,    
+    .comment_holder .comment .text .comment_date,
+    .comment_holder .comment .text .replay,
+    .comment_holder .comment .text .comment-reply-link,
+    .comment_holder .comment .text .comment-edit-link,
+    div.comment_form form p.logged-in-as a,
+    .pagination_prev_and_next_only ul li a:hover,
+    .latest_post_holder .latest_post_title a:hover,
+    .latest_post_holder.minimal .latest_post_title a,
+    .latest_post_holder .post_info_section:before,
+    .latest_post_holder .post_info_section span,
+    .latest_post_holder .post_info_section a,
+    .latest_post_holder .post_author a.post_author_link:hover,
+    .projects_holder article .portfolio_title a:hover,
+    .projects_masonry_holder article .portfolio_title a:hover,
+    .filter_holder ul li.current span,
+    .filter_holder ul li:not(.filter_title):hover span,
+    .edgt_accordion_holder.accordion .ui-accordion-header .accordion_mark_icon,
+    .edgt_accordion_holder.accordion:not(.boxed) .ui-accordion-header.ui-state-active span.tab-title,
+    blockquote.with_quote_icon .icon_quotations_holder,
+    blockquote h3,
+    .edgt_dropcap,
+    .price_in_table .value,
+    .price_in_table .price,
+    .price_in_table .mark,
+    .edgt_font_elegant_holder.edgt_icon_shortcode:hover,
+    .edgt_icon_shade.edgt_icon_shortcode:hover,
+    .edgt_font_awsome_icon_holder.edgt_icon_shortcode:hover,
+    .box_holder_icon_inner .edgt_icon_stack,
+    .box_holder_icon_inner .edgt_font_elegant_holder,
+    .edgt_icon_with_title .icon_holder .edgt_icon_stack,
+    .edgt_icon_with_title .edgt_font_elegant_holder,
+    .edgt_progress_bars_icons_inner.square .bar.active i,
+    .edgt_progress_bars_icons_inner.circle .bar.active i,
+    .edgt_progress_bars_icons_inner.normal .bar.active i,
+    .edgt_progress_bars_icons_inner .bar.active i.fa-circle,
+    .edgt_progress_bars_icons_inner.square .bar.active .edgt_font_elegant_icon,
+    .edgt_progress_bars_icons_inner.circle .bar.active .edgt_font_elegant_icon,
+    .edgt_progress_bars_icons_inner.normal .bar.active .edgt_font_elegant_icon,
+    .edgt_social_icon_holder.normal_social .simple_social,
+    .edgt_social_icon_holder.normal_social.with_link .simple_social,
+    .edgt_list.number ul>li:before,
+    .social_share_list_holder ul li i:hover,
+    .woocommerce.single-product.single .social_share_list_holder ul li i:hover,
+    .edgt_progress_bar .progress_number_wrapper.static .progress_number,
+    .qbutton:hover,
+    .load_more a:hover,
+    #submit_comment:hover,
+    .post-password-form input[type='submit']:hover,
+    .drop_down .wide .second ul li .qbutton:hover,
+    .drop_down .wide .second ul li ul li .qbutton:hover,
+    nav.content_menu ul li.active:hover i,
+    nav.content_menu ul li:hover i,
+    nav.content_menu ul li.active:hover a,
+    nav.content_menu ul li:hover a,
+    aside.sidebar .widget:not(.woocommerce) li,
+    .header-widget.widget_nav_menu ul.menu li a:hover,
+    input.wpcf7-form-control.wpcf7-submit:not([disabled]):hover,
+    .latest_post_holder .post_info_section .latest_post_categories a,
+    .latest_post_holder .post_info_section .post_author_link,
+    .latest_post_holder.boxes .date,
+    .latest_post_holder.image_in_box .date,
+    .qbutton.white,
+    .qbutton.solid_color:hover,
+    .qbutton.top_and_bottom_border,
+    .blog_load_more_button a:hover,
+    .edgt_progress_bars_vertical .progress_number,
+    .edgt_counter_holder span.counter,
+    .edgt_icon_shortcode span,
+    .edgt_icon_shortcode i,
+    .edgt_separator_with_icon .edgt_icon_holder .edgt_icon_shade i, 
+    .edgt_separator_with_icon .edgt_icon_holder .edgt_icon_shade span,
+    .service_table_inner li.service_icon .service_table_icon,
+	.edgt_search_form_3 .edgt_search_close a:hover,
+	.edgt_search_form_2 input[type="submit"]:hover,
+    .read_more_button_holder a:hover .read_more_button_icon,
+    .read_more_button_holder a.white .read_more_button_icon,
+    .projects_holder article .item_holder.image_text_zoom_hover .portfolio_title a,
+    .projects_masonry_holder article .item_holder.image_text_zoom_hover .portfolio_title a,
+    .portfolio_slider li.item .item_holder.image_text_zoom_hover .portfolio_title a,
+	.shopping_cart_dropdown ul li .item_info_holder .item_left a:hover,
+	.shopping_cart_header_holder .header_cart i,
+	.shopping_cart_header_holder .header_cart:hover i,
+    .edgt_tabs .tabs-nav li a,
+	.edgt_tabs.border_arround_element .tabs-nav li a,
+	.edgt_tabs.border_arround_active_tab .tabs-nav li a,
+	.edgt_tabs.border_arround_active_tab .tabs-nav li:hover a,
+    .blog_holder article .post_text h2 .date,
+    .blog_holder article .post_info a,
+    .blog_holder article .post_info a:hover,
+    .blog_holder article.format-link .post_text .link_image .post_text_inner .post_title a,
+    .blog_holder article.format-quote .post_text .quote_image .post_text_inner .post_title a,
+    .blog_holder article.format-quote h3 .date,
+    .blog_holder article.format-link h3 .date,
+    .blog_holder article.sticky h2 a,
+    .blog_holder article h2 a:hover,
+	.blog_holder.blog_single article h2:hover,
+    .comment-list .post_author_comment .post-author-comment-icon,
+	.edgt_team.below_image .edgt_team_info .edgt_team_position,
+    .social_share_dropdown ul li:hover a span.social_network_icon,
+    .social_share_dropdown ul li:hover,
+    .social_share_dropdown ul li a:hover span.social_network_icon,
+    .qbutton.masonry_read_more_button:hover,
+    .edgt_team.below_image .edgt_team_social_holder_between .social_share_icon_shape .social_share_icon,
+    .edgt_team_social_holder_between .edgt_social_icon_holder .edgt_icon_stack,
+	.vc_grid-container .vc_grid-filter.vc_grid-filter-color-grey > .vc_grid-filter-item:hover span,
+	.vc_grid-container .vc_grid-filter.vc_grid-filter-color-grey > .vc_grid-filter-item.vc_active span {
+		color: #4c4c4c;
+    }
+
+    .title,
+    .popup_menu:hover .line,
+    .popup_menu:hover .line:after,
+    .popup_menu:hover .line:before,
+    .mejs-controls .mejs-time-rail .mejs-time-current,
+    .mejs-controls .mejs-time-rail .mejs-time-handle,
+    .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current,
+    .edgt_accordion_holder.accordion.boxed .ui-accordion-header.ui-state-active,
+    .edgt_accordion_holder.accordion.boxed .ui-accordion-header.ui-state-hover,
+    .edgt_accordion_holder.accordion .ui-accordion-header.ui-state-active .accordion_mark,
+    .edgt_accordion_holder.accordion .ui-accordion-header.ui-state-hover .accordion_mark,
+    .edgt_dropcap.circle,
+    .edgt_dropcap.square,
+    .gallery_holder ul li .gallery_hover i.fa-search,
+    .highlight,
+    .testimonials_holder.light .flex-direction-nav a:hover,
+    .edgt_tabs.with_borders .tabs-nav li.active a,
+	.edgt_tabs.with_borders .tabs-nav li.active:hover a,
+    .edgt_tabs.border_arround_element .tabs-nav li:hover a,
+    .edgt_tabs.with_lines .tabs-nav li.active a,
+    .edgt_tabs.with_lines .tabs-nav li:hover a,	
+	.edgt_tabs.border_arround_element.horizontal.disable_margin .tabs-nav li:hover a:after,
+	.edgt_tabs.border_arround_element.horizontal.disable_margin .tabs-nav li.active a:after,
+	.edgt_tabs.border_arround_element.horizontal.disable_margin .tabs-nav li.active:hover a:after,
+    .edgt_message,
+    .price_table_inner .price_button a,
+    .edgt_price_table.active .active_text,
+    .edgt_social_icon_holder .edgt_icon_stack,
+    .footer_top .edgt_social_icon_holder:hover .edgt_icon_stack,
+    .edgt_list.circle ul>li:before,
+    .edgt_list.number.circle_number ul>li:before,
+    .edgt_pie_graf_legend ul li .color_holder,
+    .edgt_line_graf_legend ul li .color_holder,
+    .animated_icon_inner span.animated_icon_back .animated_icon,
+    .edgt_progress_bar .progress_content,
+    .edgt_progress_bars_vertical .progress_content_outer .progress_content,
+    .edgt_progress_bar .floating.floating_outside .progress_number,
+    .qbutton,
+    .load_more a,
+    .blog_load_more_button a,
+    #submit_comment,
+    .post-password-form input[type='submit'],
+    #wp-calendar td#today,
+    .edgt_image_gallery_no_space.light .controls a.prev-slide:hover,
+    .edgt_image_gallery_no_space.light .controls a.next-slide:hover,
+    input.wpcf7-form-control.wpcf7-submit,
+    div.wpcf7-response-output.wpcf7-mail-sent-ok,
+    .qbutton.white:hover,
+    .qbutton.solid_color,
+    .qbutton.top_and_bottom_border:hover,
+    .pagination ul li a:hover,
+    .single_links_pages span:hover,
+    .comment_pager .page-numbers:hover,
+    .comment_pager a:hover,
+    .comment_pager .current:hover,
+    .pagination ul li.active span,
+    .single_links_pages > span,
+    .comment_pager .current,
+	.comment_pager .page-numbers.dots:hover,
+    .read_more_button_holder a,
+    .read_more_button_holder a.white:hover,
+    .projects_holder article .item_holder.subtle_vertical_hover .text_holder .separator,
+    .projects_masonry_holder article .item_holder.subtle_vertical_hover .text_holder .separator,
+    .portfolio_slider li.item .item_holder.subtle_vertical_hover .text_holder .separator,
+    .projects_holder article .item_holder.subtle_vertical_hover .text_holder .separator.animate,
+    .projects_masonry_holder article .item_holder.subtle_vertical_hover .text_holder .separator.animate,
+    .portfolio_slider li.item .item_holder.subtle_vertical_hover .text_holder .separator.animate,
+    .projects_holder article .item_holder.image_text_zoom_hover .text_holder .separator,
+    .projects_masonry_holder article .item_holder.image_text_zoom_hover .text_holder .separator,
+    .portfolio_slider li.item .item_holder.image_text_zoom_hover .text_holder .separator,
+    .projects_holder article .item_holder.image_text_zoom_hover .text_holder .separator.animate,
+    .projects_masonry_holder article .item_holder.image_text_zoom_hover .text_holder .separator.animate,
+    .portfolio_slider li.item .item_holder.image_text_zoom_hover .text_holder .separator.animate,
+    .projects_holder article .item_holder.subtle_vertical_hover .icons_holder a,
+    .projects_masonry_holder article .item_holder.subtle_vertical_hover .icons_holder a,
+    .portfolio_slider li.item .item_holder.subtle_vertical_hover .icons_holder a,
+    .projects_holder article .item_holder.image_text_zoom_hover .icons_holder a,
+    .projects_masonry_holder article .item_holder.image_text_zoom_hover .icons_holder a,
+    .portfolio_slider li.item .item_holder.image_text_zoom_hover .icons_holder a,
+    .projects_holder article .item_holder.gradient_hover .icons_holder a:hover,
+    .projects_masonry_holder article .item_holder.gradient_hover .icons_holder a:hover,
+    .portfolio_slider li.item .item_holder.gradient_hover .icons_holder a:hover,
+	.vertical_menu_hidden_button_line,
+	.vertical_menu_hidden_button_line:after,.vertical_menu_hidden_button_line:before,
+	.popup_menu.opened:hover .line:after,
+	.popup_menu.opened:hover .line:before,
+	.shopping_cart_header_holder .header_cart_span,
+	.shopping_cart_dropdown .cart_bottom .checkout,
+	.shopping_cart_dropdown .cart_bottom .view-cart:hover,
+	.shopping_cart_dropdown ul li .item_info_holder .item_right .remove:hover,
+	.popup_menu.opened:hover .line:before,
+	.single_tags  a:hover,
+	aside.sidebar .widget .tagcloud a:hover,
+	.widget .tagcloud a:hover,
+	.blog_holder article.format-link .post_text .post_text_inner:hover,
+    .blog_holder article.format-quote .post_text .post_text_inner:hover,
+	.blog_holder article .post_social .post_comments i,
+    .blog_holder article .post_social .blog_like i,
+	.blog_holder.blog_masonry_gallery article .post_text .post_text_inner:hover,
+    .wpb_gallery .flexslider_slide .flex-control-paging li a.flex-active,
+    .wpb_gallery .flexslider_fade .flex-control-paging li a.flex-active,
+	.edgt_team.below_image:hover .social_share_icon_shape
+	{
+		background-color: #4c4c4c;
+    }
+
+    
+    .portfolio_main_holder .item_holder.prominent_plain_hover .portfolio_shader,
+    .portfolio_main_holder .item_holder.slide_up_hover .portfolio_shader,
+    .portfolio_main_holder .item_holder.cursor_change_hover .portfolio_shader,
+    .latest_post_holder .boxes_image a .latest_post_overlay{
+    background-color: rgba(76,76,76,0.7);
+    }
+
+
+    .edgt_circles_holder .edgt_circle_inner:hover .edgt_circle_inner2,
+    .edgt_team_social_holder .edgt_social_icon_holder:hover .edgt_icon_stack,
+    .edgt_icon_shade.circle:hover, 
+    .edgt_icon_shade.square:hover,
+    .edgt_team_social_holder .edgt_social_icon_holder:hover .edgt_icon_stack,
+    .edgt_circles_holder .edgt_circle_inner:hover .edgt_circle_inner2{
+    background-color: #4c4c4c !important;
+    }
+
+    #respond textarea:focus,
+    #respond input[type='text']:focus,
+    .post-password-form input[type='password']:focus,
+	.edgt_accordion_holder.accordion.boxed .ui-accordion-header.ui-state-active, 
+	.edgt_accordion_holder.accordion.boxed .ui-accordion-header.ui-state-hover,
+	.edgt_accordion_holder.accordion .ui-accordion-header.ui-state-active .accordion_mark, 
+	.edgt_accordion_holder.accordion .ui-accordion-header.ui-state-hover .accordion_mark,
+    .testimonials_holder.light .flex-direction-nav a:hover,
+    .edgt_progress_bars_icons_inner.circle .bar .bar_noactive,
+    .edgt_progress_bars_icons_inner.square .bar .bar_noactive,
+    .animated_icon_inner span.animated_icon_back .animated_icon,
+    .qbutton,
+    .load_more a,
+    .blog_load_more_button a,
+    #submit_comment,
+    .post-password-form input[type='submit'],
+    .qbutton:hover,
+    .load_more a:hover,
+    .blog_load_more_button a:hover,
+    #submit_comment:hover,
+    .drop_down .wide .second ul li .qbutton:hover,
+    .drop_down .wide .second ul li ul li .qbutton:hover,
+    .post-password-form input[type='submit']:hover,
+    .call_to_action .to_action_column2.button_wrapper .qbutton:hover,
+    .header-widget.widget_nav_menu ul ul,
+    input.wpcf7-form-control.wpcf7-text:focus,
+    input.wpcf7-form-control.wpcf7-number:focus,
+    input.wpcf7-form-control.wpcf7-date:focus,
+    textarea.wpcf7-form-control.wpcf7-textarea:focus,
+    select.wpcf7-form-control.wpcf7-select:focus,
+    input.wpcf7-form-control.wpcf7-quiz:focus,
+    input.wpcf7-form-control.wpcf7-submit,
+    input.wpcf7-form-control.wpcf7-submit[disabled],
+    input.wpcf7-form-control.wpcf7-submit:not([disabled]),
+    input.wpcf7-form-control.wpcf7-submit:not([disabled]):hover,
+    .qbutton.white,
+    .qbutton.white:hover,
+    .qbutton.solid_color,
+    .qbutton.solid_color:hover,
+    .qbutton.top_and_bottom_border,
+    .qbutton.top_and_bottom_border:hover,
+    .edgt_counter_holder .separator.medium,
+    .edgt_icon_shade.circle,
+    .edgt_icon_shade.square,
+    .edgt_pricing_border,
+    .price_table_inner .price_button a,
+	.edgt_tabs.border_arround_element.horizontal.enable_margin .tabs-nav li:hover,
+	.edgt_tabs.border_arround_element.horizontal.enable_margin .tabs-nav li.active,
+	.edgt_tabs.border_arround_active_tab.horizontal .tabs-nav li.active,
+	.edgt_tabs.border_arround_active_tab.horizontal .tabs-nav li.active:hover,
+	.edgt_tabs.border_arround_element.horizontal.disable_margin .tabs-nav li:not(.active):hover a, 
+	.edgt_tabs.border_arround_element.horizontal.disable_margin .tabs-nav li.active a,
+	.edgt_tabs.border_arround_element.horizontal.disable_margin .tabs-nav li:last-child:hover a, 
+	.edgt_tabs.border_arround_element.horizontal.disable_margin .tabs-nav li:not(.active):last-child:hover a,
+	.edgt_tabs.border_arround_element.horizontal.disable_margin .tabs-nav li.active:last-child a,
+	.single_tags  a:hover,
+	aside.sidebar .widget .tagcloud a:hover,
+	.widget .tagcloud a:hover,
+    .box_holder_icon_inner:not(.normal_icon) .edgt_icon_stack,
+    .edgt_icon_with_title:not(.normal_icon) .icon_holder .edgt_icon_stack,
+    .edgt_icon_with_title:not(.normal_icon) .edgt_font_elegant_holder,
+    .edgt_team.below_image:hover .social_share_icon_shape,
+    .box_holder_icon_inner:not(.normal_icon) .edgt_font_elegant_holder,
+	.pagination ul li a:hover,
+	.single_links_pages span:hover,
+	.comment_pager a:hover,
+	.comment_pager .current:hover,
+	.pagination ul li.active span,
+	.single_links_pages > span,
+	.comment_pager .current,
+	.comment_pager .page-numbers.dots:hover{
+		border-color: #4c4c4c;
+    }
+	
+	.drop_down .second,
+    .edgt_progress_bar .progress_number_wrapper.floating .down_arrow{
+		border-top-color: #4c4c4c;
+	}
+
+    .edgt_circles_holder .edgt_circle_inner:hover .edgt_circle_inner2,
+    .edgt_circles_holder .edgt_circle_inner:hover,
+    .edgt_team_social_holder .edgt_social_icon_holder:hover .edgt_icon_stack{
+    border-color: #4c4c4c !important;
+    }
+
+    
+
+
+    body{
+                    font-family: 'Open Sans', sans-serif;
+         color: #6d6d6d;      font-size: 14px;     font-weight: 400;    }
+            body,
+        .wrapper,
+        .content,
+        .full_width,
+        .content .container,
+		.overlapping_content .content > .container,
+        .more_facts_holder{
+        background-color:#ffffff;
+        }
+        .oblique-section polygon{
+        fill: #ffffff;
+        }
+    
+
+
+
+    h3, h6,
+    .pagination ul li.active span,
+    .single_links_pages span,
+    .comment_pager .page-numbers,
+    .pagination ul li > a.inactive,
+    .subtitle,
+    .blog_holder article .post_info,
+    .comment_holder .comment .text .comment_date,
+    .latest_post_holder .post_info_section,
+    .projects_holder article .project_category,
+    .portfolio_slides .project_category,
+    .projects_masonry_holder .project_category,
+    .testimonials .testimonial_text_inner p:not(.testimonial_author),
+    .price_in_table .mark,
+    body div.pp_default .pp_description,
+    .side_menu .widget li,
+    aside.sidebar .widget:not(.woocommerce) li,
+    aside .widget #lang_sel ul li a,
+    aside .widget #lang_sel_click ul li a,
+    section.side_menu #lang_sel ul li a,
+    section.side_menu #lang_sel_click ul li a,
+    footer #lang_sel ul li a,
+    footer #lang_sel_click ul li a,
+    .header_top #lang_sel ul li a,
+    .header_top #lang_sel_click ul li a,
+    .header_bottom #lang_sel ul li a,
+    .header_bottom #lang_sel_click > ul > li a {
+        font-family: 'Open Sans', sans-serif;
+    }
+    
+
+
+
+
+
+
+
+
+		.container_inner.default_template_holder{
+			background-color:#ffffff;
+		}
+
+
+    .content .content_inner > .container > .container_inner,
+    .content .content_inner > .full_width > .full_width_inner{
+    padding-top: 0px;
+    }
+
+    .content .content_inner > .container > .container_inner.default_template_holder{
+		padding-top: 60px;
+    }
+
+    @media only screen and (max-width: 1000px){
+    .content .content_inner > .container > .container_inner,
+    .content .content_inner > .full_width > .full_width_inner,
+    .content .content_inner > .container > .container_inner.default_template_holder{
+		padding-top: 0px !important;
+    }
+    }
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	    .content{
+		margin-top: 0;
+    }
+
+@media only screen and (max-width: 1000px){
+	.content_wrapper{
+		margin-top: 70px;
+	}
+}
+
+
+
+header .header_bottom.left_menu_position .logo_wrapper{
+	width: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .content.content_top_margin{
+		margin-top: 105px !important;
+    }
+
+    .vertical_menu_enabled .content.content_top_margin{
+    margin-top: 0px !important;
+    }
+
+
+
+
+
+    header.sticky .logo_wrapper,
+    header.sticky .side_menu_button,
+    header.sticky .header_bottom_right_widget_holder,
+    header.sticky .shopping_cart_inner,
+		.side_menu.sticky .close_side_menu_holder{
+		height: 60px !important;
+    }
+
+    header.sticky .header_bottom,
+    header.fixed.scrolled .header_bottom,
+    header.fixed_hiding.scrolled .header_bottom{
+    box-shadow: none;
+    -webkit-box-shadow: none;
+	box-shadow: none;
+    }
+
+
+
+    @media only screen and (max-width: 1000px){
+    .mobile_menu_button, 
+	.logo_wrapper, 
+	.side_menu_button, 
+	.shopping_cart_inner, 
+	.header_bottom_right_widget_holder,
+	.side_menu .close_side_menu_holder,
+	.logo_wrapper a{
+		height: 70px !important;
+    }
+    }
+
+        @media only screen and (min-width: 1000px){
+			header.fixed_hiding .edgt_logo a,
+			header.fixed_hiding .edgt_logo{
+				max-height: 55.5px;
+			}
+        }
+
+
+
+    @media only screen and (max-width: 1000px){
+        .edgt_logo a{
+            height: 55px !important;
+        }
+    }   
+
+    @media only screen and (max-width: 480px){
+    .edgt_logo a{
+    height: 55px !important;
+    }
+    }  
+
+
+
+
+
+
+
+
+
+
+    .drop_down .second{
+    border-top: 0 !important;
+    }
+
+
+
+    nav.main_menu > ul > li > a > span.item_inner{
+		 line-height: 44px;     }
+
+    nav.main_menu > ul > li > a{
+                font-family: 'Oswald', sans-serif;
+         font-size: 12px;      font-style: normal;      font-weight: 400;          letter-spacing: 0px;     }
+
+	.header_bottom #lang_sel > ul > li > a,
+	.header_bottom #lang_sel_click > ul > li > a,
+	.header_bottom #lang_sel ul > li:hover > a{
+                font-family: 'Oswald', sans-serif;
+         font-size: 12px !important;      font-style: normal;      font-weight: 400;          letter-spacing: 0px;     }
+
+			.header_bottom #lang_sel_list{
+			font-family: 'Oswald', sans-serif !important;
+		}
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+    header.scrolled nav.main_menu > ul > li > a > span.item_inner,
+    header.light.scrolled nav.main_menu > ul > li > a > span.item_inner,
+    header.dark.scrolled nav.main_menu > ul > li > a > span.item_inner{
+             font-size: 12px;                         }
+
+
+
+
+
+
+
+    nav.mobile_menu ul li a,
+    nav.mobile_menu ul li h4{
+     color: #ffffff;             font-family: 'Oswald', sans-serif;
+         font-size: 12px;      line-height: 30px;      font-style: normal;      font-weight: 400;      text-transform: uppercase;      letter-spacing: 0px;    }
+            nav.mobile_menu ul > li.has_sub > span.mobile_arrow{
+        color: #ffffff;
+        }
+    
+
+    nav.mobile_menu ul li a:hover,
+    nav.mobile_menu ul li.active > a,
+    nav.mobile_menu ul li.current-menu-item > a{
+    color: #e8e8e8;
+    }
+
+    @media only screen and (max-width: 1000px){
+    .header_bottom,
+    nav.mobile_menu{
+    background-color: #000000 !important;
+    }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+    h1{
+       color: #1f2118;         font-size: 70px;     line-height: 74px;     font-style: normal;     font-weight: 400;     letter-spacing: 6px;     text-transform: uppercase;     }
+    h2{
+            font-family: 'Oswald', sans-serif;
+        font-size: 30px;     line-height: 44px;     font-style: normal;     font-weight: 200;     letter-spacing: 1px;     text-transform: uppercase;     }
+    h2, h2 a{
+    color: #1f2118;     }
+    h3{
+            font-family: 'Oswald', sans-serif;
+        font-size: 22px;     line-height: 26px;     font-style: normal;     font-weight: 400;     letter-spacing: 1px;     text-transform: uppercase;     }
+    h3, h3 a{
+    color: #1f2118;     }
+    h4{
+            font-family: 'Oswald', sans-serif;
+        font-size: 18px;     line-height: 24px;     font-style: normal;     font-weight: 400;     letter-spacing: 1px;     text-transform: uppercase;     }
+    h4, h4 a{
+    color: #1f2118;     }
+    h5{
+            font-family: 'Open Sans', sans-serif;
+        font-size: 16px;     line-height: 24px;     font-style: italic;     font-weight: 500;         text-transform: none;     }
+    h5, h5 a{
+    color: #a1a1a1;     }
+    h6{
+            font-family: 'Oswald', sans-serif;
+        font-size: 14px;     line-height: 20px;     font-style: normal;      font-weight: 400;     letter-spacing: 0px;     text-transform: none;     }
+    h6, h6 a{
+    color: #1f2118;     }
+
+
+    p{
+    font-size: 14px;line-height: 24px;font-weight: 400;font-style: normal;text-transform: none;color: #6d6d6d    }
+
+
+
+    a, p a{
+    color: #494949;    font-style: normal;    font-weight: 600;    text-decoration: none;    }
+
+    a:hover,
+    p a:hover{
+    color: #0a0707;    text-decoration: none;    }
+
+
+
+
+    .title h1, .title h1.title_like_separator .vc_text_separator.full .separator_content{
+                font-family: 'Oswald', sans-serif;
+        font-size: 40px;     line-height: 90px;     font-style: normal;     font-weight: 400;     letter-spacing: 3px;     text-transform: uppercase;     }
+
+    .subtitle, .title_holder .title_subtitle_holder .subtitle.subtitle_like_separator .separator_content{
+                font-family: 'Open Sans', sans-serif;
+        font-size: 18px;     line-height: 30px;     font-style: italic;     font-weight: 400;     text-transform: none;         }
+
+
+	.blog_holder.blog_single .single_tags{
+		margin-top: 30px;
+	}    
+	
+	.blog_holder.blog_single .blog_navigation{
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}    
+	
+	.single-post .comment_holder{
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}    
+	
+	
+
+    
+
+  
+    
+    
+    
+  
+    
+    .blog_holder.blog_title_author_centered .post_text .post_text_inner .separator.small{
+    display : none;    }
+
+
+
+
+
+	
+	
+	
+	
+
+	
+
+
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+	
+		
+		
+
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+
+	.blog_holder.blog_masonry_gallery article .post_text .post_text_inner2,
+	.blog_holder.blog_masonry_gallery article .post_text .post_info{
+	text-align: center	}
+
+		
+
+	
+		
+	
+	
+	
+	
+	
+	
+.blog_holder.blog_masonry_gallery article .post_text .post_text_inner,
+.blog_holder article.format-link .post_text .post_text_inner:hover,
+.blog_holder article.format-quote .post_text .post_text_inner:hover{
+	background-color: #000000} 
+
+	
+	
+	.blog_holder.blog_masonry_gallery article .post_text .post_text_inner,
+	.blog_holder article.format-link .post_text .post_text_inner:hover,
+	.blog_holder article.format-quote .post_text .post_text_inner:hover {
+        background-color: rgba(0,0,0,.3)
+    }
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+    .page-template-blog-masonry-gallery .filter_outer.filter_blog{
+    text-align: center;    }
+	
+    body.page-template-blog-masonry-gallery-full-width-php .content .full_width {
+    padding-left: 1;padding-right: 1    }
+
+	
+
+
+
+	.blog_holder.masonry .post_text .post_text_inner,
+	.blog_holder.masonry_full_width .post_text .post_text_inner,
+	.blog_holder.masonry article.format-link .post_text .post_info,
+	.blog_holder.masonry_full_width article.format-link .post_text .post_info,
+	.blog_holder.masonry article.format-quote .post_text .post_info,
+	.blog_holder.masonry_full_width article.format-quote .post_text .post_info{
+	text-align: left	}
+
+
+		
+
+
+
+
+	
+	
+	
+	
+	
+	
+
+	
+	
+
+	
+	
+		
+
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+		
+
+
+	
+	
+	
+	
+	
+
+	
+	
+	
+
+	
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+	
+	
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+	
+
+
+
+
+
+
+
+  
+
+ 	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+	
+    #back_to_top > span{
+    font-size: 14px;    }
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+	.carousel-control .prev_nav .numbers,
+	.carousel-control .next_nav .numbers {
+		-webkit-transition: color 0.15s ease-out;
+		-moz-transition: color 0.15s ease-out;
+		transition: color 0.15s ease-out;
+		font-family: -1, sans-serif	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+.edgt_team.below_image:not(.social_style_center) .edgt_team_social_holder_between.center{
+    right: calc(50% - 23px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+	
+	
+		
+
+	
+	
+		
+		
+
+
+		
+
+	
+	
+	
+	
+	
+		
+	
+	
+	
+	
+	
+	
+	
+	
+		
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+
+	
+	
+		
+	
+	
+	
+	
+		
+	
+	
+
+  
+    
+    
+
+    
+
+
+
+
+
+
+
+	
+	
+	
+
+
+
+
+
+
+
+
+  
+    
+    
+
+	
+
+    
+	
+
+  
+ 
+	
+	
+
+ 
+
+
+
+    @media only screen and (min-width: 600px){
+        .footer_top, .edgt_column{
+        text-align:  center        }
+    }
+    @media only screen and (min-width: 600px){
+        .footer_top, .edgt_column.column1{
+        text-align:  center        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+
+
+
+	
+
+
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+	
+
+	
+	
+		
+	
+
+
+
+
+
+    .side_menu_button > a,
+    .mobile_menu_button span,
+    .side_menu_button > a.search_covers_header:not(.popup_menu),
+    .side_menu_button > a.side_menu_button_link:not(.popup_menu),
+    .side_menu_button > a.search_slides_from_header_bottom:not(.popup_menu),
+    .side_menu_button > a.fade_push_text_right:not(.popup_menu){ color: #ffffff; }
+
+    .popup_menu .line,
+    .popup_menu .line:after, .popup_menu .line:before,
+	.popup_menu.opened .line:after, .popup_menu.opened .line:before{
+    background-color: #ffffff;
+    }
+    .side_menu_button > a:hover,
+    .mobile_menu_button span:hover,
+    .popup_menu:hover .line,
+    .popup_menu:hover .line:after,
+    .popup_menu:hover .line:before,
+	.light:not(.sticky):not(.scrolled) .side_menu_button > a:hover,
+	.dark:not(.sticky):not(.scrolled) .side_menu_button > a:hover,
+	.side_menu_button > a:hover .search_icon_text{
+		color: #d6d6d6!important; 
+	}
+
+    .popup_menu:hover .line,
+    .popup_menu:hover .line:after, .popup_menu:hover .line:before,
+	.popup_menu.opened:hover .line:after,
+	.popup_menu.opened:hover .line:before{
+    background-color: #d6d6d6 ;
+    }
+
+
+	.side_menu_button .popup_menu{
+		-webkit-backface-visibility: hidden;
+		display: inline-block;
+	}
+	.side_menu_button .popup_menu.normal{
+		padding:10px 15px;
+	}
+	.side_menu_button .popup_menu.medium{
+		padding:10px 13px;
+	}
+	.side_menu_button .popup_menu.large{
+		padding:15px;
+	}
+	.side_menu_button .popup_menu:not(.opened){
+		background-color: #ffffff;
+	}
+	.side_menu_button .popup_menu.normal:not(.opened):hover,
+	.side_menu_button .popup_menu.medium:not(.opened):hover,
+	.side_menu_button .popup_menu.large:not(.opened):hover{
+		background-color: #dddddd;
+	}
+
+
+	@media only screen and (max-width: 1000px){
+		.mobile_menu_button span,
+		.side_menu_button > a, 
+		.mobile_menu_button span,
+		.fixed_top_header .mobile_menu_button span{
+			color: #ffffff;
+		}
+
+		.popup_menu .line,
+		.popup_menu .line:after, 
+		.popup_menu .line:before{
+			background-color: #ffffff;
+		}
+	}
+
+	@media only screen and (max-width: 1000px){
+		.mobile_menu_button span:hover,
+		.side_menu_button > a:hover, 
+		.mobile_menu_button span:hover,
+		.fixed_top_header .mobile_menu_button span:hover{
+			color: #dddddd!important ;
+		}
+		.popup_menu:hover .line,
+		.popup_menu:hover .line:after, 
+		.popup_menu:hover .line:before{
+			background-color: #dddddd;
+		}
+	}
+
+    nav.vertical_menu > ul > li > a:after,
+	.vertical_menu_toggle .second:after{
+    display:block;
+     border-bottom-color: #c1c1c1;        width: 160px; 	 border-bottom-style: dotted;     }
+
+
+
+	.vertical_menu .second .inner{
+		padding-top: 25px;
+	}
+
+	.vertical_menu .second .inner{
+		padding-bottom: 25px;
+	}
+
+
+
+
+
+
+
+
+
+    
+    nav.vertical_menu > ul > li > a:after,
+	.vertical_menu_toggle .second:after{
+            left:50%;
+        margin-left: -80px;
+
+        }
+
+
+
+
+    aside.vertical_menu_area,
+	.vertical_menu.vertical_menu_side ul li div.second,
+    .vertical_menu.vertical_menu_side ul li div.second ul,
+    .vertical_menu.vertical_menu_side ul li div.second ul li ul,
+	.vertical_menu.vertical_menu_side ul li div.second ul li a{
+        background-color: #111111;
+    }
+
+
+    aside.vertical_menu_area,
+	.vertical_menu_hidden_with_icons aside.vertical_menu_area.active{
+    padding: 50px 40px  0px 40px;
+    }
+    
+    .vertical_menu_to_content .menu-item .second {
+        left: calc(100% + 40px);
+    }
+
+    
+		
+				
+	
+				
+				
+		
+
+
+    nav.vertical_menu{
+		margin-top: 50px;
+    }
+
+    .vertical_logo_wrapper,
+    nav.vertical_menu,
+    aside.vertical_menu_area .vertical_menu_area_widget_holder{
+    text-align: center;
+    }
+
+
+    nav.vertical_menu > ul > li > a,
+		.vertical_menu.vertical_menu_side ul li a		{
+     color: #ffffff;             font-family: 'Oswald', sans-serif;
+         font-size: 14px;      line-height: 38px;      font-style: normal;      font-weight: 400;      text-transform: uppercase;      letter-spacing: 2px;     }
+
+
+    nav.vertical_menu > ul > li.active:hover > a,
+    nav.vertical_menu > ul > li:hover > a,
+	.vertical_menu.vertical_menu_side ul li:hover > a,
+	.vertical_menu.vertical_menu_side ul li.active:hover > a{
+		color: #8e8e8e;
+	}
+
+    nav.vertical_menu > ul > li.active > a,
+	.vertical_menu.vertical_menu_side ul li.active > a{
+		color: #8e8e8e;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .vertical_menu .second .inner > ul > li > a,
+    .vertical_menu .wide .second .inner > ul > li > a{
+     color: #bcbcbc;             font-family: 'Open Sans', sans-serif !important;
+         font-size: 14px;                         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .projects_holder article .portfolio_description{
+    background-color: transparent;
+    }
+
+    .projects_holder.standard article .portfolio_description,
+    .projects_holder.standard_no_space article .portfolio_description {
+    padding-left: 0;
+    padding-right: 0;
+    }
+
+    .masonry_with_space .projects_holder article .portfolio_description {
+    padding: 35px 0 43px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+     
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .filter_outer.filter_blog{
+    text-align: left;    }
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+	
+
+
+
+
+
+
+												
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+	
+		
+		
+		
+
+
+
+	
+	
+
+
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+	
+		
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+ 
+	
+
+
+
+
+  
+
+		
+
+
+
+
+
+.preload_background{
+	background-image: url("../img/preload_pattern.png") !important;
+}
+
+	
+
+
+
+	
+	
+    .masonry_gallery_item.square_big .masonry_gallery_item_inner .masonry_gallery_item_content{
+    text-align: center    }
+
+		
+	
+
+	
+	
+	
+    .masonry_gallery_item.square_small .masonry_gallery_item_inner .masonry_gallery_item_content{
+    text-align: center    }
+
+	
+
+
+	
+	
+    .masonry_gallery_item.rectangle_portrait .masonry_gallery_item_inner .masonry_gallery_item_content{
+    text-align: center    }
+
+	
+	
+
+	
+
+    .masonry_gallery_item.rectangle_landscape .masonry_gallery_item_inner .masonry_gallery_item_content{
+    text-align: center    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
