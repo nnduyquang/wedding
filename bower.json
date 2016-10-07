@@ -6,7 +6,7 @@
     "QUANG_CTY <nnduyquang@gmail.com>"
   ],
   "license": "smartlinks",
-  "homepage": "",
+  "homepage": "https://github.com/nnduyquang/wedding",
   "private": true,
   "ignore": [
     "**/.*",
@@ -14,5 +14,8 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "layerslider": "^5.0.4"
+  }
 }
