@@ -12,5 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('home');
+});
+Route::get('/', function () {
+    return view('home');
+});
+Route::get('album', function () {
+    return view('album');
+});
+Route::get('detail', function () {
+    return view('detail');
 });
