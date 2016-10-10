@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US" prefix="og: http://ogp.me/ns#">
 
-<!-- Mirrored from lifestudiosinc.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 06 Oct 2016 07:11:52 GMT -->
+<!-- Mirrored from lifestudiosinc.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 07 Oct 2016 11:43:52 GMT -->
 <!-- Added by HTTrack -->
 <meta http-equiv="content-type" content="text/html;charset=UTF-8"/><!-- /Added by HTTrack -->
 <head>
@@ -19,7 +19,7 @@
     <!--[if gte IE 9]>
     <style type="text/css">
         .gradient {
-            filter: none;s
+            filter: none;
         }
     </style>
     <![endif]-->
@@ -53,15 +53,9 @@
     <script type='application/ld+json'>{ "@context
         ": "http://schema.org","@type": "Organization","name": "Life Studios Inc","url": "http://lifestudiosinc.com","logo": "http://lifestudiosinc.com/wp-content/uploads/2015/08/life-logo.png","sameAs": ["https://www.facebook.com/lifestudiosweddings","https://instagram.com/lifestudiosinc/","https://plus.google.com/114038954305889190601/about","https://www.youtube.com/channel/UCYtJglSvbx2rpZ_KWaOZt7Q","https://www.pinterest.com/lifestudios/","https://twitter.com/lifestudiosinc"]}
 
-
-
-
     </script>
     <script type='application/ld+json'>{ "@context
         ": "http://schema.org","@type": "WebSite","url": "http://lifestudiosinc.com/","potentialAction": {"@type": "SearchAction","target": "http://lifestudiosinc.com/?s={search_term}","query-input": "required name=search_term"}}
-
-
-
 
     </script>
     <!-- / Yoast WordPress SEO Premium plugin. -->
@@ -113,72 +107,69 @@
         }
     </style>
     {{ Html::style('public/css/app.css') }}
-    {{ Html::style('public/css/style_all.css') }}
     {{ Html::style('public/css/all_third_party.css') }}
-    {{ HTML::script('public/js/all_third_party.js') }}
+
+    <link rel='stylesheet' id='finalTilesGallery_stylesheet-css'
+          href='http://lifestudiosinc.com/wp-content/plugins/final-tiles-gallery/scripts/ftg.css'
+          type='text/css' media='all'/>
+
+    <link rel='stylesheet' id='edgt_default_style-css'
+          href='http://lifestudiosinc.com/wp-content/themes/vigor/style.css'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='edgt_stylesheet-css'
+          href='http://lifestudiosinc.com/wp-content/themes/vigor/css/stylesheet.css'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='edgt_style_dynamic-css'
+          href='http://lifestudiosinc.com/wp-content/themes/vigor/css/style_dynamic.css'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='edgt_font_awesome-css'
+          href='http://lifestudiosinc.com/wp-content/themes/vigor/css/font-awesome/css/font-awesome.min.css'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='edgt_font_elegant-css'
+          href='http://lifestudiosinc.com/wp-content/themes/vigor/css/elegant-icons/style.min.css'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='edgt_ion_icons-css'
+          href='http://lifestudiosinc.com/wp-content/themes/vigor/css/ion-icons/css/ionicons.min.css'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='edgt_linea_icons-css'
+          href='http://lifestudiosinc.com/wp-content/themes/vigor/css/linea-icons/style.css'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='edgt_responsive-css'
+          href='http://lifestudiosinc.com/wp-content/themes/vigor/css/responsive.min.css'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='edgt_style_dynamic_responsive-css'
+          href='http://lifestudiosinc.com/wp-content/themes/vigor/css/style_dynamic_responsive.css' type='text/css'
+          media='all'/>
+    <link rel='stylesheet' id='edgt_vertical_responsive-css'
+          href='http://lifestudiosinc.com/wp-content/themes/vigor/css/vertical_responsive.min.css'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='js_composer_front-css'
+          href='http://lifestudiosinc.com/wp-content/plugins/js_composer/assets/css/js_composer.css'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='edgt_custom_css-css'
+          href=http://lifestudiosinc.com/wp-content/themes/vigor/css/custom_css.css' type='text/css'
+          media='all'/>
+    <link rel='stylesheet' id='edgt_webkit-css'
+          href='http://lifestudiosinc.com/wp-content/themes/vigor/css/webkit_stylesheet.css'
+          type='text/css' media='all'/>
     <link rel='stylesheet' id='ls-google-fonts-css'
           href='http://fonts.googleapis.com/css?family=Lato:100,300,regular,700,900%7COpen+Sans:300%7CIndie+Flower:regular%7COswald:300,regular,700&amp;subset=latin%2Clatin-ext'
           type='text/css' media='all'/>
-    <link rel='stylesheet' id='advanced-responsive-video-embedder-css'
-          href='wp-content/plugins/advanced-responsive-video-embedder/public/arve-public8c10.css?ver=7.5.1'
-          type='text/css' media='all'/>
-    <link rel='stylesheet' id='contact-form-7-css'
-          href='wp-content/plugins/contact-form-7/includes/css/stylesc1f9.css?ver=4.4.2' type='text/css' media='all'/>
-    <link rel='stylesheet' id='cff-css'
-          href='wp-content/plugins/custom-facebook-feed-pro/css/cff-stylefc72.css?ver=2.5.14' type='text/css'
-          media='all'/>
     <link rel='stylesheet' id='cff-font-awesome-css'
-          href='../maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.minae82.css?ver=4.2.0' type='text/css'
+          href='//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' type='text/css'
           media='all'/>
-    <link rel='stylesheet' id='finalTilesGallery_stylesheet-css'
-          href='wp-content/plugins/final-tiles-gallery/scripts/ftgdb4e.css?ver=3.1.14' type='text/css' media='all'/>
     <link rel='stylesheet' id='fontawesome_stylesheet-css'
-          href='../netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesomef9bf.css?ver=b3e53c6ea82957ea8857d12f3eb3f794'
+          href='//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css'
           type='text/css' media='all'/>
-    <link rel='stylesheet' id='edgt_default_style-css'
-          href='wp-content/themes/vigor/stylef9bf.css?ver=b3e53c6ea82957ea8857d12f3eb3f794' type='text/css'
-          media='all'/>
-    <link rel='stylesheet' id='edgt_stylesheet-css'
-          href='wp-content/themes/vigor/css/stylesheetf9bf.css?ver=b3e53c6ea82957ea8857d12f3eb3f794' type='text/css'
-          media='all'/>
-    <link rel='stylesheet' id='edgt_style_dynamic-css'
-          href='wp-content/themes/vigor/css/style_dynamic5134.css?ver=1445990219' type='text/css' media='all'/>
-    <link rel='stylesheet' id='edgt_font_awesome-css'
-          href='wp-content/themes/vigor/css/font-awesome/css/font-awesome.minf9bf.css?ver=b3e53c6ea82957ea8857d12f3eb3f794'
-          type='text/css' media='all'/>
-    <link rel='stylesheet' id='edgt_font_elegant-css'
-          href='wp-content/themes/vigor/css/elegant-icons/style.minf9bf.css?ver=b3e53c6ea82957ea8857d12f3eb3f794'
-          type='text/css' media='all'/>
-    <link rel='stylesheet' id='edgt_ion_icons-css'
-          href='wp-content/themes/vigor/css/ion-icons/css/ionicons.minf9bf.css?ver=b3e53c6ea82957ea8857d12f3eb3f794'
-          type='text/css' media='all'/>
-    <link rel='stylesheet' id='edgt_linea_icons-css'
-          href='wp-content/themes/vigor/css/linea-icons/stylef9bf.css?ver=b3e53c6ea82957ea8857d12f3eb3f794'
-          type='text/css' media='all'/>
-    <link rel='stylesheet' id='edgt_responsive-css'
-          href='wp-content/themes/vigor/css/responsive.minf9bf.css?ver=b3e53c6ea82957ea8857d12f3eb3f794' type='text/css'
-          media='all'/>
-    <link rel='stylesheet' id='edgt_style_dynamic_responsive-css'
-          href='wp-content/themes/vigor/css/style_dynamic_responsive5134.css?ver=1445990219' type='text/css'
-          media='all'/>
-    <link rel='stylesheet' id='edgt_vertical_responsive-css'
-          href='wp-content/themes/vigor/css/vertical_responsive.minf9bf.css?ver=b3e53c6ea82957ea8857d12f3eb3f794'
-          type='text/css' media='all'/>
-    <link rel='stylesheet' id='js_composer_front-css'
-          href='wp-content/plugins/js_composer/assets/css/js_composer125b.css?ver=4.7.4' type='text/css' media='all'/>
-    <link rel='stylesheet' id='edgt_custom_css-css' href='wp-content/themes/vigor/css/custom_css5134.css?ver=1445990219'
-          type='text/css' media='all'/>
-    <link rel='stylesheet' id='edgt_webkit-css'
-          href='wp-content/themes/vigor/css/webkit_stylesheetf9bf.css?ver=b3e53c6ea82957ea8857d12f3eb3f794'
-          type='text/css' media='all'/>
-    <script type='text/javascript' src='wp-content/plugins/LayerSlider/static/js/greensockcd11.js?ver=1.11.8'></script>
-    <script type='text/javascript' src='http://lifestudiosinc.com/wp-includes/js/jquery/jquery.js?ver=1.11.3'></script>
+ <script type='text/javascript'
+            src='http://lifestudiosinc.com/wp-content/plugins/LayerSlider/static/js/greensock.js'></script>
+    <script type='text/javascript' src='http://lifestudiosinc.com/wp-includes/js/jquery/jquery.js'></script>
     <script type='text/javascript'
-            src='http://lifestudiosinc.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+            src='http://lifestudiosinc.com/wp-includes/js/jquery/jquery-migrate.min.js'></script>
     <script type='text/javascript'
-            src='wp-content/plugins/LayerSlider/static/js/layerslider.kreaturamedia.jquery4c7e.js?ver=5.6.2'></script>
+            src='http://lifestudiosinc.com/wp-content/plugins/LayerSlider/static/js/layerslider.kreaturamedia.jquery.js'></script>
     <script type='text/javascript'
-            src='wp-content/plugins/LayerSlider/static/js/layerslider.transitions4c7e.js?ver=5.6.2'></script>
+            src='http://lifestudiosinc.com/wp-content/plugins/LayerSlider/static/js/layerslider.transitions.js'></script>
     <link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc0db0.php?rsd"/>
     <link rel="wlwmanifest" type="application/wlwmanifest+xml"
           href="http://lifestudiosinc.com/wp-includes/wlwmanifest.xml"/>
@@ -189,7 +180,7 @@
         }</style>
     <!-- Custom Facebook Feed JS vars -->
     <script type="text/javascript">
-        var cffsiteurl = "wp-content/plugins.html";
+        var cffsiteurl = "http://lifestudiosinc.com/wp-content/plugins.html";
         var cffajaxurl = "http://lifestudiosinc.com/wp-admin/admin-ajax.php";
         var cffmetatrans = "true";
         var cfflinkhashtags = "true";
@@ -227,7 +218,7 @@
             for (var i = 0; i < evts.length; i++) {
                 addEvent(evts[i], logHuman);
             }
-        })('indexd8c9.html?wordfence_logHuman=1&amp;hid=5211C72443982617F0C6A5325A84CD82');
+        })('index9735.html?wordfence_logHuman=1&amp;hid=6B0353BED7DA09BD0886DF6190E5D7FB');
     </script>
     <!--[if IE 9]>
     <link rel="stylesheet" type="text/css"
@@ -269,9 +260,12 @@
                 <div class="vertical_logo_wrapper">
                     <div class="edgt_logo_vertical" style="height: 55.5px;">
                         <a href="index.html">
-                            <img class="normal" src="wp-content/uploads/2015/10/Life200.png" alt="Logo"/>
-                            <img class="light" src="wp-content/uploads/2015/10/logo3.png" alt="Logo"/>
-                            <img class="dark" src="wp-content/uploads/2015/10/logo3.png" alt="Logo"/>
+                            <img class="normal" src="http://lifestudiosinc.com/wp-content/uploads/2015/10/Life200.png"
+                                 alt="Logo"/>
+                            <img class="light" src="http://lifestudiosinc.com/wp-content/uploads/2015/10/logo3.png"
+                                 alt="Logo"/>
+                            <img class="dark" src="http://lifestudiosinc.com/wp-content/uploads/2015/10/logo3.png"
+                                 alt="Logo"/>
                         </a>
                     </div>
 
@@ -496,14 +490,17 @@
                                 </div>
                                 <div class="logo_wrapper">
                                     <div class="edgt_logo"><a href="index.html"><img class="normal"
-                                                                                     src="wp-content/uploads/2015/10/Life200.png"
+                                                                                     src="http://lifestudiosinc.com/wp-content/uploads/2015/10/Life200.png"
                                                                                      alt="Logo"/><img class="light"
-                                                                                                      src="wp-content/uploads/2015/10/logo3.png"
+                                                                                                      src="http://lifestudiosinc.com/wp-content/uploads/2015/10/logo3.png"
                                                                                                       alt="Logo"/><img
-                                                    class="dark" src="wp-content/uploads/2015/10/logo3.png" alt="Logo"/><img
-                                                    class="sticky" src="wp-content/themes/vigor/img/logo_black.png"
+                                                    class="dark"
+                                                    src="http://lifestudiosinc.com/wp-content/uploads/2015/10/logo3.png"
+                                                    alt="Logo"/><img
+                                                    class="sticky"
+                                                    src="http://lifestudiosinc.com/wp-content/themes/vigor/img/logo_black.png"
                                                     alt="Logo"/><img class="mobile"
-                                                                     src="wp-content/uploads/2015/10/logo3.png"
+                                                                     src="http://lifestudiosinc.com/wp-content/uploads/2015/10/logo3.png"
                                                                      alt="Logo"/></a></div>
                                 </div>
                             </div>
@@ -678,7 +675,7 @@
                                                                 <div class="mobile-video-image"
                                                                      style="background-image: url()"></div>
                                                                 <div class="video-overlay"><img
-                                                                            src="wp-content/themes/vigor/css/img/pixel-video.png"
+                                                                            src="http://lifestudiosinc.com/wp-content/themes/vigor/css/img/pixel-video.png"
                                                                             alt=""/></div>
                                                                 <div class="video-wrap">
 
@@ -686,14 +683,14 @@
                                                                            poster="#" controls="controls" preload="auto"
                                                                            loop autoplay muted>
                                                                         <source type="video/mp4"
-                                                                                src="{{ url('public/video/HomepageVideo2-Broadband.m4v') }}">
+                                                                                src="http://lifestudiosinc.com/wp-content/uploads/2015/08/HomepageVideo2-Broadband.m4v">
                                                                         <object width="320" height="240"
                                                                                 type="application/x-shockwave-flash"
-                                                                                data="{{ url('public/video/flashmediaelement.swf') }}">
+                                                                                data="http://lifestudiosinc.com/wp-content/themes/vigor/js/flashmediaelement.swf">
                                                                             <param name="movie"
-                                                                                   value="{{ url('public/video/flashmediaelement.swf') }}"/>
+                                                                                   value="http://lifestudiosinc.com/wp-content/themes/vigor/js/flashmediaelement.swf"/>
                                                                             <param name="flashvars"
-                                                                                   value="controls=true&amp;file={{ url('public/video/HomepageVideo2-Broadband.m4v') }}"/>
+                                                                                   value="controls=true&amp;file=http://lifestudiosinc.com/wp-content/uploads/2015/08/HomepageVideo2-Broadband.m4v"/>
                                                                             <img src="#" width="1920" height="800"
                                                                                  title="No video playback capabilities"
                                                                                  alt="Video thumb"/>
@@ -767,8 +764,8 @@
                                                          data-1440="transform: translateY(-500px);">
                                                         <div class="item  has_thumbnail   " style=" ">
                                                             <div class="image"
-                                                                 style="background-image:url(wp-content/uploads/2015/08/NewIphone.jpg)">
-                                                                <img src="wp-content/uploads/2015/08/NewIphone.jpg"
+                                                                 style="background-image:url(http://lifestudiosinc.com/wp-content/uploads/2015/08/NewIphone.jpg)">
+                                                                <img src="http://lifestudiosinc.com/wp-content/uploads/2015/08/NewIphone.jpg"
                                                                      alt="Life Studios"></div>
                                                             <div class="slider_content_outer content_bottom_left">
                                                                 <div class="slider_content center"
@@ -780,7 +777,7 @@
                                                                                     href="cinematography-packages/index.html"
                                                                                     target="_self"><img data-width="604"
                                                                                                         data-height="342"
-                                                                                                        src="wp-content/uploads/2015/08/overlay21.png"
+                                                                                                        src="http://lifestudiosinc.com/wp-content/uploads/2015/08/overlay21.png"
                                                                                                         alt="Life Studios"></a>
                                                                         </div>
                                                                     </div>
@@ -809,24 +806,24 @@
                                                     <div class="gallery_holder">
                                                         <ul class="gallery_inner gallery_without_space  v3">
                                                             <li class="no_grayscale"><a class="prettyphoto"
-                                                                                        href="wp-content/uploads/2015/08/E6-1024x640.jpg"
-                                                                                        rel="prettyPhoto[rel-4-55478829]"><span
+                                                                                        href="http://lifestudiosinc.com/wp-content/uploads/2015/08/E6-1024x640.jpg"
+                                                                                        rel="prettyPhoto[rel-4-645246977]"><span
                                                                             class="gallery_hover"></span><img
                                                                             width="1280" height="800"
-                                                                            src="wp-content/uploads/2015/08/E6.jpg"
+                                                                            src="http://lifestudiosinc.com/wp-content/uploads/2015/08/E6.jpg"
                                                                             class="attachment-full"
                                                                             alt="Wedding Photography"/></a></li>
                                                             <li class="no_grayscale"><a class="prettyphoto"
-                                                                                        href="wp-content/uploads/2015/08/E2-1024x640.jpg"
-                                                                                        rel="prettyPhoto[rel-4-55478829]"><span
+                                                                                        href="http://lifestudiosinc.com/wp-content/uploads/2015/08/E2-1024x640.jpg"
+                                                                                        rel="prettyPhoto[rel-4-645246977]"><span
                                                                             class="gallery_hover"></span><img
                                                                             width="1280" height="800"
-                                                                            src="wp-content/uploads/2015/08/E2.jpg"
+                                                                            src="http://lifestudiosinc.com/wp-content/uploads/2015/08/E2.jpg"
                                                                             class="attachment-full"
                                                                             alt="Wedding Photography"/></a></li>
                                                             <li class="no_grayscale"><a class="prettyphoto"
-                                                                                        href="wp-content/uploads/2015/01/Wedding1-1024x640.jpg"
-                                                                                        rel="prettyPhoto[rel-4-55478829]"><span
+                                                                                        href="http://lifestudiosinc.com/wp-content/uploads/2015/01/Wedding1-1024x640.jpg"
+                                                                                        rel="prettyPhoto[rel-4-645246977]"><span
                                                                             class="gallery_hover"></span><img
                                                                             width="1280" height="800"
                                                                             src="wp-content/uploads/2015/01/Wedding1.jpg"
@@ -834,7 +831,7 @@
                                                                             alt="Wedding Photography"/></a></li>
                                                             <li class="no_grayscale"><a class="prettyphoto"
                                                                                         href="wp-content/uploads/2015/01/Wedding2-1024x640.jpg"
-                                                                                        rel="prettyPhoto[rel-4-55478829]"><span
+                                                                                        rel="prettyPhoto[rel-4-645246977]"><span
                                                                             class="gallery_hover"></span><img
                                                                             width="1280" height="800"
                                                                             src="wp-content/uploads/2015/01/Wedding2.jpg"
@@ -842,7 +839,7 @@
                                                                             alt="Wedding Photography"/></a></li>
                                                             <li class="no_grayscale"><a class="prettyphoto"
                                                                                         href="wp-content/uploads/2015/01/Wedding3-1024x640.jpg"
-                                                                                        rel="prettyPhoto[rel-4-55478829]"><span
+                                                                                        rel="prettyPhoto[rel-4-645246977]"><span
                                                                             class="gallery_hover"></span><img
                                                                             width="1280" height="800"
                                                                             src="wp-content/uploads/2015/01/Wedding3.jpg"
@@ -850,7 +847,7 @@
                                                                             alt="Wedding Photography"/></a></li>
                                                             <li class="no_grayscale"><a class="prettyphoto"
                                                                                         href="wp-content/uploads/2015/01/Wedding4-1024x640.jpg"
-                                                                                        rel="prettyPhoto[rel-4-55478829]"><span
+                                                                                        rel="prettyPhoto[rel-4-645246977]"><span
                                                                             class="gallery_hover"></span><img
                                                                             width="1280" height="800"
                                                                             src="wp-content/uploads/2015/01/Wedding4.jpg"
@@ -1070,12 +1067,12 @@
                                 <div class="wpb_column vc_column_container vc_col-sm-12">
                                     <div class="wpb_wrapper">
                                         <div class='google_map_holder' style='height:300'>
-                                            <div class='edgt_google_map' id='map_canvas_6939'
+                                            <div class='edgt_google_map' id='map_canvas_90528'
                                                  data-addresses='["1060 Quebec St Vancouver, BC V6A-4K7"]'
                                                  data-custom-map-style='true' data-color-overlay='#707070'
                                                  data-saturation='-96' data-lightness='-60' data-zoom='15'
                                                  data-pin='http://lifestudiosinc.com/wp-content/uploads/2015/01/pin.png'
-                                                 data-unique-id='6939' data-google-maps-scroll-wheel='false'
+                                                 data-unique-id='90528' data-google-maps-scroll-wheel='false'
                                                  data-show-address-info-box='no' data-map-height='300'></div>
                                             <div class='google_map_ovrlay'></div>
                                         </div>
@@ -1131,7 +1128,7 @@
                                                                         <div class="cff-author-text"><p
                                                                                     class="cff-page-name cff-author-date">
                                                                                 Life Studios Inc.</p>
-                                                                            <p class="cff-date"> 2 days ago </p></div>
+                                                                            <p class="cff-date"> 4 days ago </p></div>
                                                                         <div class="cff-author-img"><img
                                                                                     src="https://graph.facebook.com/175888712460157/picture?type=square"
                                                                                     title="Life Studios Inc."
@@ -1144,8 +1141,8 @@
                                                                                 href="https://www.facebook.com/lifestudiosweddings/videos/1065680146814338/"
                                                                                 target="_blank" rel="nofollow"
                                                                                 style="color: #">Haruka and Thai's Vancouver Wedding</a><br/>With tears of absolute joy, <a
-                                                                                href="http://facebook.com/1115278595227931">Kathy Haruka Tao</a> + <a
-                                                                                href="http://facebook.com/10157410916145234">Thai Tao</a> made their beautiful vows to each other with heartfelt promises of a love that will last forever... The kind of love that will stand strong as they grow together in unison! Are we the only ones with tissues here?! Thank you to our fellow vendors: Hycroft Manor, Katsura Designs, Leslie from Sakura Photography and DJ Wax Canada. </span><span
+                                                                                href="http://facebook.com/1114343885321402">Kathy Haruka Tao</a> + <a
+                                                                                href="http://facebook.com/10157410186760234">Thai Tao</a> made their beautiful vows to each other with heartfelt promises of a love that will last forever... The kind of love that will stand strong as they grow together in unison! Are we the only ones with tissues here?! Thank you to our fellow vendors: Hycroft Manor, Katsura Designs, Leslie from Sakura Photography and DJ Wax Canada. </span><span
                                                                             class="cff-expand">... <a href="#"
                                                                                                       style="color: #"><span
                                                                                     class="cff-more">See More</span><span
@@ -1155,7 +1152,7 @@
                                                                         href="http://facebook.com/175888712460157_1065680146814338"
                                                                         class="cff-html5-play"><i
                                                                             class="fa fa-play cff-playbtn"></i></a>
-                                                                <video src="https://video.xx.fbcdn.net/v/t42.1790-2/14591218_351420348526869_8877262582637920256_n.mp4?efg=eyJybHIiOjU2MywicmxhIjoxNTkzLCJ2ZW5jb2RlX3RhZyI6InN2ZV9zZCJ9&amp;rl=563&amp;vabr=313&amp;oh=4c1353f92e225c7175e2408e0749807f&amp;oe=57F78FCD"
+                                                                <video src="https://video.xx.fbcdn.net/v/t42.1790-2/14591218_351420348526869_8877262582637920256_n.mp4?efg=eyJybHIiOjU2MywicmxhIjoxNTkzLCJ2ZW5jb2RlX3RhZyI6InN2ZV9zZCJ9&amp;rl=563&amp;vabr=313&amp;oh=fd313705e8f3d6f6a29b2c68118e37f7&amp;oe=57F8E14D"
                                                                        poster="../scontent.xx.fbcdn.net/v/t15.0-10/s720x720/14510973_1065709560144730_4935595366511804416_ncff1.jpg?oh=d4b70358919e89d62976e2130204ab7d&amp;oe=58AC8B06">
                                                                     <a title="Haruka and Thai's Vancouver Wedding"
                                                                        class="cff-vidLink"
@@ -1218,18 +1215,18 @@
                                                                         class="cff-comment-likes cff-likes"
                                                                         style="color:#;"><span
                                                                             class="cff-icon"></span><a
-                                                                            href="https://facebook.com/10153236960720732"
+                                                                            href="https://facebook.com/10153236978630732"
                                                                             style="color:#;" target="_blank"
                                                                             rel="nofollow">Tina Wu</a>, <a
-                                                                            href="https://facebook.com/10154146095167980"
+                                                                            href="https://facebook.com/10154146095017980"
                                                                             style="color:#;" target="_blank"
                                                                             rel="nofollow">Jessie Lamirande</a> and 8
                                                                     others like this</p>
-                                                                <div class="cff-comment" id="cff_1115278595227931"
-                                                                     data-id="1115278595227931" style="color:#;">
+                                                                <div class="cff-comment" id="cff_1114343885321402"
+                                                                     data-id="1114343885321402" style="color:#;">
                                                                     <div class="cff-comment-text-wrapper">
                                                                         <div class="cff-comment-text"><p><a
-                                                                                        href="https://facebook.com/1115278595227931"
+                                                                                        href="https://facebook.com/1114343885321402"
                                                                                         class="cff-name" target="_blank"
                                                                                         rel="nofollow" style="color:#;">Kathy
                                                                                     Haruka Tao</a>We love it so much!!!
@@ -1242,13 +1239,14 @@
                                                                                 can relive over and over again. We are
                                                                                 blown away by your incredible talent! We
                                                                                 highly recommend you guys to everyone!!
-                                                                            </p><span class="cff-time">1 day ago </span>
+                                                                            </p><span
+                                                                                    class="cff-time">3 days ago </span>
                                                                         </div>
                                                                     </div>
                                                                     <div class="cff-comment-img"><a
-                                                                                href="https://facebook.com/1115278595227931"
+                                                                                href="https://facebook.com/1114343885321402"
                                                                                 target="_blank" rel="nofollow"><img
-                                                                                    src="wp-content/plugins/custom-facebook-feed-pro/img/avatar.png"
+                                                                                    src="http://lifestudiosinc.com/wp-content/plugins/custom-facebook-feed-pro/img/avatar.png"
                                                                                     width=32 height=32 alt="Avatar"></a>
                                                                     </div>
                                                                 </div>
@@ -1364,10 +1362,10 @@ Love Our Work? Like Our Page! @[175888712460157:274:Life Studios Inc.]"/></a>
                                                                  data-num="4"><p class="cff-comment-likes cff-likes"
                                                                                  style="color:#;"><span
                                                                             class="cff-icon"></span><a
-                                                                            href="https://facebook.com/10156189470600265"
+                                                                            href="https://facebook.com/10156189046955265"
                                                                             style="color:#;" target="_blank"
                                                                             rel="nofollow">Wendy Lew</a>, <a
-                                                                            href="https://facebook.com/10153944989558659"
+                                                                            href="https://facebook.com/10153945745528659"
                                                                             style="color:#;" target="_blank"
                                                                             rel="nofollow">Vi Vee</a> and <span
                                                                             class="cff-comment-likes-count">23</span>
@@ -1418,7 +1416,7 @@ Love Our Work? Like Our Page! @[175888712460157:274:Life Studios Inc.] </span></
                                                                href="https://www.facebook.com/lifestudiosweddings/posts/1056834124365607"
                                                                target="_blank" rel="nofollow">
                                                                 <div class="cff-album-icon"></div>
-                                                                <img src="../scontent.xx.fbcdn.net/v/t1.0-0/p480x480/14370206_1056804371035249_3607531804216733756_nad20.jpg?oh=d23e404473c7dfa640571117619bffed&amp;oe=58781DFE"
+                                                                <img src="../scontent.xx.fbcdn.net/v/t1.0-0/p480x480/14370206_1056804371035249_3607531804216733756_na93a.jpg?oh=8ec32a86018ab3121de36c56908524bb&amp;oe=589FAAFE"
                                                                      alt="Well Helen sure found her Romeo! A love that is so beautiful and defined, it just shines from their faces when they look at each other! We are so excited to share this beautiful couples engagement photos!
 
 This is a sneak peek, but for more check out the album:
@@ -1479,19 +1477,19 @@ Love Our Work? Like Our Page! @[175888712460157:274:Life Studios Inc.]"/></a>
                                                                         class="cff-comment-likes cff-likes"
                                                                         style="color:#;"><span
                                                                             class="cff-icon"></span><a
-                                                                            href="https://facebook.com/10101554130811401"
+                                                                            href="https://facebook.com/10101554393514941"
                                                                             style="color:#;" target="_blank"
                                                                             rel="nofollow">Bonnie T Wong</a>, <a
-                                                                            href="https://facebook.com/10154212394243948"
+                                                                            href="https://facebook.com/10154210934233948"
                                                                             style="color:#;" target="_blank"
                                                                             rel="nofollow">Poonam Sharma</a> and <span
                                                                             class="cff-comment-likes-count">23</span>
                                                                     others like this</p>
-                                                                <div class="cff-comment" id="cff_10156268007420441"
-                                                                     data-id="10156268007420441" style="color:#;">
+                                                                <div class="cff-comment" id="cff_10156268047425441"
+                                                                     data-id="10156268047425441" style="color:#;">
                                                                     <div class="cff-comment-text-wrapper">
                                                                         <div class="cff-comment-text"><p><a
-                                                                                        href="https://facebook.com/10156268007420441"
+                                                                                        href="https://facebook.com/10156268047425441"
                                                                                         class="cff-name" target="_blank"
                                                                                         rel="nofollow" style="color:#;">Tamara
                                                                                     Mcgill</a>Amazing shoot, amazing
@@ -1500,29 +1498,29 @@ Love Our Work? Like Our Page! @[175888712460157:274:Life Studios Inc.]"/></a>
                                                                                     &nbsp;<b></b>1</span></span></div>
                                                                     </div>
                                                                     <div class="cff-comment-img"><a
-                                                                                href="https://facebook.com/10156268007420441"
+                                                                                href="https://facebook.com/10156268047425441"
                                                                                 target="_blank" rel="nofollow"><img
                                                                                     src="wp-content/plugins/custom-facebook-feed-pro/img/avatar.png"
                                                                                     width=32 height=32 alt="Avatar"></a>
                                                                     </div>
                                                                 </div>
-                                                                <div class="cff-comment" id="cff_10153692235720448"
-                                                                     data-id="10153692235720448" style="color:#;">
+                                                                <div class="cff-comment" id="cff_10153691841995448"
+                                                                     data-id="10153691841995448" style="color:#;">
                                                                     <div class="cff-comment-text-wrapper">
                                                                         <div class="cff-comment-text"><p><a
-                                                                                        href="https://facebook.com/10153692235720448"
+                                                                                        href="https://facebook.com/10153691841995448"
                                                                                         class="cff-name" target="_blank"
                                                                                         rel="nofollow" style="color:#;">Maureen
                                                                                     Castor</a><a
-                                                                                        href="http://facebook.com/10157312069440012"
+                                                                                        href="http://facebook.com/10157311359215012"
                                                                                         target="_blank" rel="nofollow"
                                                                                         style="color:#;">Angelica
-                                                                                    Azaña</a></p><span class="cff-time">1 week ago <span
+                                                                                    Azaña</a></p><span class="cff-time">2 weeks ago <span
                                                                                         class="cff-comment-likes">&nbsp; &middot;
                                                                                     &nbsp;<b></b>1</span></span></div>
                                                                     </div>
                                                                     <div class="cff-comment-img"><a
-                                                                                href="https://facebook.com/10153692235720448"
+                                                                                href="https://facebook.com/10153691841995448"
                                                                                 target="_blank" rel="nofollow"><img
                                                                                     src="wp-content/plugins/custom-facebook-feed-pro/img/avatar.png"
                                                                                     width=32 height=32 alt="Avatar"></a>
@@ -1618,10 +1616,10 @@ Love Our Work? Like Our Page! @[175888712460157:274:Life Studios Inc.]"/></a>
                                                                  data-num="4"><p class="cff-comment-likes cff-likes"
                                                                                  style="color:#;"><span
                                                                             class="cff-icon"></span><a
-                                                                            href="https://facebook.com/106379583159512"
+                                                                            href="https://facebook.com/106300619834075"
                                                                             style="color:#;" target="_blank"
                                                                             rel="nofollow">Subbu Subhash</a>, <a
-                                                                            href="https://facebook.com/1006709582727468"
+                                                                            href="https://facebook.com/1006979339367159"
                                                                             style="color:#;" target="_blank"
                                                                             rel="nofollow">Lily Anne</a> and 5 others
                                                                     like this</p>
@@ -1716,18 +1714,18 @@ Love Our Work? Like Our Page! @[175888712460157:274:Life Studios Inc.]"/></a>
                                                                         class="cff-comment-likes cff-likes"
                                                                         style="color:#;"><span
                                                                             class="cff-icon"></span><a
-                                                                            href="https://facebook.com/1006709582727468"
+                                                                            href="https://facebook.com/1006979339367159"
                                                                             style="color:#;" target="_blank"
                                                                             rel="nofollow">Lily Anne</a>, <a
-                                                                            href="https://facebook.com/902237666551936"
+                                                                            href="https://facebook.com/902211206554582"
                                                                             style="color:#;" target="_blank"
                                                                             rel="nofollow">Shalina Lawrence</a> and 18
                                                                     others like this</p>
-                                                                <div class="cff-comment" id="cff_968780349826667"
-                                                                     data-id="968780349826667" style="color:#;">
+                                                                <div class="cff-comment" id="cff_968785006492868"
+                                                                     data-id="968785006492868" style="color:#;">
                                                                     <div class="cff-comment-text-wrapper">
                                                                         <div class="cff-comment-text"><p><a
-                                                                                        href="https://facebook.com/968780349826667"
+                                                                                        href="https://facebook.com/968785006492868"
                                                                                         class="cff-name" target="_blank"
                                                                                         rel="nofollow" style="color:#;">Jason
                                                                                     Mascarenhas</a>See you on
@@ -1736,7 +1734,7 @@ Love Our Work? Like Our Page! @[175888712460157:274:Life Studios Inc.]"/></a>
                                                                                     &nbsp;<b></b>1</span></span></div>
                                                                     </div>
                                                                     <div class="cff-comment-img"><a
-                                                                                href="https://facebook.com/968780349826667"
+                                                                                href="https://facebook.com/968785006492868"
                                                                                 target="_blank" rel="nofollow"><img
                                                                                     src="wp-content/plugins/custom-facebook-feed-pro/img/avatar.png"
                                                                                     width=32 height=32 alt="Avatar"></a>
@@ -1794,8 +1792,6 @@ Love Our Work? Like Our Page! @[175888712460157:274:Life Studios Inc.]"/></a>
         </footer>
     </div> <!-- close div.wrapper_inner  -->
 </div> <!-- close div.wrapper -->
-<script type='text/javascript'
-        src='wp-content/plugins/contact-form-7/includes/js/jquery.form.mind03d.js?ver=3.51.0-2014.06.20'></script>
 <script type='text/javascript'>
     /* <![CDATA[ */
     var _wpcf7 = {
@@ -1806,54 +1802,50 @@ Love Our Work? Like Our Page! @[175888712460157:274:Life Studios Inc.]"/></a>
     };
     /* ]]> */
 </script>
-<script type='text/javascript' src='wp-content/plugins/contact-form-7/includes/js/scriptsc1f9.js?ver=4.4.2'></script>
+{{ HTML::script('public/js/all_third_party.js') }}
+
+<!--<script type='text/javascript'
+        src='http://lifestudiosinc.com/wp-content/plugins/custom-facebook-feed-pro/js/cff-scripts.js'></script>
 <script type='text/javascript'
-        src='wp-content/plugins/custom-facebook-feed-pro/js/cff-scriptsfc72.js?ver=2.5.14'></script>
-<script type='text/javascript'
-        src='wp-content/plugins/final-tiles-gallery/scripts/jquery.finalTilesGallerydb4e.js?ver=3.1.14'></script>
+        src='http://lifestudiosinc.com/wp-content/plugins/final-tiles-gallery/scripts/jquery.finalTilesGallery.js'></script>
 <script type='text/javascript'>
     /* <![CDATA[ */
     var edgtLike = {"ajaxurl": "http:\/\/lifestudiosinc.com\/wp-admin\/admin-ajax.php"};
     /* ]]> */
 </script>
-<script type='text/javascript' src='wp-content/themes/vigor/js/edgt-like5152.js?ver=1.0'></script>
 <script type='text/javascript'
-        src='wp-content/themes/vigor/js/pluginsf9bf.js?ver=b3e53c6ea82957ea8857d12f3eb3f794'></script>
+        src='http://lifestudiosinc.com/wp-content/themes/vigor/js/edgt-like.js'></script>-->
 <script type='text/javascript'
-        src='wp-content/themes/vigor/js/jquery.carouFredSel-6.2.1f9bf.js?ver=b3e53c6ea82957ea8857d12f3eb3f794'></script>
+        src='http://lifestudiosinc.com/wp-content/themes/vigor/js/plugins.js'></script>
 <script type='text/javascript'
-        src='wp-content/themes/vigor/js/jquery.fullPage.minf9bf.js?ver=b3e53c6ea82957ea8857d12f3eb3f794'></script>
+        src='http://lifestudiosinc.com/wp-content/themes/vigor/js/jquery.carouFredSel-6.2.1.js'></script>
 <script type='text/javascript'
-        src='wp-content/themes/vigor/js/lemmon-sliderf9bf.js?ver=b3e53c6ea82957ea8857d12f3eb3f794'></script>
+        src='http://lifestudiosinc.com/wp-content/themes/vigor/js/jquery.fullPage.min.js'></script>
 <script type='text/javascript'
-        src='wp-content/themes/vigor/js/jquery.mousewheel.minf9bf.js?ver=b3e53c6ea82957ea8857d12f3eb3f794'></script>
+        src='http://lifestudiosinc.com/wp-content/themes/vigor/js/lemmon-slider.js'></script>
 <script type='text/javascript'
-        src='wp-content/themes/vigor/js/jquery.touchSwipe.minf9bf.js?ver=b3e53c6ea82957ea8857d12f3eb3f794'></script>
+        src=http://lifestudiosinc.com/'wp-content/themes/vigor/js/jquery.mousewheel.min.js'></script>
 <script type='text/javascript'
-        src='wp-content/plugins/js_composer/assets/lib/bower/isotope/dist/isotope.pkgd.min125b.js?ver=4.7.4'></script>
+        src='http://lifestudiosinc.com/wp-content/themes/vigor/js/jquery.touchSwipe.min.js'></script>
+<script type='text/javascript'
+        src='http://lifestudiosinc.com/wp-content/plugins/js_composer/assets/lib/bower/isotope/dist/isotope.pkgd.min.js'></script>
 <script type='text/javascript'
         src='https://maps.googleapis.com/maps/api/js?sensor=false&amp;ver=b3e53c6ea82957ea8857d12f3eb3f794'></script>
-<script type='text/javascript' src='wp-content/themes/vigor/js/default_dynamic5134.js?ver=1445990219'></script>
 <script type='text/javascript'
-        src='wp-content/themes/vigor/js/defaultf9bf.js?ver=b3e53c6ea82957ea8857d12f3eb3f794'></script>
-<script type='text/javascript' src='wp-content/themes/vigor/js/custom_js5134.js?ver=1445990219'></script>
+        src='http://lifestudiosinc.com/wp-content/themes/vigor/js/default_dynamic.js'></script>
 <script type='text/javascript'
-        src='wp-content/themes/vigor/js/TweenLite.minf9bf.js?ver=b3e53c6ea82957ea8857d12f3eb3f794'></script>
+        src='http://lifestudiosinc.com/wp-content/themes/vigor/js/default.js'></script>
 <script type='text/javascript'
-        src='wp-content/themes/vigor/js/ScrollToPlugin.minf9bf.js?ver=b3e53c6ea82957ea8857d12f3eb3f794'></script>
+        src='http://lifestudiosinc.com/wp-content/themes/vigor/js/custom_js.js'></script>
 <script type='text/javascript'
-        src='wp-content/themes/vigor/js/smoothPageScrollf9bf.js?ver=b3e53c6ea82957ea8857d12f3eb3f794'></script>
+        src='http://lifestudiosinc.com/wp-content/themes/vigor/js/TweenLite.min.js'></script>
 <script type='text/javascript'
-        src='http://lifestudiosinc.com/wp-includes/js/comment-reply.min.js?ver=b3e53c6ea82957ea8857d12f3eb3f794'></script>
+        src='http://lifestudiosinc.com/wp-content/themes/vigor/js/ScrollToPlugin.min.js'></script>
 <script type='text/javascript'
-        src='wp-content/plugins/js_composer/assets/js/js_composer_front125b.js?ver=4.7.4'></script>
+        src='http://lifestudiosinc.com/wp-content/themes/vigor/js/smoothPageScroll.js'></script>
 <script type='text/javascript'
-        src='wp-content/plugins/advanced-responsive-video-embedder/public/arve-public8c10.js?ver=7.5.1'></script>
+        src='http://lifestudiosinc.com/wp-includes/js/comment-reply.min.js'></script>
+<script type='text/javascript'
+        src='http://lifestudiosinc.com/wp-content/plugins/js_composer/assets/js/js_composer_front.js'></script>
 </body>
-
-<!-- Mirrored from lifestudiosinc.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 06 Oct 2016 07:15:34 GMT -->
 </html>
-<!-- Dynamic page generated in 2.537 seconds. -->
-<!-- Cached page generated by WP-Super-Cache on 2016-10-05 23:11:00 -->
-
-<!-- Compression = gzip -->

@@ -241,8 +241,8 @@
   bottom: 5px;
   right: 5px;
   height: 22px;
-  background: #000 url('../img/cff-album-icon.png') no-repeat 5px 5px;
-  background: rgba(0,0,0,0.7) url('../img/cff-album-icon.png') no-repeat 5px 5px;
+  background: #000 url('../images/custom-facebook-feed-pro/cff-album-icon.png') no-repeat 5px 5px;
+  background: rgba(0,0,0,0.7) url('../images/custom-facebook-feed-pro/cff-album-icon.png') no-repeat 5px 5px;
   color: #fff;
   font-size: 12px;
   margin: 0;
@@ -451,7 +451,7 @@
   *width: 60px;
   *height: 60px;
   *padding: 0;
-  *background: #000 url('../img/play.png') no-repeat center center;
+  *background: #000 url('../images/custom-facebook-feed-pro/play.png') no-repeat center center;
 }
 /* Play button hover state */
 #cff .cff-html5-play:hover .cff-playbtn,
@@ -461,7 +461,7 @@
   cursor: pointer;
 
   /* IE7 and under */
-  *background: #000 url('../img/play.png') no-repeat center center;
+  *background: #000 url('../images/custom-facebook-feed-pro/play.png') no-repeat center center;
 }
 /* If it's a video with no poster image */
 #cff .cff-desc-wrap.cff-no-image{
@@ -728,7 +728,7 @@
   height: 14px;
   margin-right: 5px;
   text-indent: -9999px;
-  background: url('../img/icons.png') no-repeat;
+  background: url('../images/custom-facebook-feed-pro/icons.png') no-repeat;
 }
 #cff .cff-replace{
   display: none;
@@ -797,12 +797,12 @@
   width: 16px;
   height: 16px;
   margin: -2px 0 -3px 0;
-  /*background: url('../img/loader-light.gif') no-repeat;*/
-  background: url('../img/loader.png') no-repeat;
+  /*background: url('../images/custom-facebook-feed-pro/loader-light.gif') no-repeat;*/
+  background: url('../images/custom-facebook-feed-pro/loader.png') no-repeat;
 }
 .cff-dark .cff-loader{
-  /*background: url('../img/loader-dark.gif') no-repeat;*/
-  background: url('../img/loader-dark.png') no-repeat;
+  /*background: url('../images/custom-facebook-feed-pro/loader-dark.gif') no-repeat;*/
+  background: url('../images/custom-facebook-feed-pro/loader-dark.png') no-repeat;
 }
 /* Display comments */
 #cff .cff-view-comments{
@@ -877,7 +877,7 @@
   zoom: 1;
   *display: inline;
 
-  background: url('../img/icons.png') no-repeat;
+  background: url('../images/custom-facebook-feed-pro/icons.png') no-repeat;
   background-position: 0 -50px;
   width: 10px;
   height: 9px;
@@ -977,7 +977,7 @@
   margin: 0 0 0 28px;
 }
 #cff .cff-comment-replies .cff-replies-icon{
-  background: url('../img/icons.png') no-repeat -34px -15px;
+  background: url('../images/custom-facebook-feed-pro/icons.png') no-repeat -34px -15px;
   width: 11px;
   height: 8px;
   display: block;
@@ -1419,7 +1419,7 @@
 
 /* Preload images */
 body:after {
-  content: url(../img/close.png) url(../img/loading.gif) url(../img/prev.png) url(../img/next.png);
+  content: url(../images/custom-facebook-feed-pro/close.png) url(../images/custom-facebook-feed-pro/loading.gif) url(../images/custom-facebook-feed-pro/prev.png) url(../images/custom-facebook-feed-pro/next.png);
   display: none;
 }
 .cff-lightbox-overlay {
@@ -1493,7 +1493,7 @@ body:after {
   width: 16px;
   height: 16px;
   margin: 0 auto;
-  background: url(../img/loader-dark.png) no-repeat;
+  background: url(../images/custom-facebook-feed-pro/loader-dark.png) no-repeat;
 }
 
 #cff-lightbox-wrapper .cff-lightbox-caption-text{
@@ -1567,7 +1567,7 @@ body:after {
   width: 25%;
   left: 0;
   float: left;
-  background: url(../img/prev.png) left 48% no-repeat;
+  background: url(../images/custom-facebook-feed-pro/prev.png) left 48% no-repeat;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
   -webkit-transition: opacity 0.6s;
@@ -1583,7 +1583,7 @@ body:after {
   width: 25%;
   right: 0;
   float: right;
-  background: url(../img/next.png) right 48% no-repeat;
+  background: url(../images/custom-facebook-feed-pro/next.png) right 48% no-repeat;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
   -webkit-transition: opacity 0.6s;
@@ -1656,7 +1656,7 @@ body:after {
   height: 30px;
   margin: 0 -5px 0 0;
   color: #333;
-  /*background: url(../img/close.png) top right no-repeat;*/
+  /*background: url(../images/custom-facebook-feed-pro/close.png) top right no-repeat;*/
   text-align: center;
   margin-top: 7px;
   outline: none;
