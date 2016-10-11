@@ -14,9 +14,6 @@
 Route::get('/', function () {
     return view('home');
 });
-Route::get('/', function () {
-    return view('home');
-});
 Route::get('album', function () {
     return view('album');
 });
@@ -26,6 +23,12 @@ Route::get('detail', function () {
 Route::get('login', function () {
     return view('admin.login');
 });
-Auth::routes();
-Route::get('/home', 'HomeController@index');
-Route::get('admin', 'HomeController@index');
+Route::post('login', 'AuthController@login')->name('login');
+Route::get('admin', function () {
+    return view('admin.admin');
+})->middleware('AuthMiddle');
+Route::get('errors', function () {
+    return view('errors.503');
+});
+
+Route::get('logout', 'AuthController@logout');

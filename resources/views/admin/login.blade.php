@@ -15,7 +15,7 @@
 <body>
 
 <div class="wrapper">
-    <form class="login" role="form" method="POST" action="{{ url('/login') }}">
+    <form class="login" role="form" method="POST" action="{{ route('login') }}">
         {{ csrf_field() }}
         <p class=title">Đăng Nhập</p>
         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
