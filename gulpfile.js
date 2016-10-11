@@ -26,11 +26,26 @@ mix.sass([
     //paths.layerslider + 'css/_layerslider.scss',
     'styles/application.css'
 ], 'public/css/all_third_party.css');
+
+mix.sass([
+    //paths.layerslider + 'css/_layerslider.scss',
+    'admin/login/normalize.css',
+    'admin/login/style.scss'
+], 'public/css/login.css');
+
+
 mix.scripts([
     // paths.layerslider + 'js/greensock.js',
     'scripts/libs-min.js',
     'scripts/application.js'
 ], 'public/js/all_third_party.js');
+
+mix.scripts([
+    // paths.layerslider + 'js/greensock.js',
+    'admin/login/prefixfree.min.js',
+    'admin/login/index.js'
+], 'public/js/login.js');
+
 mix.copy([
     //'resources/assets/fonts/elegant-icons/**',
 

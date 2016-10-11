@@ -23,3 +23,9 @@ Route::get('album', function () {
 Route::get('detail', function () {
     return view('detail');
 });
+Route::get('login', function () {
+    return view('admin.login');
+});
+Auth::routes();
+Route::get('/home', 'HomeController@index');
+Route::get('admin', 'HomeController@index');
