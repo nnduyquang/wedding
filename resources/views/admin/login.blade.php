@@ -18,13 +18,15 @@
     <form class="login" role="form" method="POST" action="{{ route('login') }}">
         {{ csrf_field() }}
         <p class=title">Đăng Nhập</p>
+        <span class="help-block">
+                    {{ $errors->first('errors')? $errors->first('errors'):'' }}
+        </span>
         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-            <input type="text" placeholder="Email" class="form-control" name="email" value="{{ old('email') }}"
-                   autofocus/>
+            <input type="text" placeholder="Email" class="form-control" name="email" value="{{ old('email') }}" autofocus required/>
             @if ($errors->has('email'))
                 <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
+                    <strong>{{ $errors->first('email') }}</strong>
+                </span>
             @endif
 
             <i class="fa fa-user"></i>
