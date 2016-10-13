@@ -6,35 +6,14 @@
     <title>AdminLTE 2 | Dashboard</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!-- Bootstrap 3.3.6 -->
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
-    <!-- AdminLTE Skins. Choose a skin from the css/skins
-         folder instead of downloading all of them to reduce the load. -->
-    <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
-    <!-- iCheck -->
-    <link rel="stylesheet" href="plugins/iCheck/flat/blue.css">
-    <!-- Morris chart -->
-    <link rel="stylesheet" href="plugins/morris/morris.css">
-    <!-- jvectormap -->
-    <link rel="stylesheet" href="plugins/jvectormap/jquery-jvectormap-1.2.2.css">
-    <!-- Date Picker -->
-    <link rel="stylesheet" href="plugins/datepicker/datepicker3.css">
-    <!-- Daterange picker -->
-    <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
-    <!-- bootstrap wysihtml5 - text editor -->
-    <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+{{ Html::style('public/css/admin_third_party.css') }}
+{{ Html::style('public/css/AdminLTE.min.css') }}
+{{ Html::style('public/css/_all-skins.min.css') }}
+{{ Html::script('public/js/admin_third_party.js') }}
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Theme style -->
     <![endif]-->
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -71,7 +50,7 @@
                                     <li><!-- start message -->
                                         <a href="#">
                                             <div class="pull-left">
-                                                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                                {{ Html::image('public/images/admin/user2-160x160.jpg', 'User Image',array('class' => 'img-circle')) }}
                                             </div>
                                             <h4>
                                                 Support Team
@@ -84,7 +63,7 @@
                                     <li>
                                         <a href="#">
                                             <div class="pull-left">
-                                                <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                                                {{ Html::image('public/images/admin/user3-128x128.jpg', 'User Image',array('class' => 'img-circle')) }}
                                             </div>
                                             <h4>
                                                 AdminLTE Design Team
@@ -96,7 +75,7 @@
                                     <li>
                                         <a href="#">
                                             <div class="pull-left">
-                                                <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                                                {{ Html::image('public/images/admin/user4-128x128.jpg', 'User Image',array('class' => 'img-circle')) }}
                                             </div>
                                             <h4>
                                                 Developers
@@ -108,7 +87,8 @@
                                     <li>
                                         <a href="#">
                                             <div class="pull-left">
-                                                <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                                                {{ Html::image('public/images/admin/user3-128x128.jpg', 'User Image',array('class' => 'img-circle')) }}
+
                                             </div>
                                             <h4>
                                                 Sales Department
@@ -120,7 +100,7 @@
                                     <li>
                                         <a href="#">
                                             <div class="pull-left">
-                                                <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                                                {{ Html::image('public/images/admin/user4-128x128.jpg', 'User Image',array('class' => 'img-circle')) }}
                                             </div>
                                             <h4>
                                                 Reviewers
@@ -152,7 +132,8 @@
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <i class="fa fa-warning text-yellow"></i> Very long description here that may not fit into the
+                                            <i class="fa fa-warning text-yellow"></i> Very long description here that
+                                            may not fit into the
                                             page and may cause design problems
                                         </a>
                                     </li>
@@ -194,7 +175,9 @@
                                                 <small class="pull-right">20%</small>
                                             </h3>
                                             <div class="progress xs">
-                                                <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                <div class="progress-bar progress-bar-aqua" style="width: 20%"
+                                                     role="progressbar" aria-valuenow="20" aria-valuemin="0"
+                                                     aria-valuemax="100">
                                                     <span class="sr-only">20% Complete</span>
                                                 </div>
                                             </div>
@@ -208,7 +191,9 @@
                                                 <small class="pull-right">40%</small>
                                             </h3>
                                             <div class="progress xs">
-                                                <div class="progress-bar progress-bar-green" style="width: 40%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                <div class="progress-bar progress-bar-green" style="width: 40%"
+                                                     role="progressbar" aria-valuenow="20" aria-valuemin="0"
+                                                     aria-valuemax="100">
                                                     <span class="sr-only">40% Complete</span>
                                                 </div>
                                             </div>
@@ -222,7 +207,9 @@
                                                 <small class="pull-right">60%</small>
                                             </h3>
                                             <div class="progress xs">
-                                                <div class="progress-bar progress-bar-red" style="width: 60%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                <div class="progress-bar progress-bar-red" style="width: 60%"
+                                                     role="progressbar" aria-valuenow="20" aria-valuemin="0"
+                                                     aria-valuemax="100">
                                                     <span class="sr-only">60% Complete</span>
                                                 </div>
                                             </div>
@@ -236,7 +223,9 @@
                                                 <small class="pull-right">80%</small>
                                             </h3>
                                             <div class="progress xs">
-                                                <div class="progress-bar progress-bar-yellow" style="width: 80%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                <div class="progress-bar progress-bar-yellow" style="width: 80%"
+                                                     role="progressbar" aria-valuenow="20" aria-valuemin="0"
+                                                     aria-valuemax="100">
                                                     <span class="sr-only">80% Complete</span>
                                                 </div>
                                             </div>
@@ -253,14 +242,13 @@
                     <!-- User Account: style can be found in dropdown.less -->
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                            {{ Html::image('public/images/admin/user2-160x160.jpg', 'User Image',array('class' => 'user-image')) }}
                             <span class="hidden-xs">Alexander Pierce</span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- User image -->
                             <li class="user-header">
-                                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-
+                                {{ Html::image('public/images/admin/user2-160x160.jpg', 'User Image',array('class' => 'img-circle')) }}
                                 <p>
                                     Alexander Pierce - Web Developer
                                     <small>Member since Nov. 2012</small>
@@ -307,7 +295,7 @@
             <!-- Sidebar user panel -->
             <div class="user-panel">
                 <div class="pull-left image">
-                    <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                    {{ Html::image('public/images/admin/user2-160x160.jpg', 'User Image',array('class' => 'img-circle')) }}
                 </div>
                 <div class="pull-left info">
                     <p>Alexander Pierce</p>
@@ -352,7 +340,8 @@
                         <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
                         <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
                         <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
-                        <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
+                        <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed
+                                Sidebar</a></li>
                     </ul>
                 </li>
                 <li>
@@ -404,7 +393,8 @@
                     </a>
                     <ul class="treeview-menu">
                         <li><a href="pages/forms/general.html"><i class="fa fa-circle-o"></i> General Elements</a></li>
-                        <li><a href="pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
+                        <li><a href="pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a>
+                        </li>
                         <li><a href="pages/forms/editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
                     </ul>
                 </li>
@@ -595,8 +585,10 @@
                         </ul>
                         <div class="tab-content no-padding">
                             <!-- Morris chart - Sales -->
-                            <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 300px;"></div>
-                            <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;"></div>
+                            <div class="chart tab-pane active" id="revenue-chart"
+                                 style="position: relative; height: 300px;"></div>
+                            <div class="chart tab-pane" id="sales-chart"
+                                 style="position: relative; height: 300px;"></div>
                         </div>
                     </div>
                     <!-- /.nav-tabs-custom -->
@@ -610,17 +602,18 @@
 
                             <div class="box-tools pull-right" data-toggle="tooltip" title="Status">
                                 <div class="btn-group" data-toggle="btn-toggle">
-                                    <button type="button" class="btn btn-default btn-sm active"><i class="fa fa-square text-green"></i>
+                                    <button type="button" class="btn btn-default btn-sm active"><i
+                                                class="fa fa-square text-green"></i>
                                     </button>
-                                    <button type="button" class="btn btn-default btn-sm"><i class="fa fa-square text-red"></i></button>
+                                    <button type="button" class="btn btn-default btn-sm"><i
+                                                class="fa fa-square text-red"></i></button>
                                 </div>
                             </div>
                         </div>
                         <div class="box-body chat" id="chat-box">
                             <!-- chat item -->
                             <div class="item">
-                                <img src="dist/img/user4-128x128.jpg" alt="user image" class="online">
-
+                                {{ Html::image('public/images/admin/user4-128x128.jpg', 'User Image',array('class' => 'online')) }}
                                 <p class="message">
                                     <a href="#" class="name">
                                         <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 2:15</small>
@@ -646,8 +639,7 @@
                             <!-- /.item -->
                             <!-- chat item -->
                             <div class="item">
-                                <img src="dist/img/user3-128x128.jpg" alt="user image" class="offline">
-
+                                {{ Html::image('public/images/admin/user3-128x128.jpg', 'User Image',array('class' => 'offline')) }}
                                 <p class="message">
                                     <a href="#" class="name">
                                         <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 5:15</small>
@@ -661,8 +653,7 @@
                             <!-- /.item -->
                             <!-- chat item -->
                             <div class="item">
-                                <img src="dist/img/user2-160x160.jpg" alt="user image" class="offline">
-
+                                {{ Html::image('public/images/admin/user2-160x160.jpg', 'User Image',array('class' => 'offline')) }}
                                 <p class="message">
                                     <a href="#" class="name">
                                         <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 5:30</small>
@@ -795,7 +786,8 @@
                         </div>
                         <!-- /.box-body -->
                         <div class="box-footer clearfix no-border">
-                            <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i> Add item</button>
+                            <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i> Add item
+                            </button>
                         </div>
                     </div>
                     <!-- /.box -->
@@ -808,7 +800,8 @@
                             <h3 class="box-title">Quick Email</h3>
                             <!-- tools box -->
                             <div class="pull-right box-tools">
-                                <button type="button" class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip" title="Remove">
+                                <button type="button" class="btn btn-info btn-sm" data-widget="remove"
+                                        data-toggle="tooltip" title="Remove">
                                     <i class="fa fa-times"></i></button>
                             </div>
                             <!-- /. tools -->
@@ -822,7 +815,8 @@
                                     <input type="text" class="form-control" name="subject" placeholder="Subject">
                                 </div>
                                 <div>
-                                    <textarea class="textarea" placeholder="Message" style="width: 100%; height: 125px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                                    <textarea class="textarea" placeholder="Message"
+                                              style="width: 100%; height: 125px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
                                 </div>
                             </form>
                         </div>
@@ -842,9 +836,11 @@
                         <div class="box-header">
                             <!-- tools box -->
                             <div class="pull-right box-tools">
-                                <button type="button" class="btn btn-primary btn-sm daterange pull-right" data-toggle="tooltip" title="Date range">
+                                <button type="button" class="btn btn-primary btn-sm daterange pull-right"
+                                        data-toggle="tooltip" title="Date range">
                                     <i class="fa fa-calendar"></i></button>
-                                <button type="button" class="btn btn-primary btn-sm pull-right" data-widget="collapse" data-toggle="tooltip" title="Collapse" style="margin-right: 5px;">
+                                <button type="button" class="btn btn-primary btn-sm pull-right" data-widget="collapse"
+                                        data-toggle="tooltip" title="Collapse" style="margin-right: 5px;">
                                     <i class="fa fa-minus"></i></button>
                             </div>
                             <!-- /. tools -->
@@ -890,9 +886,11 @@
                             <h3 class="box-title">Sales Graph</h3>
 
                             <div class="box-tools pull-right">
-                                <button type="button" class="btn bg-teal btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>
+                                <button type="button" class="btn bg-teal btn-sm" data-widget="collapse"><i
+                                            class="fa fa-minus"></i>
                                 </button>
-                                <button type="button" class="btn bg-teal btn-sm" data-widget="remove"><i class="fa fa-times"></i>
+                                <button type="button" class="btn bg-teal btn-sm" data-widget="remove"><i
+                                            class="fa fa-times"></i>
                                 </button>
                             </div>
                         </div>
@@ -903,19 +901,22 @@
                         <div class="box-footer no-border">
                             <div class="row">
                                 <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
-                                    <input type="text" class="knob" data-readonly="true" value="20" data-width="60" data-height="60" data-fgColor="#39CCCC">
+                                    <input type="text" class="knob" data-readonly="true" value="20" data-width="60"
+                                           data-height="60" data-fgColor="#39CCCC">
 
                                     <div class="knob-label">Mail-Orders</div>
                                 </div>
                                 <!-- ./col -->
                                 <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
-                                    <input type="text" class="knob" data-readonly="true" value="50" data-width="60" data-height="60" data-fgColor="#39CCCC">
+                                    <input type="text" class="knob" data-readonly="true" value="50" data-width="60"
+                                           data-height="60" data-fgColor="#39CCCC">
 
                                     <div class="knob-label">Online</div>
                                 </div>
                                 <!-- ./col -->
                                 <div class="col-xs-4 text-center">
-                                    <input type="text" class="knob" data-readonly="true" value="30" data-width="60" data-height="60" data-fgColor="#39CCCC">
+                                    <input type="text" class="knob" data-readonly="true" value="30" data-width="60"
+                                           data-height="60" data-fgColor="#39CCCC">
 
                                     <div class="knob-label">In-Store</div>
                                 </div>
@@ -937,7 +938,8 @@
                             <div class="pull-right box-tools">
                                 <!-- button with a dropdown -->
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown">
+                                    <button type="button" class="btn btn-success btn-sm dropdown-toggle"
+                                            data-toggle="dropdown">
                                         <i class="fa fa-bars"></i></button>
                                     <ul class="dropdown-menu pull-right" role="menu">
                                         <li><a href="#">Add new event</a></li>
@@ -946,9 +948,11 @@
                                         <li><a href="#">View calendar</a></li>
                                     </ul>
                                 </div>
-                                <button type="button" class="btn btn-success btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>
+                                <button type="button" class="btn btn-success btn-sm" data-widget="collapse"><i
+                                            class="fa fa-minus"></i>
                                 </button>
-                                <button type="button" class="btn btn-success btn-sm" data-widget="remove"><i class="fa fa-times"></i>
+                                <button type="button" class="btn btn-success btn-sm" data-widget="remove"><i
+                                            class="fa fa-times"></i>
                                 </button>
                             </div>
                             <!-- /. tools -->
@@ -1215,47 +1219,16 @@
          immediately after the control sidebar -->
     <div class="control-sidebar-bg"></div>
 </div>
-<!-- ./wrapper -->
+{{ Html::script('public/js/app.min.js') }}
+{{ Html::script('public/js/dashboard.js') }}
+{{ Html::script('public/js/demo.js') }}
 
-<!-- jQuery 2.2.3 -->
-<script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+</body>
+</html>
 <script>
     $.widget.bridge('uibutton', $.ui.button);
 </script>
-<!-- Bootstrap 3.3.6 -->
-<script src="bootstrap/js/bootstrap.min.js"></script>
-<!-- Morris.js charts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-<script src="plugins/morris/morris.min.js"></script>
-<!-- Sparkline -->
-<script src="plugins/sparkline/jquery.sparkline.min.js"></script>
-<!-- jvectormap -->
-<script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-<!-- jQuery Knob Chart -->
-<script src="plugins/knob/jquery.knob.js"></script>
-<!-- daterangepicker -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-<script src="plugins/daterangepicker/daterangepicker.js"></script>
-<!-- datepicker -->
-<script src="plugins/datepicker/bootstrap-datepicker.js"></script>
-<!-- Bootstrap WYSIHTML5 -->
-<script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-<!-- Slimscroll -->
-<script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
-<!-- FastClick -->
-<script src="plugins/fastclick/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="dist/js/app.min.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="dist/js/pages/dashboard.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
-</body>
-</html>
+
 
 <a href="{{ url('/logout') }}">
     Logout
