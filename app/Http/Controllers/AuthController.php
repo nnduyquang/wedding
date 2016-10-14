@@ -21,10 +21,15 @@ class AuthController extends Controller
         //echo $request['password'];
         $email = $request['email'];
         $password = $request['password'];
-        if (Auth::attempt(['email' => $email, 'password' => $password]))
+        if (Auth::attempt(['email' => $email, 'password' => $password])) {
             //echo 'Thành công';
-            return view('admin.admin', ['user' => Auth::user()]);
-        else {
+            //$request->session()->put('user', Auth::user());
+            //$user = Auth::User();
+            //Session::put('name', $user->name);
+            //session(['user' => Auth::user()]);
+            //return view('admin.admin', ['user' => Auth::user()]);
+            return redirect()->intended('admin/dashboard');
+        } else {
             $errors = new MessageBag(['errors' => ['Thông Tin Đăng Nhập Không Hợp Lệ.']]);
             return Redirect::back()->withErrors($errors);
         }
@@ -32,7 +37,8 @@ class AuthController extends Controller
 
     public function logout()
     {
+        //session()->flush();
         Auth::logout();
-        return view('admin.login');
+        return redirect()->intended('login');
     }
 }

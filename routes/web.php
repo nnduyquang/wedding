@@ -27,8 +27,15 @@ Route::post('login', 'AuthController@login')->name('login');
 Route::get('admin', function () {
     return view('admin.admin');
 })->middleware('AuthMiddle');
+Route::get('admin/dashboard', function () {
+    return view('admin.dashboard');
+})->middleware('AuthMiddle');
+Route::get('admin/albums', function () {
+    return view('admin.album');
+})->middleware('AuthMiddle');
 Route::get('errors', function () {
     return view('errors.503');
 });
+
 
 Route::get('logout', 'AuthController@logout');
