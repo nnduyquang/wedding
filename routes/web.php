@@ -24,7 +24,24 @@ Route::get('login', function () {
     return view('admin.login');
 });
 Route::post('login', 'AuthController@login')->name('login');
-Route::get('admin', function () {
+Route::post('admin/locations','LocationController@action')->name('locations');
+
+Route::group(['middleware'=>['AuthMiddle']],function(){
+    Route::get('admin', function () {
+        return view('admin.admin');
+    });
+    Route::get('admin/dashboard', function () {
+        return view('admin.dashboard');
+    });
+    Route::get('admin/albums', function () {
+        return view('admin.album');
+    });
+    Route::get('admin/locations', function () {
+        return view('admin.location');
+    })->name('ohyear');
+});
+
+/*Route::get('admin', function () {
     return view('admin.admin');
 })->middleware('AuthMiddle');
 Route::get('admin/dashboard', function () {
@@ -32,7 +49,7 @@ Route::get('admin/dashboard', function () {
 })->middleware('AuthMiddle');
 Route::get('admin/albums', function () {
     return view('admin.album');
-})->middleware('AuthMiddle');
+})->middleware('AuthMiddle');*/
 Route::get('errors', function () {
     return view('errors.503');
 });

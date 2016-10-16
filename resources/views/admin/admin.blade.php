@@ -10,6 +10,7 @@
 {{ Html::style('public/css/AdminLTE.min.css') }}
 {{ Html::style('public/css/_all-skins.min.css') }}
 {{ Html::script('public/js/admin_third_party.js') }}
+@yield('scripts')
 
 <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -320,6 +321,11 @@
                 <li>
                     <a href="{{url('/admin/albums')}}">
                         <i class="fa fa-dashboard"></i><span>Albums</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{url('/admin/locations')}}">
+                        <i class="fa fa-dashboard"></i><span>Địa Điểm</span>
                     </a>
                 </li>
                 <li class="treeview">
