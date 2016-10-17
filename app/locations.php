@@ -8,4 +8,7 @@ class locations extends Model
 {
     protected $table='locations';
     protected $fillable=['id_location','name','created_at','updated_at','id'];
+    public function users(){
+        return $this->belongsTo('App\User','id');
+    }
 }

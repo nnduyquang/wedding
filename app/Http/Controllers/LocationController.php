@@ -18,15 +18,25 @@ class LocationController extends Controller
         if (Input::get('insertLocation')) {
             $check = $this->insert($request);
             if ($check) {
-                return Redirect::back()->with('success', ['Thêm Thành Công']);
+                return Redirect::back()->withInput()->with('success', 'Thêm Thành Công');
             } else {
-                return Redirect::back()->with('fail', ['Thêm Thất Bại']);
+                return Redirect::back()->withInput()->with('fail', 'Thêm Thất Bại');
             }
 
         } else if (Input::get('updateLocation')) {
-            $this->update($request);
+            $check = $this->update($request);
+            if ($check) {
+                return Redirect::back()->withInput()->with('success', 'Cập Nhật Thành Công');
+            } else {
+                return Redirect::back()->withInput()->with('fail', 'Cập Nhật Thất Bại');
+            }
         } else if (Input::get('deleteLocation')) {
-            $this->delete($request);
+            $check = $this->delete($request);
+            if ($check) {
+                return Redirect::back()->withInput()->with('success', 'Xóa Thành Công');
+            } else {
+                return Redirect::back()->withInput()->with('fail', 'Xóa Thất Bại');
+            }
         } else
             redirect('errors');
     }
@@ -34,7 +44,7 @@ class LocationController extends Controller
     public function insert(Request $request)
     {
         $messages = array(
-            'location.required' => 'Không Để Trống',
+            'location.required' => '* Không Để Trống',
         );
         $this->validate($request, [
             'location' => 'required'
@@ -48,13 +58,28 @@ class LocationController extends Controller
 
     public function update(Request $request)
     {
-        echo $request['location'];
-        echo '<br>' . 'update';
+        /* echo $request['editlocation'];
+         echo '<br>';
+         echo $request['hdId'];
+         echo '<br>' . 'update';*/
+        $id=$request['hdId'];
+        $data = \App\locations::find($id);
+        $data->name = $request['editlocation'];
+        return ($data->save());
     }
 
     public function delete(Request $request)
     {
-        echo $request['location'];
-        echo '<br>' . 'delete';
+        $items_checked = Input::get('checkbox');
+        if (is_array($items_checked)) {
+            return (\App\locations::whereIn('id_location', $items_checked)->delete());
+        }
+    }
+
+    public function selectAll()
+    {
+        $data = \App\locations::all();
+        return view('admin.location')->with('data', $data);
+
     }
 }

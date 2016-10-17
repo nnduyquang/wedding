@@ -36,9 +36,7 @@ Route::group(['middleware'=>['AuthMiddle']],function(){
     Route::get('admin/albums', function () {
         return view('admin.album');
     });
-    Route::get('admin/locations', function () {
-        return view('admin.location');
-    })->name('ohyear');
+    Route::get('admin/locations','LocationController@selectAll');
 });
 
 /*Route::get('admin', function () {
