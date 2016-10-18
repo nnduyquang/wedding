@@ -1,5 +1,15 @@
 @extends('admin.admin')
 @section('scripts')
+    <style type="text/css">
+        .thumbnails li img{
+            width: 50px;
+            height: 50px;
+        }
+        .mygrid-wrapper-div{
+            overflow: scroll;
+            height: 300px;
+        }
+    </style>
     <script>
         $(function () {
             $('#example1').DataTable({

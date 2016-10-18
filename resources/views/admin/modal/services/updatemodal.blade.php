@@ -11,20 +11,11 @@
                 <input type="hidden" name="hdId">
                 <input type="text" name="txtsevice" class="form-control" placeholder="Nhập Tên Service">
                 <div id="container-image">
-                    <select class='image-picker show-html'>
-                        <option data-img-src="http://localhost:8080/wedding/public/images/temps/10_album.png" data-img-class="first" data-img-alt="Page 1" value="1">  Page 1  </option>
-                        <option data-img-src="http://localhost:8080/wedding/public/images/temps/10_album.png" data-img-alt="Page 2" value="2">  Page 2  </option>
-                        <option data-img-src="http://localhost:8080/wedding/public/images/temps/10_album.png" data-img-alt="Page 3" value="3">  Page 3  </option>
-                        <option data-img-src="http://localhost:8080/wedding/public/images/temps/10_album.png" data-img-alt="Page 4" value="4">  Page 4  </option>
-                        <option data-img-src="http://localhost:8080/wedding/public/images/temps/10_album.png" data-img-alt="Page 5" value="5">  Page 5  </option>
-                        <option data-img-src="http://localhost:8080/wedding/public/images/temps/10_album.png" data-img-alt="Page 6" value="6">  Page 6  </option>
-                        <option data-img-src="http://localhost:8080/wedding/public/images/temps/10_album.png" data-img-alt="Page 7" value="7">  Page 7  </option>
-                        <option data-img-src="http://localhost:8080/wedding/public/images/temps/10_album.png" data-img-alt="Page 8" value="8">  Page 8  </option>
-                        <option data-img-src="http://localhost:8080/wedding/public/images/temps/10_album.png" data-img-alt="Page 9" value="9">  Page 9  </option>
-                        <option data-img-src="http://localhost:8080/wedding/public/images/temps/10_album.png" data-img-alt="Page 10" value="10"> Page 10 </option>
-                        <option data-img-src="http://localhost:8080/wedding/public/images/temps/10_album.png" data-img-alt="Page 11" value="11"> Page 11 </option>
-                        <option data-img-src="http://localhost:8080/wedding/public/images/temps/10_album.png" data-img-alt="Page 12" data-img-class="last" value="12"> Page 12 </option>
-                    </select>
+                    <div class="mygrid-wrapper-div">
+                        <select class='image-picker show-html'>
+
+                        </select>
+                    </div>
 
                 </div>
             </div>
@@ -82,14 +73,18 @@
                         data: {'_token': token, 'data': 'getimage'},
                         success: function (data) {
                             console.log(data);
-                            var images = data;
                             var html;
-
-                            for (i = 0; i <= data.length; i++) {
-                                html += "<option data-img-src='http://localhost:8080/wedding/" + data[i] + "' data-img-class='first' " + "data-img-alt='Page 1' value='1'>  Page 1  </option> "
-                                break;
+                            var APP_URL = {!!  json_encode(url('/')) !!};
+                            console.log(APP_URL);
+                            html += " <option data-img-src='" + APP_URL + data[0] + "' data-img-alt='Page'" + 1 + " value='" + 1 + "'>  Page 1  </option>"
+                            var count = 1;
+                            for (i = 1; i < data.length - 1; i++) {
+                                count += i;
+                                html += " <option data-img-src='" + APP_URL + data[i] + "' data-img-alt='Page'" + count + " value='" + count + "'>  Page " + count + "  </option>"
+                                //break;
                             }
-                            //$('#container-image .image-picker').append(html);
+                            html += " <option data-img-src='" + APP_URL + data[data.length - 1] + "' data-img-alt='Page'" + data.length + " value='" + data.length + "'>  Page " + data.length + "  </option>"
+                            $('#container-image .image-picker').append(html);
                             $("select").imagepicker();
                         }
                     });

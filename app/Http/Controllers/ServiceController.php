@@ -23,7 +23,7 @@ class ServiceController extends Controller
         foreach (File::allFiles(public_path().'/images/temps/') as $file)
         {
             $filename = $file->getRelativePathName();
-            $images[]='public/images/temps/'.$filename;
+            $images[]='/public/images/temps/'.$filename;
         }
         //return [1,2,3];
 
