@@ -32,6 +32,8 @@
     "Ionicons": "ionicons#^2.0.1",
     "font-awesome": "^4.6.3",
     "iCheck": "icheck#^1.0.2",
-    "datepicker": "*"
+    "datepicker": "*",
+    "bootstrap-fileinput": "^4.3.5",
+    "image-picker": "^0.3.0"
   }
 }

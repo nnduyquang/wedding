@@ -16,7 +16,7 @@
 @section('contain_admin')
     <section class="content-header">
         <h1>
-            Địa Điểm
+            Dịch Vụ
             <small>Trang Điều Khiển</small>
         </h1>
         <ol class="breadcrumb">
@@ -50,43 +50,35 @@
                                 <thead>
                                 <tr>
                                     <th><input class="text-center" id="checkAll" type="checkbox"></th>
-                                    <th>Địa Điểm</th>
+                                    <th>Tên Dịch Vụ</th>
+                                    <th>Biểu Tượng</th>
                                     <th>Người Thực Hiện</th>
                                     <th>Ngày</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($data as $row)
-                                    <tr>
-                                        <td><input name="checkbox[]" type="checkbox" value="{{$row->id_location}}"></td>
-                                        <td>{{$row->name}}
-                                        </td>
-                                        <td>{{$row->users->name}}</td>
-                                        <td> {{$row->updated_at}}</td>
-                                        <td><button class="btn btn-primary" data-condition="test" data-toggle="modal-confirm" data-hidden="{{$row->id_location}}" data-name="{{$row->name}}" data-title="Cập Nhật Dữ Liệu!" data-target="#submit-confirm" type="submit">Sửa</button></td>
-                                    </tr>
-                                @endforeach
+                                {{-- @foreach($data as $row)
+                                     <tr>
+                                         <td><input name="checkbox[]" type="checkbox" value="{{$row->id_location}}"></td>
+                                         <td>{{$row->name}}
+                                         </td>
+                                         <td>{{$row->users->name}}</td>
+                                         <td> {{$row->updated_at}}</td>
+                                         <td><button class="btn btn-primary" data-condition="test" data-toggle="modal-confirm" data-hidden="{{$row->id_location}}" data-name="{{$row->name}}" data-title="Cập Nhật Dữ Liệu!" data-target="#submit-confirm" type="submit">Sửa</button></td>
+                                     </tr>
+                                 @endforeach
+                                 --}}
                                 </tfoot>
                             </table>
 
-                            <div class="col-md-7">
-                                <div class="col-md-2">
-                                    <span>Địa Điểm</span>
-                                </div>
-                                <div class="col-md-5">
-                                    <input type="text" name="location" class="form-control"
-                                           placeholder="Nhập Địa Điểm Cần Thêm">
-                                    <p style="color: red">{{($errors->has('location'))? $errors->first('location'):''}}</p>
-                                </div>
-                                <div class="col-md-5">
-                                    <input name="insertLocation" type="submit" class="btn btn-primary" value="Thêm"/>
-                                    <input name="deleteLocation"
-                                           onclick="return confirm('Chú Có Thật Sự Muốn Xóa? Bút Sa Gà Xối Mỡ');"
-                                           type="submit" class="btn btn-primary" value="Xóa"/>
-                                </div>
+                            <div class="col-md-12 text-center">
+                                <button class="btn btn-primary" data-toggle="modal-confirm" data-type="insert" data-condition="test" data-target="#submit-confirm">Thêm</button>
+                                <input name="deleteLocation"
+                                       onclick="return confirm('Chú Có Thật Sự Muốn Xóa? Bút Sa Gà Xối Mỡ');"
+                                       type="submit" class="btn btn-primary" value="Xóa"/>
                                 {{-- Modal --}}
-                                @include('admin.modal.locations.updatemodal')
+                                @include('admin.modal.services.updatemodal')
                             </div>
                         </form>
                     </div>

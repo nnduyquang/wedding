@@ -28,7 +28,7 @@ class AuthController extends Controller
             //Session::put('name', $user->name);
             //session(['user' => Auth::user()]);
             //return view('admin.admin', ['user' => Auth::user()]);
-            return redirect()->intended('admin/dashboard');
+            return redirect()->intended('sml_admin/dashboard');
         } else {
             $errors = new MessageBag(['errors' => ['Thông Tin Đăng Nhập Không Hợp Lệ.']]);
             return Redirect::back()->withErrors($errors);
@@ -39,6 +39,6 @@ class AuthController extends Controller
     {
         //session()->flush();
         Auth::logout();
-        return redirect()->intended('login');
+        return redirect()->intended('sml_login');
     }
 }

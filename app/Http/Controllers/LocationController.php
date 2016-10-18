@@ -58,10 +58,6 @@ class LocationController extends Controller
 
     public function update(Request $request)
     {
-        /* echo $request['editlocation'];
-         echo '<br>';
-         echo $request['hdId'];
-         echo '<br>' . 'update';*/
         $id=$request['hdId'];
         $data = \App\locations::find($id);
         $data->name = $request['editlocation'];

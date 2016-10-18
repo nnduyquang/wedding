@@ -6,6 +6,7 @@
     <title>AdminLTE 2 | Dashboard</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 {{ Html::style('public/css/admin_third_party.css') }}
 {{ Html::style('public/css/AdminLTE.min.css') }}
 {{ Html::style('public/css/_all-skins.min.css') }}
@@ -314,18 +315,23 @@
             <ul class="sidebar-menu">
                 <li class="header">TRANG ĐIỀU KHIỂN</li>
                 <li class="active treeview">
-                    <a href="{{url('/admin/dashboard')}}">
+                    <a href="{{url('/sml_admin/dashboard')}}">
                         <i class="fa fa-dashboard"></i><span>Dashboard</span>
                     </a>
                 </li>
                 <li>
-                    <a href="{{url('/admin/albums')}}">
+                    <a href="{{url('/sml_admin/albums')}}">
                         <i class="fa fa-dashboard"></i><span>Albums</span>
                     </a>
                 </li>
                 <li>
-                    <a href="{{url('/admin/locations')}}">
+                    <a href="{{url('/sml_admin/locations')}}">
                         <i class="fa fa-dashboard"></i><span>Địa Điểm</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{url('/sml_admin/services')}}">
+                        <i class="fa fa-dashboard"></i><span>Dịch Vụ</span>
                     </a>
                 </li>
                 <li class="treeview">
