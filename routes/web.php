@@ -26,6 +26,7 @@ Route::get('sml_login', function () {
 Route::post('sml_login', 'AuthController@login')->name('login');
 Route::post('sml_admin/locations','LocationController@action')->name('locations');
 Route::post('sml_admin/services','ServiceController@action')->name('services');
+//Route::post('sml_admin/services/upload','ServiceController@uploadImage');
 
 Route::group(['middleware'=>['AuthMiddle']],function(){
     Route::get('sml_admin', function () {

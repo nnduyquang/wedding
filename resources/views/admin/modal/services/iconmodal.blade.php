@@ -9,8 +9,7 @@
             </div>
             <div class="modal-body">
                 <div class="col-md-12">
-                    <input id="input-2" name="input2" type="file" class="file" multiple
-                           data-show-upload="false" data-show-caption="true">
+                    <input id="input-file" name="input-file" type="file">
                 </div>
             </div>
 
@@ -24,6 +23,21 @@
 </div>
 <script>
     $(document).ready(function () {
+        var APP_URL = {!!  json_encode(url('/')) !!};
+        console.log(APP_URL);
+        var token = $('meta[name="csrf-token"]').attr('content');
+        //$.ajaxSetup({ headers: { 'X-CSRF-TOKEN':token } });
+        $("#input-file").fileinput({
+            allowedFileExtensions : ['jpeg','jpg','png'],
+            uploadAsync: true,
+            showUploadedThumbs:false,
+            uploadUrl: APP_URL+"/sml_admin/services",
+            uploadExtraData: {
+                '_token': token,
+                data:"uploadImage",
+
+            }
+        });
         $('button[data-toggle="modal-confirm-icon"]').click(function (event) {
             event.preventDefault();
             var self = $(this);

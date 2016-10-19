@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Response;
 
 class ServiceController extends Controller
 {
@@ -12,7 +14,8 @@ class ServiceController extends Controller
         $type = $request['data'];
         if($type==='getimage')
             return $this->getAllImage();
-
+        elseif($type==='uploadImage')
+            return $this->uploadImage();
         //return $request['name'];
     }
 
@@ -23,10 +26,18 @@ class ServiceController extends Controller
         foreach (File::allFiles(public_path().'/images/temps/') as $file)
         {
             $filename = $file->getRelativePathName();
+
             $images[]='/public/images/temps/'.$filename;
         }
-        //return [1,2,3];
-
         return $images;
+    }
+
+    public function uploadImage()
+    {
+        $file = Input::file('input-file');
+        $target="public/images/temps/";
+        $filename = $file->getClientOriginalName();
+        Input::file('input-file')->move($target, $filename);
+        return Response::json(['success' => true]);
     }
 }

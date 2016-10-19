@@ -23,6 +23,7 @@
                 "autoWidth": false
             });
 
+            //$('#input-file').fileinput({'showUpload':false, 'previewFileType':'any'});
         });
     </script>
 @stop

@@ -87,7 +87,7 @@
                                 html += " <option data-img-src='" + APP_URL + data[i] + "' data-img-alt='Page'" + count + " value='" + count + "'>  Page " + count + "  </option>"
                             }
                             html += " <option data-img-src='" + APP_URL + data[data.length - 1] + "' data-img-alt='Page'" + data.length + " value='" + data.length + "'>  Page " + data.length + "  </option>"
-                            $('#container-image .image-picker').append(html);
+                            $('#container-image .image-picker').html(html);
                             $("select").imagepicker({
                                 clicked:function(){
                                     $("input[name='txticon']").val($(this).find("option[value='" + $(this).val() + "']").data('img-src').replace(APP_URL,"").replace(/^.*(\\|\/|\:)/, ''));
