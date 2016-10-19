@@ -8,6 +8,8 @@
         .mygrid-wrapper-div{
             overflow: scroll;
             height: 300px;
+            padding-left: 5%;
+            padding-right: 5%;
         }
     </style>
     <script>
@@ -20,6 +22,7 @@
                 "info": true,
                 "autoWidth": false
             });
+
         });
     </script>
 @stop
@@ -83,12 +86,14 @@
                             </table>
 
                             <div class="col-md-12 text-center">
-                                <button class="btn btn-primary" data-toggle="modal-confirm" data-type="insert" data-condition="test" data-target="#submit-confirm">Thêm</button>
+                                <button class="btn btn-primary" data-toggle="modal-confirm-crud" data-type="insert" data-condition="test" data-target="#submit-confirm-crud">Thêm</button>
                                 <input name="deleteLocation"
                                        onclick="return confirm('Chú Có Thật Sự Muốn Xóa? Bút Sa Gà Xối Mỡ');"
                                        type="submit" class="btn btn-primary" value="Xóa"/>
+                                <button class="btn btn-primary" data-toggle="modal-confirm-icon" data-type="icon" data-condition="testicon" data-target="#submit-confirm-icon">Upload Icon</button>
                                 {{-- Modal --}}
                                 @include('admin.modal.services.updatemodal')
+                                @include('admin.modal.services.iconmodal')
                             </div>
                         </form>
                     </div>
