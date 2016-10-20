@@ -21,14 +21,17 @@ Route::get('detail', function () {
     return view('detail');
 });
 Route::get('sml_login', function () {
-    return view('admin.login');
+    if (\Illuminate\Support\Facades\Auth::check())
+        return redirect()->intended('sml_admin/dashboard');
+    else
+        return view('admin.login');
 });
 Route::post('sml_login', 'AuthController@login')->name('login');
-Route::post('sml_admin/locations','LocationController@action')->name('locations');
-Route::post('sml_admin/services','ServiceController@action')->name('services');
+Route::post('sml_admin/locations', 'LocationController@action')->name('locations');
+Route::post('sml_admin/services', 'ServiceController@action')->name('services');
 //Route::post('sml_admin/services/upload','ServiceController@uploadImage');
 
-Route::group(['middleware'=>['AuthMiddle']],function(){
+Route::group(['middleware' => ['AuthMiddle']], function () {
     Route::get('sml_admin', function () {
         return view('admin.admin');
     });
@@ -38,21 +41,9 @@ Route::group(['middleware'=>['AuthMiddle']],function(){
     Route::get('sml_admin/albums', function () {
         return view('admin.album');
     });
-    Route::get('sml_admin/locations','LocationController@selectAll');
-    Route::get('sml_admin/services', function () {
-        return view('admin.service');
-    });
+    Route::get('sml_admin/locations', 'LocationController@selectAll');
+    Route::get('sml_admin/services', 'ServiceController@selectAll');
 });
-
-/*Route::get('admin', function () {
-    return view('admin.admin');
-})->middleware('AuthMiddle');
-Route::get('admin/dashboard', function () {
-    return view('admin.dashboard');
-})->middleware('AuthMiddle');
-Route::get('admin/albums', function () {
-    return view('admin.album');
-})->middleware('AuthMiddle');*/
 Route::get('errors', function () {
     return view('errors.503');
 });

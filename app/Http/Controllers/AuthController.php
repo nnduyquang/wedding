@@ -13,12 +13,15 @@ class AuthController extends Controller
 {
     public function login(Request $request)
     {
+//        system.out.println("step1");
+//        if(Auth::check()){
+//            system.out.println("step2");
+//            return redirect()->intended('sml_admin/dashboard');
+//        }else{
         $this->validate($request, [
             'email' => 'required|max:50',
             'password' => 'required'
         ]);
-        //echo $request['email'];
-        //echo $request['password'];
         $email = $request['email'];
         $password = $request['password'];
         if (Auth::attempt(['email' => $email, 'password' => $password])) {
@@ -33,6 +36,11 @@ class AuthController extends Controller
             $errors = new MessageBag(['errors' => ['Thông Tin Đăng Nhập Không Hợp Lệ.']]);
             return Redirect::back()->withErrors($errors);
         }
+
+//        }
+        //echo $request['email'];
+        //echo $request['password'];
+
     }
 
     public function logout()

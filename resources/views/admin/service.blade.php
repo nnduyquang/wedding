@@ -14,6 +14,7 @@
     </style>
     <script>
         $(function () {
+
             $('#example1').DataTable({
                 "paging": true,
                 "lengthChange": false,
@@ -58,7 +59,7 @@
                         @elseif(\Session::has('fail'))
                             <h4 id="notice"><p class="text-center bg-danger">{{\Session::get('fail')}}</p></h4>
                         @endif
-                        <form action="{{ route('locations') }}" method="post">
+                        <form action="{{ route('services') }}" method="post">
                             {{ csrf_field() }}
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
@@ -72,17 +73,16 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                {{-- @foreach($data as $row)
+                                 @foreach($data as $row)
                                      <tr>
-                                         <td><input name="checkbox[]" type="checkbox" value="{{$row->id_location}}"></td>
-                                         <td>{{$row->name}}
-                                         </td>
+                                         <td><input name="checkbox[]" type="checkbox" value="{{$row->id_service}}"></td>
+                                         <td>{{$row->name}}</td>
+                                         <td>{{ Html::image($row->icon,'',array('width'=>50,'height'=>50)) }}</td>
                                          <td>{{$row->users->name}}</td>
                                          <td> {{$row->updated_at}}</td>
-                                         <td><button class="btn btn-primary" data-condition="test" data-toggle="modal-confirm" data-hidden="{{$row->id_location}}" data-name="{{$row->name}}" data-title="Cập Nhật Dữ Liệu!" data-target="#submit-confirm" type="submit">Sửa</button></td>
+                                         <td><button class="btn btn-primary" data-condition="test" data-toggle="modal-confirm" data-hidden="{{$row->id_service}}" data-name="{{$row->name}}" data-title="Cập Nhật Dữ Liệu!" data-target="#submit-confirm" type="submit">Sửa</button></td>
                                      </tr>
                                  @endforeach
-                                 --}}
                                 </tfoot>
                             </table>
 

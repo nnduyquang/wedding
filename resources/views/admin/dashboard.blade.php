@@ -519,6 +519,7 @@
         </section>
         <!-- right col -->
     </div>
+{{ Html::script('public/js/dashboard.js') }}
     <!-- /.row (main row) -->
 
 </section>

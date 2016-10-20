@@ -8,12 +8,9 @@
     {{ Html::style('public/css/login.css') }}
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     {{ Html::script('public/js/login.js') }}
-    <script src="js/prefixfree.min.js"></script>
-
 </head>
 
 <body>
-
 <div class="wrapper">
     <form class="login" role="form" method="POST" action="{{ route('login') }}">
         {{ csrf_field() }}
@@ -22,7 +19,8 @@
                     {{ $errors->first('errors')? $errors->first('errors'):'' }}
         </span>
         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-            <input type="text" placeholder="Email" class="form-control" name="email" value="{{ old('email') }}" autofocus required/>
+            <input type="text" placeholder="Email" class="form-control" name="email" value="{{ old('email') }}"
+                   autofocus required/>
             @if ($errors->has('email'))
                 <span class="help-block">
                     <strong>{{ $errors->first('email') }}</strong>

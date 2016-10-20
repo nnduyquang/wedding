@@ -10,13 +10,18 @@
             <div class="modal-body">
                 <div class="col-md-12">
                     <input type="hidden" name="hdId">
-                    <input type="text" name="txtsevice" class="form-control" placeholder="Nhập Tên Service">
+                    <input type="text" name="txtsevice" value="{{old('txtsevice')}}" class="form-control" placeholder="Nhập Tên Service">
+                    <p style="color: red">{{($errors->has('txtsevice'))? $errors->first('txtsevice'):''}}</p>
                 </div>
-                <div class="col-md-12" style="margin-bottom: 15px">
-                    <input type="hidden" name="srcIcon">
-                    <input type="text" name="txticon" class="form-control" placeholder="Xin Chọn Icon">
+                <div class="col-md-12">
+                    <input type="hidden" name="srcIcon"  value="{{old('srcIcon')}}">
+                    <input type="hidden" name="fileName" value="{{old('fileName')}}">
+                    <input type="text" name="txticon" value="{{old('fileName')}}" class="form-control" placeholder="Xin Chọn Icon" disabled>
+                    <p style="color: red">{{($errors->has('srcIcon'))? $errors->first('srcIcon'):''}}</p>
                 </div>
-
+                <div class="col-md-3" style="margin-bottom: 15px">
+                    <input type="text" name="txtorder" class="form-control" placeholder="Ưu Tiên">
+                </div>
                 <div class="col-md-12">
                     <div id="container-image">
                         <div class="mygrid-wrapper-div">
@@ -35,9 +40,11 @@
                                            data-show-upload="false" data-show-caption="true"></div>--}}
 
             <div class="modal-footer" style="margin-top: 50px">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
-                <input name="updateLocation" type="submit" class="btn btn-primary"
-                       value="Cập Nhật"/>
+                <div class="col-md-12">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                    <input data-confirm="modal" name="insertLocation" type="submit" class="btn btn-primary"
+                           value="Cập Nhật"/>
+                </div>
             </div>
         </div>
     </div>
@@ -51,7 +58,7 @@
             if (type == 'insert') {
                 var target = $(self.data('target'));
                 if (target.length == 1) {
-                    $('input[data-confirm="modal"]').attr("name", "insertLocation");
+                    $('input[data-confirm="modal"]').attr("name", "insertService");
                     $('input[data-confirm="modal"]').attr("value", "Thêm");
                 }
                 var showModal = true;
@@ -64,7 +71,7 @@
                 if (showModal) {
                     target.on('shown.bs.modal', function (e) {
                         target.find('input[data-confirm="modal"]').click(function (e) {
-                            // e.preventDefault();
+                            //e.preventDefault();
                             var parentForm = self.closest('form');
                             if (parentForm.length == 1) {
                                 parentForm.submit();
@@ -89,9 +96,10 @@
                             html += " <option data-img-src='" + APP_URL + data[data.length - 1] + "' data-img-alt='Page'" + data.length + " value='" + data.length + "'>  Page " + data.length + "  </option>"
                             $('#container-image .image-picker').html(html);
                             $("select").imagepicker({
-                                clicked:function(){
-                                    $("input[name='txticon']").val($(this).find("option[value='" + $(this).val() + "']").data('img-src').replace(APP_URL,"").replace(/^.*(\\|\/|\:)/, ''));
-                                    $("input[name='srcIcon']").val($(this).find("option[value='" + $(this).val() + "']").data('img-src').replace(APP_URL,""));
+                                clicked: function () {
+                                    $("input[name='txticon']").val($(this).find("option[value='" + $(this).val() + "']").data('img-src').replace(APP_URL, "").replace(/^.*(\\|\/|\:)/, ''));
+                                    $("input[name='srcIcon']").val($(this).find("option[value='" + $(this).val() + "']").data('img-src').replace(APP_URL, ""));
+                                    $("input[name='fileName']").val($(this).find("option[value='" + $(this).val() + "']").data('img-src').replace(APP_URL, "").replace(/^.*(\\|\/|\:)/, ''));
 //                                    console.log($(this).find("option[value='" + $(this).val() + "']").data('img-src'));
                                 }
                             });
@@ -103,11 +111,15 @@
             }
 
         });
-        $(".image-picker").find(".selected img").each(function(index, item){
+        @if (count($errors) > 0)
+               $('#submit-confirm-crud').modal('show');
+        $('button[data-toggle="modal-confirm-crud"]').trigger("click");
+        @endif
+        $(".image-picker").find(".selected img").each(function (index, item) {
             console.log("haha");
         });
-        /* $("#checkAll").change(function () {
+         $("#checkAll").change(function () {
          $("input:checkbox").prop('checked', $(this).prop("checked"));
-         });*/
+         });
     });
 </script>
