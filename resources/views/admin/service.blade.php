@@ -54,9 +54,9 @@
                                 $('#notice').fadeOut('fast');
                             }, 3000); // <-- time in milliseconds
                         </script>
-                        @if(\Session::has('success'))
+                        @if(\Session::has('success') && count($errors->all())==0)
                             <h4 id="notice"><p class="text-center bg-success">{{\Session::get('success')}}</p></h4>
-                        @elseif(\Session::has('fail'))
+                        @elseif(\Session::has('fail')&& count($errors->all())==0)
                             <h4 id="notice"><p class="text-center bg-danger">{{\Session::get('fail')}}</p></h4>
                         @endif
                         <form action="{{ route('services') }}" method="post">
@@ -67,6 +67,7 @@
                                     <th><input class="text-center" id="checkAll" type="checkbox"></th>
                                     <th>Tên Dịch Vụ</th>
                                     <th>Biểu Tượng</th>
+                                    <th>Ưu Tiên</th>
                                     <th>Người Thực Hiện</th>
                                     <th>Ngày</th>
                                     <th>Action</th>
@@ -78,9 +79,10 @@
                                          <td><input name="checkbox[]" type="checkbox" value="{{$row->id_service}}"></td>
                                          <td>{{$row->name}}</td>
                                          <td>{{ Html::image($row->icon,'',array('width'=>50,'height'=>50)) }}</td>
+                                         <td>{{$row->order}}</td>
                                          <td>{{$row->users->name}}</td>
                                          <td> {{$row->updated_at}}</td>
-                                         <td><button class="btn btn-primary" data-condition="test" data-toggle="modal-confirm" data-hidden="{{$row->id_service}}" data-name="{{$row->name}}" data-title="Cập Nhật Dữ Liệu!" data-target="#submit-confirm" type="submit">Sửa</button></td>
+                                         <td><button class="btn btn-primary" data-type="update" data-condition="test" data-toggle="modal-confirm-crud" data-hidden="{{$row->id_service}}" data-name="{{$row->name}}" data-title="Cập Nhật Dữ Liệu!" data-target="#submit-confirm-crud" type="submit" data-value="{{$row->id_service}}">Sửa</button></td>
                                      </tr>
                                  @endforeach
                                 </tfoot>
@@ -88,7 +90,7 @@
 
                             <div class="col-md-12 text-center">
                                 <button class="btn btn-primary" data-toggle="modal-confirm-crud" data-type="insert" data-condition="test" data-target="#submit-confirm-crud">Thêm</button>
-                                <input name="deleteLocation"
+                                <input name="deleteService"
                                        onclick="return confirm('Chú Có Thật Sự Muốn Xóa? Bút Sa Gà Xối Mỡ');"
                                        type="submit" class="btn btn-primary" value="Xóa"/>
                                 <button class="btn btn-primary" data-toggle="modal-confirm-icon" data-type="icon" data-condition="testicon" data-target="#submit-confirm-icon">Upload Icon</button>

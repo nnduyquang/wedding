@@ -61,6 +61,7 @@ class LocationController extends Controller
         $id=$request['hdId'];
         $data = \App\locations::find($id);
         $data->name = $request['editlocation'];
+        $data->id=Auth::user()->id;
         return ($data->save());
     }
 
