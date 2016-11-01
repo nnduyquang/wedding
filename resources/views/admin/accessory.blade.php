@@ -16,12 +16,12 @@
 @section('contain_admin')
     <section class="content-header">
         <h1>
-            Địa Điểm
+            Phụ Kiện
             <small>Trang Điều Khiển</small>
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="active">Địa Điểm</li>
+            <li class="active">Phụ Kiện</li>
         </ol>
     </section>
 
@@ -44,13 +44,13 @@
                         @elseif(\Session::has('fail'))
                             <h4 id="notice"><p class="text-center bg-danger">{{\Session::get('fail')}}</p></h4>
                         @endif
-                        <form action="{{ route('locations') }}" method="post">
+                        <form action="{{ route('accessories') }}" method="post">
                             {{ csrf_field() }}
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                 <tr>
                                     <th><input class="text-center" id="checkAll" type="checkbox"></th>
-                                    <th>Địa Điểm</th>
+                                    <th>Phụ Kiện</th>
                                     <th>Người Thực Hiện</th>
                                     <th>Ngày</th>
                                     <th>Action</th>
@@ -59,34 +59,34 @@
                                 <tbody>
                                 @foreach($data as $row)
                                     <tr>
-                                        <td><input name="checkbox[]" type="checkbox" value="{{$row->id_location}}"></td>
+                                        <td><input name="checkbox[]" type="checkbox" value="{{$row->id_accessory}}"></td>
                                         <td>{{$row->name}}
                                         </td>
                                         <td>{{$row->users->name}}</td>
                                         <td> {{$row->updated_at}}</td>
-                                        <td><button class="btn btn-primary" data-condition="test" data-toggle="modal-confirm" data-hidden="{{$row->id_location}}" data-name="{{$row->name}}" data-title="Cập Nhật Dữ Liệu!" data-target="#submit-confirm" type="submit">Sửa</button></td>
+                                        <td><button class="btn btn-primary" data-condition="test" data-toggle="modal-confirm" data-hidden="{{$row->id_accessory}}" data-name="{{$row->name}}" data-title="Cập Nhật Dữ Liệu!" data-target="#submit-confirm" type="submit">Sửa</button></td>
                                     </tr>
                                 @endforeach
                                 </tfoot>
                             </table>
 
-                            <div class="col-md-7">
+                            <div class="col-md-9">
                                 <div class="col-md-2">
-                                    <span>Địa Điểm</span>
+                                    <span>Tên Phụ Kiện</span>
                                 </div>
                                 <div class="col-md-5">
-                                    <input type="text" name="location" class="form-control"
-                                           placeholder="Nhập Địa Điểm Cần Thêm">
-                                    <p style="color: red">{{($errors->has('location'))? $errors->first('location'):''}}</p>
+                                    <input type="text" name="accessory" class="form-control"
+                                           placeholder="Nhập Tên Phụ Kiện Cần Thêm">
+                                    <p style="color: red">{{($errors->has('accessory'))? $errors->first('accessory'):''}}</p>
                                 </div>
                                 <div class="col-md-5">
-                                    <input name="insertLocation" type="submit" class="btn btn-primary" value="Thêm"/>
-                                    <input name="deleteLocation"
+                                    <input name="insertAccessory" type="submit" class="btn btn-primary" value="Thêm"/>
+                                    <input name="deleteAccessory"
                                            onclick="return confirm('Chú Có Thật Sự Muốn Xóa? Bút Sa Gà Xối Mỡ');"
                                            type="submit" class="btn btn-primary" value="Xóa"/>
                                 </div>
                                 {{-- Modal --}}
-                                @include('admin.modal.locations.updatemodal')
+                                @include('admin.modal.accessories.updatemodal')
                             </div>
                         </form>
                     </div>

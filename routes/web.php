@@ -28,6 +28,7 @@ Route::get('sml_login', function () {
 });
 Route::post('sml_login', 'AuthController@login')->name('login');
 Route::post('sml_admin/locations', 'LocationController@action')->name('locations');
+Route::post('sml_admin/accessories', 'AccessoryController@action')->name('accessories');
 Route::post('sml_admin/services', 'ServiceController@action')->name('services');
 //Route::post('sml_admin/services/upload','ServiceController@uploadImage');
 
@@ -43,6 +44,7 @@ Route::group(['middleware' => ['AuthMiddle']], function () {
     });
     Route::get('sml_admin/locations', 'LocationController@selectAll');
     Route::get('sml_admin/services', 'ServiceController@selectAll');
+    Route::get('sml_admin/accessories', 'AccessoryController@selectAll');
 });
 Route::get('errors', function () {
     return view('errors.503');
