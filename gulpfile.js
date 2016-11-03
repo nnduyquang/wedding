@@ -90,6 +90,17 @@ mix.scripts([
 
 ], 'public/js/admin_third_party.js');
 
+// gulp.task('myjs',function(){
+//     elixir(function(mix)
+//     {
+        mix.scripts([
+            'admin/my-js/services/services.js',
+        ],'public/js/admin_all_myjs.js');
+//     });
+//
+// });
+
+
 mix.copy([
     'resources/assets/sass/admin/_all-skins.min.css',
     'resources/assets/sass/admin/AdminLTE.min.css',

@@ -59,7 +59,7 @@
                         @elseif(\Session::has('fail')&& count($errors->all())==0)
                             <h4 id="notice"><p class="text-center bg-danger">{{\Session::get('fail')}}</p></h4>
                         @endif
-                        <form action="{{ route('services') }}" method="post">
+                        {{--<form action="{{ route('services') }}" method="post">--}}
                             {{ csrf_field() }}
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
@@ -74,31 +74,30 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                 @foreach($data as $row)
-                                     <tr>
-                                         <td><input name="checkbox[]" type="checkbox" value="{{$row->id_service}}"></td>
-                                         <td>{{$row->name}}</td>
-                                         <td>{{ Html::image($row->icon,'',array('width'=>50,'height'=>50)) }}</td>
-                                         <td>{{$row->order}}</td>
-                                         <td>{{$row->users->name}}</td>
-                                         <td> {{$row->updated_at}}</td>
-                                         <td><button class="btn btn-primary" data-type="update" data-condition="test" data-toggle="modal-confirm-crud" data-hidden="{{$row->id_service}}" data-name="{{$row->name}}" data-title="Cập Nhật Dữ Liệu!" data-target="#submit-confirm-crud" type="submit" data-value="{{$row->id_service}}">Sửa</button></td>
-                                     </tr>
-                                 @endforeach
+                                @foreach($data as $row)
+                                    <tr>
+                                        <td><input name="checkbox[]" type="checkbox" value="{{$row->id_service}}"></td>
+                                        <td>{{$row->name}}</td>
+                                        <td>{{ Html::image($row->icon,'',array('width'=>50,'height'=>50)) }}</td>
+                                        <td>{{$row->order}}</td>
+                                        <td>{{$row->users->name}}</td>
+                                        <td> {{$row->updated_at}}</td>
+                                        <td><button id="openUpdateModalService" data-id="{{$row->id_service}}" class="btn btn-primary">Sửa</button></td>
+                                    </tr>
+                                @endforeach
                                 </tfoot>
                             </table>
 
                             <div class="col-md-12 text-center">
-                                <button class="btn btn-primary" data-toggle="modal-confirm-crud" data-type="insert" data-condition="test" data-target="#submit-confirm-crud">Thêm</button>
-                                <input name="deleteService"
-                                       onclick="return confirm('Chú Có Thật Sự Muốn Xóa? Bút Sa Gà Xối Mỡ');"
-                                       type="submit" class="btn btn-primary" value="Xóa"/>
-                                <button class="btn btn-primary" data-toggle="modal-confirm-icon" data-type="icon" data-condition="testicon" data-target="#submit-confirm-icon">Upload Icon</button>
+                                <button id="openInsertModalService" class="btn btn-primary">Thêm</button>
+                                @include('admin.modal.service.insertmodal')
+                                @include('admin.modal.service.updatemodal')
+                                @include('admin.modal.service.iconmodal')
+                                <button id="deleteService" type="submit" class="btn btn-primary">Xóa</button>
+                                <button id="openIconModalService" class="btn btn-primary">Upload Icon</button>
                                 {{-- Modal --}}
-                                @include('admin.modal.services.updatemodal')
-                                @include('admin.modal.services.iconmodal')
                             </div>
-                        </form>
+                        {{--</form>--}}
                     </div>
                     <!-- /.box-body -->
                 </div>

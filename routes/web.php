@@ -44,6 +44,7 @@ Route::group(['middleware' => ['AuthMiddle']], function () {
     });
     Route::get('sml_admin/locations', 'LocationController@selectAll');
     Route::get('sml_admin/services', 'ServiceController@selectAll');
+    Route::get('sml_admin/services2', 'ServiceController@selectAll');
     Route::get('sml_admin/accessories', 'AccessoryController@selectAll');
 });
 Route::get('errors', function () {

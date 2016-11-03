@@ -529,7 +529,7 @@
 <script>
     $.widget.bridge('uibutton', $.ui.button);
 </script>
-
+{{ Html::script('public/js/admin_all_myjs.js') }}
 
 <a href="{{ url('/logout') }}">
     Logout

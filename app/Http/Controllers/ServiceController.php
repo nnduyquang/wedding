@@ -13,47 +13,43 @@ use Illuminate\Support\Facades\Validator;
 
 class ServiceController extends Controller
 {
-    public function action(Request $request){
+    public function action(Request $request)
+    {
         $type = $request['data'];
-        if($type==='getimage')
+        if ($type === 'getimage')
             return $this->getAllImage();
-        elseif($type==='uploadImage')
+        elseif ($type === 'uploadImage')
             return $this->uploadImage();
-        elseif($type==='selectService'){
-            $id=$request['id'];
+        elseif ($type === 'selectService') {
+            $id = $request['id'];
             return $this->getServiceById($id);
         }
-        if(Input::get('insertService')){
-            $check = $this->insert($request);
-            if ($check) {
-                return Redirect::back()->withInput()->with('success', 'Thêm Thành Công');
-            } else {
-                return Redirect::back()->withInput()->with('fail', 'Thêm Thất Bại');
-            }
-        }else if (Input::get('deleteService')) {
-            $check = $this->delete($request);
-            if ($check) {
-                return Redirect::back()->withInput()->with('success', 'Xóa Thành Công');
-            } else {
-                return Redirect::back()->withInput()->with('fail', 'Xóa Thất Bại');
-            }
-        }else if (Input::get('updateService')) {
-            $check = $this->update($request);
-            if ($check) {
-                return Redirect::back()->withInput()->with('success', 'Cập Nhật Thành Công');
-            } else {
-                return Redirect::back()->withInput()->with('fail', 'Cập Nhật Thất Bại');
-            }
+        switch ($type) {
+            case 'getimage':
+                return $this->getAllImage();
+            case 'uploadImage':
+                return $this->uploadImage();
+            case 'selectService':
+                $id = $request['id'];
+                return $this->getServiceById($id);
+            case 'insertService':
+                //console.log('zo');
+                return $this->insert($request);
+            case 'getDetailService':
+                return $this->getServiceById($request['id']);
+            case 'updateService':
+                return $this->update($request);
+            case 'deleteService':
+                return $this->delete($request);
         }
     }
 
     public function getAllImage()
     {
-        $images=array();
-        foreach (File::allFiles(public_path().'/images/temps/') as $file)
-        {
+        $images = array();
+        foreach (File::allFiles(public_path() . '/images/temps/') as $file) {
             $filename = $file->getRelativePathName();
-            $images[]='/public/images/temps/'.$filename;
+            $images[] = '/public/images/temps/' . $filename;
         }
         return $images;
     }
@@ -61,83 +57,92 @@ class ServiceController extends Controller
     public function uploadImage()
     {
         $file = Input::file('input-file');
-        $target="public/images/temps/";
+        $target = "public/images/temps/";
         $filename = $file->getClientOriginalName();
         Input::file('input-file')->move($target, $filename);
         return Response::json(['success' => true]);
     }
 
-    public function insert(Request $request){
+    public function insert(Request $request)
+    {
         $messages = array(
             'txtsevice.required' => '* Không Để Trống',
-            'srcIcon.required'=>'* Mời Chọn Icon',
-            'txtorder.integer'=>'Chỉ Được Nhập Số Nguyên'
+            'srcIcon.required' => '* Mời Chọn Icon',
+            'txtorder.integer' => 'Chỉ Được Nhập Số Nguyên'
         );
         $validator = Validator::make($request->all(), [
             'txtsevice' => 'required',
             'srcIcon' => 'required',
-            'txtorder'=>'integer'
-        ],$messages);
+            'txtorder' => 'integer'
+        ], $messages);
         if ($validator->fails()) {
-            return Redirect::back()
-                ->withErrors($validator)
-                ->withInput()->with('state', 'insertState');
-        }
+            return response()->json([
+                'success' => false,
+                'errors' => $validator->errors()->toArray()
+            ]);
+        } else {
 
-        $nameService=$request['txtsevice'];
-        $srcIcon=$request['srcIcon'];
-        $service = new \App\services;
-        $service->name= $nameService;
-        $service->icon= $srcIcon;
-        if($request->has('txtorder'))
-        {
-            $txtorder=$request['txtorder'];
-            $service->order= $txtorder;
+            $nameService = $request['txtsevice'];
+            $srcIcon = $request['srcIcon'];
+            $service = new \App\services;
+            $service->name = $nameService;
+            $service->icon = $srcIcon;
+            if ($request->has('txtorder')) {
+                $txtorder = $request['txtorder'];
+                $service->order = $txtorder;
+            }
+            $service->id = Auth::user()->id;
+            $service->save();
+            return response()->json([
+                'success' => true
+            ]);
         }
-        $service->id = Auth::user()->id;
-        return ($service->save());
     }
 
-    public function update(Request $request){
+    public function update(Request $request)
+    {
         $messages = array(
             'txtsevice.required' => '* Không Để Trống',
-            'srcIcon.required'=>'* Mời Chọn Icon',
-            'txtorder.integer'=>'Chỉ Được Nhập Số Nguyên'
+            'srcIcon.required' => '* Mời Chọn Icon',
+            'txtorder.integer' => 'Chỉ Được Nhập Số Nguyên'
         );
-//        $this->validate($request, [
-//            'txtsevice' => 'required',
-//            'srcIcon' => 'required',
-//            'txtorder'=>'integer'
-//        ], $messages);
         $validator = Validator::make($request->all(), [
             'txtsevice' => 'required',
             'srcIcon' => 'required',
-            'txtorder'=>'integer'
-        ],$messages);
+            'txtorder' => 'integer'
+        ], $messages);
         if ($validator->fails()) {
-            return Redirect::back()
-                ->withErrors($validator)
-                ->withInput()->with('state', 'updateState')->with('idReturn',$request['hdId']);
+            return response()->json([
+                'success' => false,
+                'errors' => $validator->errors()->toArray()
+            ]);
+        } else {
+            $id = $request['id'];
+            $nameService = $request['txtsevice'];
+            $srcIcon = $request['srcIcon'];
+            $data = \App\services::find($id);
+            $data->name = $nameService;
+            $data->icon = $srcIcon;
+            if ($request->has('txtorder')) {
+                $txtorder = $request['txtorder'];
+                $data->order = $txtorder;
+            }
+            $data->id = Auth::user()->id;
+            $data->save();
+            return response()->json([
+                'success' => true
+            ]);
         }
-        $id=$request['hdId'];
-        $nameService=$request['txtsevice'];
-        $srcIcon=$request['srcIcon'];
-        $data = \App\services::find($id);
-        $data->name= $nameService;
-        $data->icon= $srcIcon;
-        if($request->has('txtorder'))
-        {
-            $txtorder=$request['txtorder'];
-            $data->order= $txtorder;
-        }
-        $data->id = Auth::user()->id;
-        return ($data->save());
     }
 
-    public function delete(Request $request){
-        $items_checked = Input::get('checkbox');
+    public function delete(Request $request)
+    {
+        $items_checked = $request['checkboxlist'];
         if (is_array($items_checked)) {
-            return (\App\services::whereIn('id_service', $items_checked)->delete());
+            \App\services::whereIn('id_service', $items_checked)->delete();
+            return response()->json([
+                'success' => true
+            ]);
         }
     }
 
@@ -148,8 +153,12 @@ class ServiceController extends Controller
 
     }
 
-    public function getServiceById($id){
+    public function getServiceById($id)
+    {
         $data = \App\services::where('id_service', $id)->first();
-        return $data;
+        return response()->json([
+            'success' => true,
+            'data' => $data->toArray()
+        ]);
     }
 }
