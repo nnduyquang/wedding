@@ -21,39 +21,44 @@ $(document).ready(function () {
         }
 
     }
-    $.ajax({
-        type: "POST",
-        url: 'services',
-        data: {'_token': token, 'data': 'getimage'},
-        success: function (data) {
-            var html;
-            var APP_URL =getBaseURL();
-            html += " <option data-img-src='" + APP_URL + data[0] + "' data-img-alt='Page'" + 1 + " value='" + 1 + "'>  Page 1  </option>"
-            var count = 1;
-            for (i = 1; i < data.length - 1; i++) {
-                count += i;
-                html += " <option data-img-src='" + APP_URL + data[i] + "' data-img-alt='Page'" + count + " value='" + count + "'>  Page " + count + "  </option>"
-            }
-            html += " <option data-img-src='" + APP_URL + data[data.length - 1] + "' data-img-alt='Page'" + data.length + " value='" + data.length + "'>  Page " + data.length + "  </option>"
-            $('#container-image .image-picker').html(html);
-            $("select").imagepicker({
-                clicked: function () {
-                    $("input[name='txticon']").val($(this).find("option[value='" + $(this).val() + "']").data('img-src').replace(APP_URL, "").replace(/^.*(\\|\/|\:)/, ''));
-                    $("input[name='srcIcon']").val($(this).find("option[value='" + $(this).val() + "']").data('img-src').replace(APP_URL, ""));
-                    $("input[name='fileName']").val($(this).find("option[value='" + $(this).val() + "']").data('img-src').replace(APP_URL, "").replace(/^.*(\\|\/|\:)/, ''));
-                }
-            });
 
-        }
-    });
 
     $("#checkAll").change(function () {
         $("input:checkbox").prop('checked', $(this).prop("checked"));
     });
 
+    function loadImageChoose(){
+        $.ajax({
+            type: "POST",
+            url: 'services',
+            data: {'_token': token, 'data': 'getimage'},
+            success: function (data) {
+                var html;
+                var APP_URL =getBaseURL();
+                html += " <option data-img-src='" + APP_URL + data[0] + "' data-img-alt='Page'" + 1 + " value='" + 1 + "'>  Page 1  </option>"
+                var count = 1;
+                for (i = 1; i < data.length - 1; i++) {
+                    count += i;
+                    html += " <option data-img-src='" + APP_URL + data[i] + "' data-img-alt='Page'" + count + " value='" + count + "'>  Page " + count + "  </option>"
+                }
+                html += " <option data-img-src='" + APP_URL + data[data.length - 1] + "' data-img-alt='Page'" + data.length + " value='" + data.length + "'>  Page " + data.length + "  </option>"
+                $('#container-image .image-picker').html(html);
+                $("select").imagepicker({
+                    clicked: function () {
+                        $("input[name='txticon']").val($(this).find("option[value='" + $(this).val() + "']").data('img-src').replace(APP_URL, "").replace(/^.*(\\|\/|\:)/, ''));
+                        $("input[name='srcIcon']").val($(this).find("option[value='" + $(this).val() + "']").data('img-src').replace(APP_URL, ""));
+                        $("input[name='fileName']").val($(this).find("option[value='" + $(this).val() + "']").data('img-src').replace(APP_URL, "").replace(/^.*(\\|\/|\:)/, ''));
+                    }
+                });
+
+            }
+        });
+    }
+
 
 ////////////////////CẬP NHẬT SERVICE////////////////////////
     $('button#openUpdateModalService').click(function(){
+        loadImageChoose();
         $.ajax({
             type: "POST",
             url: 'services',
@@ -118,6 +123,7 @@ $(document).ready(function () {
 
     ////////////////////THÊM MỚI SERVICE////////////////////////
     $('button#openInsertModalService').click(function(){
+        loadImageChoose();
         $("#submit-confirm-insert input[name='txticon']").val("");
         $("#submit-confirm-insert input[name='srcIcon']").val("");
         $("#submit-confirm-insert input[name='fileName']").val("");
@@ -204,34 +210,5 @@ $(document).ready(function () {
     $("#input-file").on('fileuploaded', function(event, data, previewId, index) {
         var form = data.form, files = data.files, extra = data.extra,
             response = data.response.success, reader = data.reader;
-        if(response){
-            $.ajax({
-                type: "POST",
-                url: 'services',
-                data: {'_token': token, 'data': 'getimage'},
-                success: function (data) {
-                    var html;
-                    var APP_URL =getBaseURL();
-                    html += " <option data-img-src='" + APP_URL + data[0] + "' data-img-alt='Page'" + 1 + " value='" + 1 + "'>  Page 1  </option>"
-                    var count = 1;
-                    for (i = 1; i < data.length - 1; i++) {
-                        count += i;
-                        html += " <option data-img-src='" + APP_URL + data[i] + "' data-img-alt='Page'" + count + " value='" + count + "'>  Page " + count + "  </option>"
-                    }
-                    html += " <option data-img-src='" + APP_URL + data[data.length - 1] + "' data-img-alt='Page'" + data.length + " value='" + data.length + "'>  Page " + data.length + "  </option>"
-                    $('#container-image .image-picker').html(html);
-                    $("select").imagepicker({
-                        clicked: function () {
-                            $("input[name='txticon']").val($(this).find("option[value='" + $(this).val() + "']").data('img-src').replace(APP_URL, "").replace(/^.*(\\|\/|\:)/, ''));
-                            $("input[name='srcIcon']").val($(this).find("option[value='" + $(this).val() + "']").data('img-src').replace(APP_URL, ""));
-                            $("input[name='fileName']").val($(this).find("option[value='" + $(this).val() + "']").data('img-src').replace(APP_URL, "").replace(/^.*(\\|\/|\:)/, ''));
-                        }
-                    });
-
-                }
-            });
-        }
-        // alert(response);
-        // //alert('File uploaded triggered');
     });
 });

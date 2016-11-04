@@ -30,7 +30,7 @@ Route::post('sml_login', 'AuthController@login')->name('login');
 Route::post('sml_admin/locations', 'LocationController@action')->name('locations');
 Route::post('sml_admin/accessories', 'AccessoryController@action')->name('accessories');
 Route::post('sml_admin/services', 'ServiceController@action')->name('services');
-//Route::post('sml_admin/services/upload','ServiceController@uploadImage');
+Route::post('sml_admin/albums', 'AlbumController@action')->name('albums');
 
 Route::group(['middleware' => ['AuthMiddle']], function () {
     Route::get('sml_admin', function () {
@@ -44,8 +44,10 @@ Route::group(['middleware' => ['AuthMiddle']], function () {
     });
     Route::get('sml_admin/locations', 'LocationController@selectAll');
     Route::get('sml_admin/services', 'ServiceController@selectAll');
-    Route::get('sml_admin/services2', 'ServiceController@selectAll');
     Route::get('sml_admin/accessories', 'AccessoryController@selectAll');
+    Route::get('sml_admin/albums/insert',function(){
+        return view('admin.album.insertalbum');
+    })->name('insertalbum');
 });
 Route::get('errors', function () {
     return view('errors.503');

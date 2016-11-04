@@ -339,11 +339,6 @@
                         <i class="fa fa-dashboard"></i><span>Phụ Kiện</span>
                     </a>
                 </li>
-                <li>
-                    <a href="{{url('/sml_admin/services')}}">
-                        <i class="fa fa-dashboard"></i><span>Kế Hoạch</span>
-                    </a>
-                </li>
                 <li class="treeview">
                     <a href="#">
                         <i class="fa fa-files-o"></i>
