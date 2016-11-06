@@ -22,99 +22,46 @@ $(document).ready(function () {
         }
 
     }
-
-    $("#input-file-album").fileinput({
-        allowedFileExtensions: ['jpeg', 'jpg', 'png'],
-        uploadAsync: true,
-        showUploadedThumbs: false,
-        uploadUrl: getBaseURL() + "sml_admin/albums",
-        uploadExtraData: function (previewId, index) {
-            var albumname = $("#submit-confirm-create-album input[name='albumname']").val();
-            var info = {
-                '_token': token,
-                data: "uploadImage",
-                'albumname': albumname
-            }
-            return info;
-        }
-    });
-
-    $("#input-file-album").on('fileuploaded', function (event, data, previewId, index) {
-        var form = data.form, files = data.files, extra = data.extra,
-            response = data.response.success, reader = data.reader;
-    });
-
     $('#openModalCreateAlbum').click(function () {
         $('#submit-confirm-create-album').modal();
     });
-
-    function getDirectoryImage() {
+    $('#formsummit').submit(function(e){
+        e.preventDefault();
+        var albumname = $("#submit-confirm-create-album input[name='albumname']").val();
+        var data = new FormData($(this).get(0));
+        var uploadfile=[];
+        $.each($("input[name='uploadfile']").files, function(i, file) {
+            data.append(uploadfile, file);
+        });
+        data.append('data','uploadImage');
+        data.append('albumname',albumname);
         $.ajax({
             type: "POST",
             url: getBaseURL() + "sml_admin/albums",
             dataType: 'json',
-            data: {
-                '_token': token,
-                'data': 'getDirectory',
-            },
+            processData: false,
+            contentType: false,
+            data:data,
             success: function (data) {
                 if (data.success) {
-                    var html = "";
-                    var listfile = data.listfile;
-                    listfile.forEach(function (entry) {
-                        html += " <option>" + entry + "</option>";
-                    });
-                    $("#ddAlbum").html(html);
+                    location.reload();
+                }else{
+                    $('#submit-confirm-create-album .notics#errtxtnamealbum p').html('');
+                    $('#submit-confirm-create-album .notics#errtxtnamealbum p').html(data.errors.albumname);
+                    $('#submit-confirm-create-album .notics#errtxtchooseimage p').html('');
+                    $('#submit-confirm-create-album .notics#errtxtchooseimage p').html(data.errors.uploadfile);
+                    $('#submit-confirm-create-album #errtxtnamealbum').fadeIn().delay(3000).fadeOut();
+                    $('#submit-confirm-create-album #errtxtchooseimage').fadeIn().delay(3000).fadeOut();
                 }
             },
             error: function (data) {
                 alert('zo error');
             }
         });
-    }
-
-    $('#openModalChooseImage').click(function () {
-        getDirectoryImage();
-        $('#submit-confirm-choose-image').modal();
     });
-    // $('.selectpicker#ddAlbum').on('change', function () {
-    //     var selected = $(this).find("option:selected").val();
-    //     $.ajax({
-    //         type: "POST",
-    //         url: getBaseURL() + "sml_admin/albums",
-    //         dataType: 'json',
-    //         data: {
-    //             '_token': token,
-    //             'data': 'getListImage',
-    //             'nameFolder': selected
-    //         },
-    //         success: function (data) {
-    //
-    //             var html;
-    //             var APP_URL = getBaseURL();
-    //             // html += " <option data-img-src='" + APP_URL + data[0] + "' data-img-alt='Page'" + 1 + " value='" + 1 + "'>  Page 1  </option>"
-    //             var count = 1;
-    //             for (i = 1; i < data.length+1; i++) {
-    //                 //count += i;
-    //                 html += " <option data-img-src='" + APP_URL + data[i-1] + "' data-img-alt='Page'" + count + " value='" + count + "'>  Page " + count + "  </option>"
-    //                 count += i;
-    //             }
-    //             // html += " <option data-img-src='" + APP_URL + data[data.length - 1] + "' data-img-alt='Page'" + data.length + " value='" + data.length + "'>  Page " + data.length + "  </option>"
-    //             $('#container-image-choose .image-picker').html(html);
-    //             $("select").imagepicker({
-    //                 hide_select:false,
-    //                 clicked: function () {
-    //                     // $("input[name='txticon']").val($(this).find("option[value='" + $(this).val() + "']").data('img-src').replace(APP_URL, "").replace(/^.*(\\|\/|\:)/, ''));
-    //                     // $("input[name='srcIcon']").val($(this).find("option[value='" + $(this).val() + "']").data('img-src').replace(APP_URL, ""));
-    //                     // $("input[name='fileName']").val($(this).find("option[value='" + $(this).val() + "']").data('img-src').replace(APP_URL, "").replace(/^.*(\\|\/|\:)/, ''));
-    //                 }
-    //             });
-    //             $('#ddAlbum').css('display','true');
-    //         },
-    //         error: function (data) {
-    //             alert('zo error');
-    //         }
-    //     });
-    // });
+    $(".viewDetailAlbum").click(function(){
+        var id_folder=$(this).data('id');
+        window.location="albummanagers/view/"+id_folder;
+    });
 
 });

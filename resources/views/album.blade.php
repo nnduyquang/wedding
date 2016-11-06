@@ -67,7 +67,7 @@
                     <a class="p-plan " href="kyoto-03-sakura-romance/index.html">
                         <div class="p-plan__photo">
                             <div class="p-plan__photo__content">
-                                {{ Html::image('public/images/albums/kyoto-03-sakura-romance/img03-75.jpg', 'DE & Co. Decollte Wedding Photography in Japan. A Japanese Wedding Photo Studio. | 德可莉日本專業婚紗攝影 | Kyoto | 京都 | Sakura Romance | 櫻花。絢爛',array('width'=>650,'height'=>410)) }}
+                                {{ Html::image('plans', 'DE & Co. Decollte Wedding Photography in Japan. A Japanese Wedding Photo Studio. | 德可莉日本專業婚紗攝影 | Kyoto | 京都 | Sakura Romance | 櫻花。絢爛',array('width'=>650,'height'=>410)) }}
                             </div>
                         </div>
                         <div class="p-plan__box">
@@ -102,7 +102,7 @@
                     <a class="p-plan " href="kyoto-08/index.html">
                         <div class="p-plan__photo">
                             <div class="p-plan__photo__content">
-                                {{ Html::image('public/images/albums/kyoto-08/fc6927a4cd7fc6f068de9eb5d3ae4aff-5.jpg', 'サムネイル',array('width'=>650,'height'=>410)) }}
+                                {{ Html::image('plans', 'サムネイル',array('width'=>650,'height'=>410)) }}
                             </div>
                         </div>
                         <div class="p-plan__box">

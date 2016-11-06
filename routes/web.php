@@ -31,6 +31,7 @@ Route::post('sml_admin/locations', 'LocationController@action')->name('locations
 Route::post('sml_admin/accessories', 'AccessoryController@action')->name('accessories');
 Route::post('sml_admin/services', 'ServiceController@action')->name('services');
 Route::post('sml_admin/albums', 'AlbumController@action')->name('albums');
+//Route::post('sml_admin/albums/add', 'AlbumController@uploadImage2')->name('addalbums');
 
 Route::group(['middleware' => ['AuthMiddle']], function () {
     Route::get('sml_admin', function () {
@@ -48,6 +49,8 @@ Route::group(['middleware' => ['AuthMiddle']], function () {
     Route::get('sml_admin/albums/insert',function(){
         return view('admin.album.insertalbum');
     })->name('insertalbum');
+    Route::get('sml_admin/albummanagers','AlbumController@selectAll');
+    Route::get('sml_admin/albummanagers/view/{id}','AlbumController@getImageOfAlbum');
 });
 Route::get('errors', function () {
     return view('errors.503');

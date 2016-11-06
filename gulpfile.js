@@ -95,6 +95,7 @@ mix.scripts([
 //     {
         mix.scripts([
             'admin/my-js/services/services.js',
+            'admin/my-js/plans/plans.js',
             'admin/my-js/albums/albums.js',
         ],'public/js/admin_all_myjs.js');
 //     });

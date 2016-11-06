@@ -72,8 +72,8 @@
                         </div>
                         <div class="form-group col-md-12">
                             <div class="col-sm-10 col-sm-offset-2">
-                                @include('admin.modal.albums.createalbummodal')
-                                @include('admin.modal.albums.chooseimagemainmodal')
+                                @include('admin.modal.plans.createalbummodal')
+                                @include('admin.modal.plans.chooseimagemainmodal')
                                 <button id="submit"class="btn btn-primary">Thêm</button>
                             </div>
                         </div>

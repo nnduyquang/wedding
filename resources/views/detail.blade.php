@@ -57,7 +57,7 @@
                         </li>
                         <li class="c-gallery__item">
                             <a>
-                                {{ Html::image('public/images/albums/okinawa-03-vow-of-love/img08-37.jpg', '',array('width'=>750,'height'=>562)) }}
+                                {{ Html::image('plans', '',array('width'=>750,'height'=>562)) }}
                             </a>
                         </li>
                         <li class="c-gallery__item">

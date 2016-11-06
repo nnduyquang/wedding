@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAlbumsTable extends Migration
+class CreateAlbumfoldersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,12 @@ class CreateAlbumsTable extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('plans');
-        Schema::create('plans', function (Blueprint $table) {
-            $table->increments('id_album');
+        Schema::create('albumfolders', function (Blueprint $table) {
+            $table->increments('id_folder');
             $table->string('name');
-            $table->text('description');
-            $table->text('images');
+            $table->string('main_image');
             $table->integer('id')->unsigned();
-            $table->foreign('id')->references('id')->on('users');//Tham chieu khoa ngoai bang users
+            $table->foreign('id')->references('id')->on('users');
             $table->timestamps();
         });
     }
@@ -32,6 +30,6 @@ class CreateAlbumsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('albumfolders');
     }
 }

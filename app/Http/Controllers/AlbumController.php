@@ -27,48 +27,90 @@ class AlbumController extends Controller
         }
     }
 
+    /**
+     * @param $request
+     * @return mixed
+     */
     public function uploadImage($request)
     {
         $messages = array(
-            'albumname.required' => 'Tên Album Không Để Trống',
+            'albumname.required' => 'Tên Album Không Để Trống'
         );
         $validator = Validator::make($request->all(), [
-            'albumname' => 'required'
+            'albumname' => 'required',
         ], $messages);
         if ($validator->fails()) {
             return response()->json([
                 'success' => false,
-                'errors' => $validator->errors()->toArray(),
-                'error'=>$validator->errors()->first('albumname')
+                'errors' => $validator->errors()->toArray()
             ]);
         } else {
+            $file = Input::file('uploadfile');
+            if ($file) {
             $name_folder = $request['albumname'];
-            $file = Input::file('input-file-album');
-            $target = "public/images/albums/" . $name_folder;
-            $filename = $file->getClientOriginalName();
-            Input::file('input-file-album')->move($target, $filename);
-            return Response::json(['success' => true]);
+            $album_folder = new \App\albumfolders;
+            $album_folder->name = $name_folder;
+            $album_folder->id = Auth::user()->id;
+            $album_folder->save();
+
+                $target = "public/images/albums/" . $name_folder;
+                foreach ($file as $oneFile) {
+                    $filename = $oneFile->getClientOriginalName();
+                    $oneFile->move($target, $filename);
+                }
+                return Response::json(['success' => true]);
+            }
+            return Response::json([
+                'success' => false,
+                'errors'=>['uploadfile'=>'Mời Chọn Hình']
+            ]);
         }
     }
-    public function getDirectory(){
-        $directory='public/images/albums/*';
-        $listfile=[];
-        foreach(glob($directory, GLOB_ONLYDIR) as $dir) {
-            $listfile[]= basename($dir);
+
+    public function selectAll()
+    {
+        $album_folder = \App\albumfolders::all();
+        return view('admin.albummanager')->with('data', $album_folder);
+    }
+
+    public function getDirectory()
+    {
+        $directory = 'public/images/albums/*';
+        $listfile = [];
+        foreach (glob($directory, GLOB_ONLYDIR) as $dir) {
+            $listfile[] = basename($dir);
         }
         return response()->json([
             'success' => true,
-            'listfile'=>$listfile
+            'listfile' => $listfile
         ]);
     }
 
-    public function getListImage($request){
+    public function getListImage($request)
+    {
         $images = array();
-        foreach (File::allFiles(public_path() . '/images/albums/'.$request['nameFolder']) as $file) {
+        foreach (File::allFiles(public_path() . '/images/albums/' . $request['nameFolder']) as $file) {
             $filename = $file->getRelativePathName();
-            $images[] = '/public/images/albums/'.$request['nameFolder'].'/' . $filename;
+            $images[] = '/public/images/albums/' . $request['nameFolder'] . '/' . $filename;
         }
         return $images;
+    }
+
+    public function getImageOfAlbum($id)
+    {
+        $album_folder = \App\albumfolders::where('id_folder', $id)->first();
+        $images = array();
+        foreach (File::allFiles(public_path() . '/images/albums/' . $album_folder->name) as $file) {
+            $filename = $file->getRelativePathName();
+            $images[] = ['/public/images/albums/' . $album_folder->name . '/' . $filename,$filename];
+        }
+        $data = Response::json([
+            'name' => $album_folder->name,
+            'images' => $images,
+            'id_folder' => $album_folder->id_folder,
+        ]);
+        //return $data;
+        return view('admin.album.viewdetailalbum')->with('data', $data);
     }
 
 }

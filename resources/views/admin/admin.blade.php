@@ -321,7 +321,12 @@
                 </li>
                 <li>
                     <a href="{{url('/sml_admin/albums')}}">
-                        <i class="fa fa-dashboard"></i><span>Albums</span>
+                        <i class="fa fa-dashboard"></i><span>Kế Hoạch</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{url('/sml_admin/albummanagers')}}">
+                        <i class="fa fa-dashboard"></i><span>Album Hình</span>
                     </a>
                 </li>
                 <li>
