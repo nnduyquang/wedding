@@ -24,6 +24,8 @@ class AlbumController extends Controller
                 return $this->getDirectory();
             case 'getListImage':
                 return $this->getListImage($request);
+            case 'deleteImageInFolder':
+                return $this->deleteImageInFolder($request);
         }
     }
 
@@ -34,10 +36,12 @@ class AlbumController extends Controller
     public function uploadImage($request)
     {
         $messages = array(
-            'albumname.required' => 'Tên Album Không Để Trống'
+            'albumname.required' => 'Tên Album Không Để Trống',
+            'uploadfile.max' => 'Dung Lượng Hình Không Lớn Hơn 2MB'
         );
         $validator = Validator::make($request->all(), [
             'albumname' => 'required',
+            'uploadfile' => 'max:2048'
         ], $messages);
         if ($validator->fails()) {
             return response()->json([
@@ -47,22 +51,27 @@ class AlbumController extends Controller
         } else {
             $file = Input::file('uploadfile');
             if ($file) {
-            $name_folder = $request['albumname'];
-            $album_folder = new \App\albumfolders;
-            $album_folder->name = $name_folder;
-            $album_folder->id = Auth::user()->id;
-            $album_folder->save();
+                $name_folder = $request['albumname'];
+                if ($request['type'] == 'create') {
+                    $album_folder = new \App\albumfolders;
+                    $album_folder->name = $name_folder;
+                    $album_folder->id = Auth::user()->id;
+                    $album_folder->save();
+                }
 
                 $target = "public/images/albums/" . $name_folder;
                 foreach ($file as $oneFile) {
+                    $ran = str_random(10);
                     $filename = $oneFile->getClientOriginalName();
+                    $filename = str_replace('.' . $oneFile->getClientOriginalExtension(), '', $filename);
+                    $filename = $filename . '_' . $ran . '.' . $oneFile->getClientOriginalExtension();
                     $oneFile->move($target, $filename);
                 }
                 return Response::json(['success' => true]);
             }
             return Response::json([
                 'success' => false,
-                'errors'=>['uploadfile'=>'Mời Chọn Hình']
+                'errors' => ['uploadfile' => 'Mời Chọn Hình']
             ]);
         }
     }
@@ -102,7 +111,7 @@ class AlbumController extends Controller
         $images = array();
         foreach (File::allFiles(public_path() . '/images/albums/' . $album_folder->name) as $file) {
             $filename = $file->getRelativePathName();
-            $images[] = ['/public/images/albums/' . $album_folder->name . '/' . $filename,$filename];
+            $images[] = ['/public/images/albums/' . $album_folder->name . '/' . $filename, $filename];
         }
         $data = Response::json([
             'name' => $album_folder->name,
@@ -111,6 +120,16 @@ class AlbumController extends Controller
         ]);
         //return $data;
         return view('admin.album.viewdetailalbum')->with('data', $data);
+    }
+
+    public function deleteImageInFolder($request)
+    {
+        $infos = $request['info'];
+        $pathImage = '/public/images/albums/';
+        foreach ($infos as $info) {
+            File::delete(public_path() . '/images/albums/' . $info['folder'] . '/' . $info['name']);
+        }
+        return Response::json(['success' => true]);
     }
 
 }

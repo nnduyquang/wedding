@@ -87,6 +87,7 @@
 
                         <div class="col-md-12 text-center">
                             @include('admin.modal.albums.addalbummodal')
+
                             <button id="openModalCreateAlbum" class="btn btn-primary">Thêm Album</button>
                             <button id="deleteService" type="submit" class="btn btn-primary">Xóa</button>
                             {{-- Modal --}}

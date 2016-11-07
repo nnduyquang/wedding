@@ -81,7 +81,7 @@
                                 <td>{{ Html::image($key[0], '',array('width' => 200,'height' => 150)) }}</td>
                                 <td>{{$key[1]}}</td>
                                 <td>
-                                    <button id="" data-id="" class="btn btn-primary">Xóa</button>
+                                    <button id="deleteImageInfolder" class="deleteImageInfolder btn btn-primary" data-name="{{$key[1]}}" data-folder="{{json_decode($data->content())->name }}" class="btn btn-primary">Xóa</button>
                                 </td>
                             </tr>
                             @endforeach
@@ -89,8 +89,9 @@
                         </table>
 
                         <div class="col-md-12 text-center">
-                            @include('admin.modal.albums.addalbummodal')
-                            <button id="openModalCreateAlbum" class="btn btn-primary">Thêm Hình Vào Album</button>
+{{--                            @include('admin.modal.albums.addalbummodal')--}}
+                            @include('admin.modal.albums.insertimagetoalbummodal')
+                            <button id="insertImageToAlbum" data-target="submit-confirm-insert-image-to-album" data-name="{{json_decode($data->content())->name }}" class="btn btn-primary">Thêm Hình Vào Album</button>
                             <button id="deleteService" type="submit" class="btn btn-primary">Xóa</button>
                             {{-- Modal --}}
                         </div>

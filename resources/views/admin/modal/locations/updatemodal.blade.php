@@ -27,7 +27,6 @@
                 target.find('.modal-title').html(title);
                 target.find('.modal-body input[name="editlocation"]').val(name);
                 target.find('.modal-body input[name="hdId"]').val(hidden);
-                //target.find('.modal-body input').val(name);
                 var showModal = true;
                 var fn = window[condition];
                 if(typeof fn === 'function') {
