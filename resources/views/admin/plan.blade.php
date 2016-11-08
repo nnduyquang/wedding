@@ -30,7 +30,7 @@
 @section('contain_admin')
     <section class="content-header">
         <h1>
-            Dịch Vụ
+            Kế Hoạch
             <small>Trang Điều Khiển</small>
         </h1>
         <ol class="breadcrumb">
@@ -62,8 +62,8 @@
                             <thead>
                             <tr>
                                 <th><input class="text-center" id="checkAll" type="checkbox"></th>
-                                <th>Tên Album</th>
-                                <th>Hình</th>
+                                <th>Tên Plan</th>
+                                <th>Album Hình</th>
                                 <th>User</th>
                                 <th>Ngày</th>
                                 <th>Action</th>
@@ -74,9 +74,9 @@
                                 <tr>
                                     <td><input name="checkbox[]" type="checkbox" value=""></td>
                                     <td>Tên Album</td>
-                                    <td>Hình</td>
+                                    <td>Album Hình</td>
                                     <td>Quang</td>
-                                    <td>Ngày}</td>
+                                    <td>Ngày</td>
                                     <td><button id="" data-id="" class="btn btn-primary">Xem</button></td>
                                 </tr>
                             {{--@endforeach--}}
@@ -84,7 +84,7 @@
                         </table>
 
                         <div class="col-md-12 text-center">
-                            <button onclick="window.location='{{ URL::route('insertalbum') }}'" class="btn btn-primary">Thêm</button>
+                            <button onclick="window.location='{{ URL::route('insertplan') }}'" class="btn btn-primary">Thêm Kế Hoạch</button>
                             <button id="" type="submit" class="btn btn-primary">Xóa</button>
                             {{-- Modal --}}
                         </div>

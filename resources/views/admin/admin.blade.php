@@ -320,7 +320,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{url('/sml_admin/albums')}}">
+                    <a href="{{url('/sml_admin/plans')}}">
                         <i class="fa fa-dashboard"></i><span>Kế Hoạch</span>
                     </a>
                 </li>
