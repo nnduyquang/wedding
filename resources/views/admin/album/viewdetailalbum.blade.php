@@ -77,7 +77,7 @@
 
                             @foreach(json_decode($data->content())->images as $key)
                             <tr>
-                                <td><input name="checkbox[]" type="checkbox" value=""></td>
+                                <td><input name="checkbox[]" type="checkbox" data-name="{{$key[1]}}" data-folder="{{json_decode($data->content())->name }}"></td>
                                 <td>{{ Html::image($key[0], '',array('width' => 200,'height' => 150)) }}</td>
                                 <td>{{$key[1]}}</td>
                                 <td>
