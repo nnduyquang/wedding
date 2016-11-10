@@ -48,8 +48,12 @@ class AccessoryController extends Controller
         $this->validate($request, [
             'accessory' => 'required'
         ], $messages);
-
         $location = new \App\accessories;
+        if (Input::has('type')){
+            $location->type=1;
+        }else{
+            $location->type=0;
+        }
         $location->name = $request['accessory'];
         $location->id = Auth::user()->id;
         return ($location->save());
@@ -59,6 +63,11 @@ class AccessoryController extends Controller
     {
         $id=$request['hdId'];
         $data = \App\accessories::find($id);
+        if (Input::has('edittype')){
+            $data->type=1;
+        }else{
+            $data->type=0;
+        }
         $data->name = $request['editaccessory'];
         $data->id=Auth::user()->id;
         return ($data->save());
@@ -74,7 +83,7 @@ class AccessoryController extends Controller
 
     public function selectAll()
     {
-        $data = \App\accessories::all();
+        $data = \App\accessories::orderBy('type', 'desc')->get();
         return view('admin.accessory')->with('data', $data);
 
     }

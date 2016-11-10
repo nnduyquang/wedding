@@ -88,27 +88,13 @@
                             <label for="example-search-input" class="col-xs-2 col-form-label">Chọn Địa Điểm</label>
                         </div>
                         <div class="form-group row">
-                            <div class="col-xs-6">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                Cóc xê cho váy
-                            </div>
-                            <div class="col-xs-6">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> Áo
-                                sơ mi trắng
-                            </div>
-                            <div class="col-xs-6">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                Giày Cho Cô dâu chú rể
-                            </div>
-                            <div class="col-xs-6">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> 1
-                            </div>
-                            <div class="col-xs-6">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> 1
-                            </div>
-                            <div class="col-xs-6">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> 1
-                            </div>
+                            @foreach(json_decode($data->content())->locations as $key)
+                                <div class="col-xs-6">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                           value="{{$key->id_location}}">
+                                    {{$key->name}}
+                                </div>
+                            @endforeach
                         </div>
 
                         <div class="form-group row">
@@ -117,34 +103,17 @@
                             </h3>
                         </div>
                         <div class="form-group row">
-                            <div class="col-xs-6">
-                                <div class="form-group">
-                                    <label for="formGroupExampleInput">Tổng Thời Gian Chụp</label>
-                                    <input type="text" class="form-control" id="formGroupExampleInput"
-                                           placeholder="Example input">
-                                </div>
-                            </div>
-                            <div class="col-xs-6">
-                                <div class="form-group">
-                                    <label for="formGroupExampleInput">Số Shot Hình</label>
-                                    <input type="text" class="form-control" id="formGroupExampleInput"
-                                           placeholder="Example input">
-                                </div>
-                            </div>
-                            <div class="col-xs-6">
-                                <div class="form-group">
-                                    <label for="formGroupExampleInput">Đồ Cô Dâu</label>
-                                    <input type="text" class="form-control" id="formGroupExampleInput"
-                                           placeholder="Example input">
-                                </div>
-                            </div>
-                            <div class="col-xs-6">
-                                <div class="form-group">
-                                    <label for="formGroupExampleInput">Đồ Chú Rể</label>
-                                    <input type="text" class="form-control" id="formGroupExampleInput"
-                                           placeholder="Example input">
-                                </div>
-                            </div>
+                            @foreach(json_decode($data->content())->accessories as $key)
+                                @if($key->type==1)
+                                    <div class="col-xs-6">
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput">{{$key->name}}</label>
+                                            <input type="text" class="form-control" id="formGroupExampleInput"
+                                                   placeholder="Example input">
+                                        </div>
+                                    </div>
+                                @endif
+                            @endforeach
                         </div>
                         <div class="form-group row">
                             <h3 class="p-plan-details__title c-headline">
@@ -152,27 +121,15 @@
                             </h3>
                         </div>
                         <div class="form-group row">
-                            <div class="col-xs-6">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                Cóc xê cho váy
-                            </div>
-                            <div class="col-xs-6">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> Áo
-                                sơ mi trắng
-                            </div>
-                            <div class="col-xs-6">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                Giày Cho Cô dâu chú rể
-                            </div>
-                            <div class="col-xs-6">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> 1
-                            </div>
-                            <div class="col-xs-6">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> 1
-                            </div>
-                            <div class="col-xs-6">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> 1
-                            </div>
+                            @foreach(json_decode($data->content())->accessories as $key)
+                                @if($key->type==0)
+                                    <div class="col-xs-6">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                               value="{{$key->id_accessory}}">
+                                        {{$key->name}}
+                                    </div>
+                                @endif
+                            @endforeach
                         </div>
                         <div class="form-group row">
                             <h3 class="p-plan-details__title c-headline">
@@ -180,27 +137,18 @@
                             </h3>
                         </div>
                         <div class="form-group row">
-                            <div class="col-xs-6">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                Cóc xê cho váy
-                            </div>
-                            <div class="col-xs-6">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> Áo
-                                sơ mi trắng
-                            </div>
-                            <div class="col-xs-6">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                Giày Cho Cô dâu chú rể
-                            </div>
-                            <div class="col-xs-6">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> 1
-                            </div>
-                            <div class="col-xs-6">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> 1
-                            </div>
-                            <div class="col-xs-6">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> 1
-                            </div>
+                            @foreach(json_decode($data->content())->services as $key)
+                                <div class="col-xs-6">
+                                    <div class="form-group">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                               value="{{$key->id_service}}">
+                                        {{$key->name}}
+                                        <input type="text" class="form-control" id="formGroupExampleInput"
+                                               placeholder="Example input">
+                                    </div>
+
+                                </div>
+                            @endforeach
                         </div>
                         <div class="form-group row">
                             <label for="example-text-input" class="col-xs-2 col-form-label">Tags</label>

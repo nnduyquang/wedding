@@ -51,6 +51,7 @@
                                 <tr>
                                     <th><input class="text-center" id="checkAll" type="checkbox"></th>
                                     <th>Phụ Kiện</th>
+                                    <th>Loại Phụ Kiện</th>
                                     <th>Người Thực Hiện</th>
                                     <th>Ngày</th>
                                     <th>Action</th>
@@ -60,11 +61,17 @@
                                 @foreach($data as $row)
                                     <tr>
                                         <td><input name="checkbox[]" type="checkbox" value="{{$row->id_accessory}}"></td>
-                                        <td>{{$row->name}}
+                                        <td>{{$row->name}}</td>
+                                        <td>
+                                            @if($row->type==1)
+                                                Chính
+                                            @else
+                                                Kèm Theo
+                                            @endif
                                         </td>
                                         <td>{{$row->users->name}}</td>
                                         <td> {{$row->updated_at}}</td>
-                                        <td><button class="btn btn-primary" data-condition="test" data-toggle="modal-confirm" data-hidden="{{$row->id_accessory}}" data-name="{{$row->name}}" data-title="Cập Nhật Dữ Liệu!" data-target="#submit-confirm" type="submit">Sửa</button></td>
+                                        <td><button class="btn btn-primary" data-condition="test" data-toggle="modal-confirm" data-hidden="{{$row->id_accessory}}" data-name="{{$row->name}}" data-type="{{$row->type}}" data-title="Cập Nhật Dữ Liệu!" data-target="#submit-confirm" type="submit">Sửa</button></td>
                                     </tr>
                                 @endforeach
                                 </tfoot>
@@ -78,6 +85,7 @@
                                     <input type="text" name="accessory" class="form-control"
                                            placeholder="Nhập Tên Phụ Kiện Cần Thêm">
                                     <p style="color: red">{{($errors->has('accessory'))? $errors->first('accessory'):''}}</p>
+                                    <input class="form-check-input" type="checkbox" name="type" id="inlineCheckbox1"> Chính?
                                 </div>
                                 <div class="col-md-5">
                                     <input name="insertAccessory" type="submit" class="btn btn-primary" value="Thêm"/>

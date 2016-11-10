@@ -50,9 +50,7 @@ Route::group(['middleware' => ['AuthMiddle']], function () {
     Route::get('sml_admin/plans',function(){
         return view('admin.plan');
     });
-    Route::get('sml_admin/plans/insert',function(){
-        return view('admin.plan.insertplan');
-    })->name('insertplan');
+    Route::get('sml_admin/plans/insert','PlanController@selectAll')->name('insertplan');
 });
 Route::get('errors', function () {
     return view('errors.503');
