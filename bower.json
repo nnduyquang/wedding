@@ -34,6 +34,8 @@
     "iCheck": "icheck#^1.0.2",
     "datepicker": "*",
     "bootstrap-fileinput": "^4.3.5",
-    "image-picker": "^0.3.0"
+    "image-picker": "^0.3.0",
+    "bootstrap-tokenfield": "^0.12.1",
+    "jquery-ui": "^1.12.1"
   }
 }

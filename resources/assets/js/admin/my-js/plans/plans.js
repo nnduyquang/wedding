@@ -22,5 +22,24 @@ $(document).ready(function () {
         }
 
     }
+    $('#tags').tokenfield({
+        autocomplete: {
+            // source: function(query, process){
+            //     return $.ajax({
+            //         url: $(this)[0].$element[0].dataset.link,
+            //         type: 'get',
+            //         data: {query: query},
+            //         dataType: 'json',
+            //         success: function(json) {
+            //             return typeof json.options == 'undefined' ? false : process(json.options);
+            //         }
+            //     });
+            // },
+            source:['red','blue','green','yellow','violet','brown','purple','black','white'],
+            delay: 100
+        },
+        showAutocompleteOnFocus: true
+    })
+    // ['red','blue','green','yellow','violet','brown','purple','black','white'],
 
 });

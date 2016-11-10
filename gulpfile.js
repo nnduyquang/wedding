@@ -28,13 +28,13 @@ mix.sass([
 ], 'public/css/all_third_party.css');
 
 mix.sass([
-    //paths.layerslider + 'css/_layerslider.scss',
     'admin/login/normalize.css',
     'admin/login/style.scss'
 ], 'public/css/login.css');
 
 mix.sass([
     './bower_components/bootstrap/dist/css/bootstrap.min.css',
+    './bower_components/jquery-ui/themes/smoothness/jquery-ui.css',
     './bower_components/font-awesome/css/font-awesome.min.css',
     './bower_components/bootstrap-fileinput/css/fileinput.min.css',
     './bower_components/image-picker/image-picker/image-picker.css',
@@ -46,6 +46,8 @@ mix.sass([
     './bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css',
     'admin/daterangepicker/daterangepicker.css',
     'admin/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css',
+    './bower_components/bootstrap-tokenfield/dist/css/tokenfield-typeahead.min.css',
+    './bower_components/bootstrap-tokenfield/dist/css/bootstrap-tokenfield.min.css',
 
 
 ], 'public/css/admin_third_party.css');
@@ -69,6 +71,7 @@ mix.scripts([
     'admin/jQuery/jquery-2.2.3.min.js',
     'admin/jQuery/jquery-ui.min.js',
     './bower_components/bootstrap/dist/js/bootstrap.min.js',
+    // './bower_components/jquery-ui/jquery-ui.min.js',
     'admin/datatables/jquery.dataTables.min.js',
     'admin/datatables/dataTables.bootstrap.min.js',
     './bower_components/bootstrap-fileinput/js/fileinput.min.js',
@@ -78,8 +81,6 @@ mix.scripts([
     'admin/sparkline/jquery.sparkline.min.js',
     'admin/jvectormap/jquery-jvectormap-1.2.2.min.js',
     'admin/jvectormap/jquery-jvectormap-world-mill-en.js',
-    //'./bower_components/jvectormap/jquery-jvectormap.js',
-    //'./bower_components/jvectormap/tests/assets/jquery-jvectormap-world-mill-en.js',
     'admin/knob/jquery.knob.js',
     './bower_components/moment/min/moment.min.js',
     'admin/daterangepicker/daterangepicker.js',
@@ -87,6 +88,7 @@ mix.scripts([
     'admin/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js',
     './bower_components/jquery-slimscroll/jquery.slimscroll.min.js',
     './bower_components/fastclick/lib/fastclick.js',
+    './bower_components/bootstrap-tokenfield/dist/bootstrap-tokenfield.js',
 
 ], 'public/js/admin_third_party.js');
 
