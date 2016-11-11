@@ -18,7 +18,8 @@ class PlanController extends Controller
     {
         $type = $request['data'];
         switch ($type) {
-
+            case 'insertplan':
+                return $this->insertPlan($request);
         }
     }
 
@@ -26,11 +27,16 @@ class PlanController extends Controller
         $location = \App\locations::all();
         $accessories = \App\accessories::all();
         $services=\App\services::all();
+        $albumfolders=\App\albumfolders::all();
         $data=Response::json([
             'locations'=>$location,
             'accessories'=>$accessories,
-            'services'=>$services
+            'services'=>$services,
+            'albumfolders'=>$albumfolders
         ]);
         return view('admin.plan.insertplan')->with('data', $data);
+    }
+    public function insertPlan(Request $request){
+        return 'haha';
     }
 }

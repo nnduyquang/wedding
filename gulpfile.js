@@ -1,4 +1,5 @@
 const elixir = require('laravel-elixir');
+elixir.config.sourcemaps = false;
 
 require('laravel-elixir-vue-2');
 
@@ -21,7 +22,9 @@ var paths = {
 
 elixir(mix => {
     mix.sass('app.scss')
-    .webpack('app.js');
+    .webpack('app.js')
+    .task('build-script-admin-all-myjs')
+    .task('build-script-admin-third-party');
 mix.sass([
     //paths.layerslider + 'css/_layerslider.scss',
     'styles/application.css'
@@ -65,44 +68,47 @@ mix.scripts([
     'admin/login/index.js'
 ], 'public/js/login.js');
 
-mix.scripts([
-    './bower_components/html5shiv/dist/html5shiv.min.js',
-    './bower_components/respond/dest/respond.min.js',
-    'admin/jQuery/jquery-2.2.3.min.js',
-    'admin/jQuery/jquery-ui.min.js',
-    './bower_components/bootstrap/dist/js/bootstrap.min.js',
-    // './bower_components/jquery-ui/jquery-ui.min.js',
-    'admin/datatables/jquery.dataTables.min.js',
-    'admin/datatables/dataTables.bootstrap.min.js',
-    './bower_components/bootstrap-fileinput/js/fileinput.min.js',
-    './bower_components/image-picker/image-picker/image-picker.min.js',
-    './bower_components/raphael/raphael.min.js',
-    'admin/morris/morris.js',
-    'admin/sparkline/jquery.sparkline.min.js',
-    'admin/jvectormap/jquery-jvectormap-1.2.2.min.js',
-    'admin/jvectormap/jquery-jvectormap-world-mill-en.js',
-    'admin/knob/jquery.knob.js',
-    './bower_components/moment/min/moment.min.js',
-    'admin/daterangepicker/daterangepicker.js',
-    './bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js',
-    'admin/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js',
-    './bower_components/jquery-slimscroll/jquery.slimscroll.min.js',
-    './bower_components/fastclick/lib/fastclick.js',
-    './bower_components/bootstrap-tokenfield/dist/bootstrap-tokenfield.js',
-
-], 'public/js/admin_third_party.js');
+// mix.scripts([
+//     './bower_components/html5shiv/dist/html5shiv.min.js',
+//     './bower_components/respond/dest/respond.min.js',
+//     'admin/jQuery/jquery-2.2.3.min.js',
+//     'admin/jQuery/jquery-ui.min.js',
+//     './bower_components/bootstrap/dist/js/bootstrap.min.js',
+//     // './bower_components/jquery-ui/jquery-ui.min.js',
+//     'admin/datatables/jquery.dataTables.min.js',
+//     'admin/datatables/dataTables.bootstrap.min.js',
+//     './bower_components/bootstrap-fileinput/js/fileinput.min.js',
+//     './bower_components/image-picker/image-picker/image-picker.min.js',
+//     './bower_components/raphael/raphael.min.js',
+//     'admin/morris/morris.js',
+//     'admin/sparkline/jquery.sparkline.min.js',
+//     'admin/jvectormap/jquery-jvectormap-1.2.2.min.js',
+//     'admin/jvectormap/jquery-jvectormap-world-mill-en.js',
+//     'admin/knob/jquery.knob.js',
+//     './bower_components/moment/min/moment.min.js',
+//     'admin/daterangepicker/daterangepicker.js',
+//     './bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js',
+//     'admin/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js',
+//     './bower_components/jquery-slimscroll/jquery.slimscroll.min.js',
+//     './bower_components/fastclick/lib/fastclick.js',
+//     './bower_components/bootstrap-tokenfield/dist/bootstrap-tokenfield.js',
+//
+// ], 'public/js/admin_third_party.js');
 
 // gulp.task('myjs',function(){
 //     elixir(function(mix)
 //     {
-        mix.scripts([
-            'admin/my-js/services/services.js',
-            'admin/my-js/plans/plans.js',
-            'admin/my-js/albums/albums.js',
-        ],'public/js/admin_all_myjs.js');
+//         mix.scripts([
+//             'admin/my-js/services/services.js',
+//             'admin/my-js/plans/plans.js',
+//             'admin/my-js/albums/albums.js',
+//         ],'public/js/admin_all_myjs.js');
 //     });
 //
 // });
+
+
+
 
 
 mix.copy([
@@ -128,4 +134,46 @@ mix.copy([
 
 ], 'public/locales');
 
+});
+gulp.task('build-script-admin-all-myjs', function() {
+    elixir(function(mix)
+    {
+        mix.scripts([
+            'admin/my-js/services/services.js',
+            'admin/my-js/plans/plans.js',
+            'admin/my-js/albums/albums.js',
+        ],'public/js/admin_all_myjs.js');
+    });
+});
+
+gulp.task('build-script-admin-third-party', function() {
+    elixir(function(mix)
+    {
+        mix.scripts([
+            './bower_components/html5shiv/dist/html5shiv.min.js',
+            './bower_components/respond/dest/respond.min.js',
+            'admin/jQuery/jquery-2.2.3.min.js',
+            'admin/jQuery/jquery-ui.min.js',
+            './bower_components/bootstrap/dist/js/bootstrap.min.js',
+            // './bower_components/jquery-ui/jquery-ui.min.js',
+            'admin/datatables/jquery.dataTables.min.js',
+            'admin/datatables/dataTables.bootstrap.min.js',
+            './bower_components/bootstrap-fileinput/js/fileinput.min.js',
+            './bower_components/image-picker/image-picker/image-picker.min.js',
+            './bower_components/raphael/raphael.min.js',
+            'admin/morris/morris.js',
+            'admin/sparkline/jquery.sparkline.min.js',
+            'admin/jvectormap/jquery-jvectormap-1.2.2.min.js',
+            'admin/jvectormap/jquery-jvectormap-world-mill-en.js',
+            'admin/knob/jquery.knob.js',
+            './bower_components/moment/min/moment.min.js',
+            'admin/daterangepicker/daterangepicker.js',
+            './bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js',
+            'admin/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js',
+            './bower_components/jquery-slimscroll/jquery.slimscroll.min.js',
+            './bower_components/fastclick/lib/fastclick.js',
+            './bower_components/bootstrap-tokenfield/dist/bootstrap-tokenfield.js',
+
+        ], 'public/js/admin_third_party.js');
+    });
 });

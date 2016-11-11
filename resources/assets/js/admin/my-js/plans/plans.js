@@ -40,6 +40,9 @@ $(document).ready(function () {
         },
         showAutocompleteOnFocus: true
     })
-    // ['red','blue','green','yellow','violet','brown','purple','black','white'],
+    $('#insertplan').click(function(){
+        alert('quang');
+        alert('quang');
+    });
 
 });

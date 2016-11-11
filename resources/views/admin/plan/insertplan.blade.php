@@ -64,13 +64,13 @@
                         <div class="form-group row">
                             <label for="example-text-input" class="col-xs-2 col-form-label">Tên Kế Hoạch</label>
                             <div class="col-xs-10">
-                                <input class="form-control" type="text" id="example-text-input">
+                                <input class="form-control" type="text" id="nameAlbum">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="example-search-input" class="col-xs-2 col-form-label">Mô Tả</label>
                             <div class="col-xs-10">
-                                <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                                <textarea class="form-control" id="descriptionAlbum" rows="3"></textarea>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -78,9 +78,9 @@
                             <div class="col-xs-10">
                                 <select class="custom-select">
                                     <option selected>Chọn Album Hình</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
+                                    @foreach(json_decode($data->content())->albumfolders as $key)
+                                        <option value="{{$key->id_folder}}">{{$key->name}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
@@ -90,7 +90,7 @@
                         <div class="form-group row">
                             @foreach(json_decode($data->content())->locations as $key)
                                 <div class="col-xs-6">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                    <input class="form-check-input" name="locations[]" type="checkbox" id="inlineCheckbox1"
                                            value="{{$key->id_location}}">
                                     {{$key->name}}
                                 </div>
@@ -124,7 +124,7 @@
                             @foreach(json_decode($data->content())->accessories as $key)
                                 @if($key->type==0)
                                     <div class="col-xs-6">
-                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                        <input class="form-check-input" name="accessories[]" type="checkbox" id="inlineCheckbox1"
                                                value="{{$key->id_accessory}}">
                                         {{$key->name}}
                                     </div>
@@ -140,10 +140,10 @@
                             @foreach(json_decode($data->content())->services as $key)
                                 <div class="col-xs-6">
                                     <div class="form-group">
-                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                        <input class="form-check-input" name="services[]" type="checkbox" id="inlineCheckbox1"
                                                value="{{$key->id_service}}">
                                         {{$key->name}}
-                                        <input type="text" class="form-control" id="formGroupExampleInput"
+                                        <input type="text" class="form-control" id="description_{{$key->id_service}}"
                                                placeholder="Example input">
                                     </div>
 
@@ -158,7 +158,7 @@
                         </div>
 
                         <div class="col-md-12 text-center">
-                            <button onclick="" class="btn btn-primary">Thêm</button>
+                            <button id="insertplan" class="btn btn-primary">Thêm</button>
                             <button id="" type="submit" class="btn btn-primary">Xóa</button>
                             {{-- Modal --}}
                         </div>
