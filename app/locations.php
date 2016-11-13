@@ -12,4 +12,7 @@ class locations extends Model
     public function users(){
         return $this->belongsTo('App\User','id');
     }
+    public function albums(){
+        return $this->belongsToMany('App\albums','albumsatlocations','id_location','id_album');
+    }
 }

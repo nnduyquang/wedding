@@ -61,33 +61,38 @@
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
+                        {!! Form::open(array('id'=>'formInsertPlan','url'=>'sml_admin/plans','method'=>'POST')) !!}
                         <div class="form-group row">
                             <label for="example-text-input" class="col-xs-2 col-form-label">Tên Kế Hoạch</label>
                             <div class="col-xs-10">
                                 <input class="form-control" type="text" id="nameAlbum">
+                                <div class="notics" id="errtxtnameAlbum" style="display: none"><p style="color: red"></p></div>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="example-search-input" class="col-xs-2 col-form-label">Mô Tả</label>
                             <div class="col-xs-10">
                                 <textarea class="form-control" id="descriptionAlbum" rows="3"></textarea>
+                                <div class="notics" id="errtxtdescriptionAlbum" style="display: none"><p style="color: red"></p></div>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="example-search-input" class="col-xs-2 col-form-label">Chọn Album</label>
                             <div class="col-xs-10">
-                                <select class="custom-select">
+                                <select class="custom-select" id="folderChoose">
                                     <option selected>Chọn Album Hình</option>
                                     @foreach(json_decode($data->content())->albumfolders as $key)
                                         <option value="{{$key->id_folder}}">{{$key->name}}</option>
                                     @endforeach
                                 </select>
+                                <div class="notics" id="errtxtfolderChoose" style="display: none"><p style="color: red"></p></div>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="example-search-input" class="col-xs-2 col-form-label">Chọn Địa Điểm</label>
                         </div>
                         <div class="form-group row">
+                            <div class="notics" id="errtxtlocations" style="display: none"><p style="color: red"></p></div>
                             @foreach(json_decode($data->content())->locations as $key)
                                 <div class="col-xs-6">
                                     <input class="form-check-input" name="locations[]" type="checkbox" id="inlineCheckbox1"
@@ -95,6 +100,7 @@
                                     {{$key->name}}
                                 </div>
                             @endforeach
+
                         </div>
 
                         <div class="form-group row">
@@ -107,13 +113,14 @@
                                 @if($key->type==1)
                                     <div class="col-xs-6">
                                         <div class="form-group">
-                                            <label for="formGroupExampleInput">{{$key->name}}</label>
-                                            <input type="text" class="form-control" id="formGroupExampleInput"
-                                                   placeholder="Example input">
+                                            <label for="formGroupExampleInput">{{$key->name}}<span style="color: red">*</span></label>
+                                            <input type="text" class="form-control" id="accessory_description_{{$key->id_accessory}}">
+                                            <input data="idHiddenAccessoryMain" type="hidden" id="accessory_id_{{$key->id_accessory}}" value="{{$key->id_accessory}}">
                                         </div>
                                     </div>
                                 @endif
                             @endforeach
+                                <div class="notics" id="errtxtAccessoryMain" style="display: none"><p style="color: red"></p></div>
                         </div>
                         <div class="form-group row">
                             <h3 class="p-plan-details__title c-headline">
@@ -124,7 +131,7 @@
                             @foreach(json_decode($data->content())->accessories as $key)
                                 @if($key->type==0)
                                     <div class="col-xs-6">
-                                        <input class="form-check-input" name="accessories[]" type="checkbox" id="inlineCheckbox1"
+                                        <input class="form-check-input" name="accessorySubs[]" type="checkbox" id="inlineCheckbox1"
                                                value="{{$key->id_accessory}}">
                                         {{$key->name}}
                                     </div>
@@ -140,11 +147,10 @@
                             @foreach(json_decode($data->content())->services as $key)
                                 <div class="col-xs-6">
                                     <div class="form-group">
-                                        <input class="form-check-input" name="services[]" type="checkbox" id="inlineCheckbox1"
+                                        <input class="form-check-input" name="services" type="checkbox" id="inlineCheckbox1"
                                                value="{{$key->id_service}}">
                                         {{$key->name}}
-                                        <input type="text" class="form-control" id="description_{{$key->id_service}}"
-                                               placeholder="Example input">
+                                        <input type="text" class="form-control" id="description_{{$key->id_service}}">
                                     </div>
 
                                 </div>
@@ -162,6 +168,7 @@
                             <button id="" type="submit" class="btn btn-primary">Xóa</button>
                             {{-- Modal --}}
                         </div>
+                        {!! Form::close() !!}
                         {{--</form>--}}
                     </div>
                     <!-- /.box-body -->

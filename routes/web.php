@@ -31,6 +31,7 @@ Route::post('sml_admin/locations', 'LocationController@action')->name('locations
 Route::post('sml_admin/accessories', 'AccessoryController@action')->name('accessories');
 Route::post('sml_admin/services', 'ServiceController@action')->name('services');
 Route::post('sml_admin/albums', 'AlbumController@action')->name('albums');
+Route::post('sml_admin/plans', 'PlanController@action')->name('plans');
 
 Route::group(['middleware' => ['AuthMiddle']], function () {
     Route::get('sml_admin', function () {
