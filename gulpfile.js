@@ -94,6 +94,7 @@ elixir(mix => {
     // ], 'public/js/admin_third_party.js');
 
     mix.scripts([
+        'admin/my-js/ulti/ulti.js',
         'admin/my-js/services/services.js',
         'admin/my-js/plans/plans.js',
         'admin/my-js/albums/albums.js',
