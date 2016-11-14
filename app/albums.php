@@ -26,4 +26,7 @@ class albums extends Model
             ->withPivot('has_servive', 'description')
             ->withTimestamps();
     }
+    public function keywords(){
+        return $this->belongsToMany('App\keywords','keywordsofalbums','id_album','id_keyword')->withTimestamps();
+    }
 }

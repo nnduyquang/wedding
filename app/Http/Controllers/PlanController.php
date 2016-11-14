@@ -18,6 +18,8 @@ class PlanController extends Controller
     {
         $type = $request['data'];
         switch ($type) {
+            case 'getTags':
+                return $this->getTags();
             case 'insertPlan':
                 return $this->insertPlan($request);
         }
@@ -36,6 +38,17 @@ class PlanController extends Controller
             'albumfolders' => $albumfolders
         ]);
         return view('admin.plan.insertplan')->with('data', $data);
+    }
+
+    public function getTags(){
+        $tags=\App\keywords::all();
+        $result=array();
+        foreach ($tags as $tag){
+            $result[]=$tag->name;
+        }
+        return Response::json([
+            'options'=>$result
+        ]);
     }
 
     public function insertPlan($request)
@@ -93,6 +106,20 @@ class PlanController extends Controller
             $services=json_decode($request['services'], true);
             foreach ($services as $service) {
                 $album->services()->attach($service['idService'], ['description' => $service['description'], 'has_servive' => false]);
+            }
+            $keywords=Input::get('taglist');
+            $keywords = explode(",", $keywords);
+            //dd($keywords);
+            foreach ($keywords as $keyword) {
+                $tag=\App\keywords::where('name',$keyword)->get();
+                if($tag->isEmpty()){
+                    $tag= new \App\keywords;
+                    $tag->name=$keyword;
+                    $tag->save();
+                    $album->keywords()->attach($tag->id_keyword);
+                }else{
+                    $album->keywords()->attach($tag->id_keyword);
+                }
             }
             return response()->json([
                 'success' => true
