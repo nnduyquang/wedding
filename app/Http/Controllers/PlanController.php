@@ -126,4 +126,26 @@ class PlanController extends Controller
             ]);
         }
     }
+
+    public function selectAllPlan()
+    {
+        $data = \App\albums::all();
+        return view('admin.plan')->with('data', $data);
+
+    }
+    public function getDetailPlan($id)
+    {
+        $location = \App\locations::all();
+        $accessories = \App\accessories::all();
+        $services = \App\services::all();
+        $albumfolders = \App\albumfolders::all();
+        $data = Response::json([
+            'locations' => $location,
+            'accessories' => $accessories,
+            'services' => $services,
+            'albumfolders' => $albumfolders
+        ]);
+        //return $data;
+        return view('admin.plan.updateplan')->with('data', $data);
+    }
 }

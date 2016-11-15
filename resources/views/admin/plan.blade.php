@@ -70,16 +70,16 @@
                             </tr>
                             </thead>
                             <tbody>
-{{--                            @foreach($data as $row)--}}
+                            @foreach($data as $row)
                                 <tr>
-                                    <td><input name="checkbox[]" type="checkbox" value=""></td>
-                                    <td>Tên Album</td>
-                                    <td>Album Hình</td>
-                                    <td>Quang</td>
-                                    <td>Ngày</td>
-                                    <td><button id="" data-id="" class="btn btn-primary">Xem</button></td>
+                                    <td><input name="checkbox[]" type="checkbox" value="{{$row->id_album}}"></td>
+                                    <td>{{$row->name}}</td>
+                                    <td>{{$row->albumfolders->name}}</td>
+                                    <td>{{$row->users->name}}</td>
+                                    <td>{{$row->updated_at}}</td>
+                                    <td><button id="viewDetailPlan" data-id="{{$row->id_album}}" class="btn btn-primary viewDetailPlan">Xem</button></td>
                                 </tr>
-                            {{--@endforeach--}}
+                            @endforeach
                             </tfoot>
                         </table>
 

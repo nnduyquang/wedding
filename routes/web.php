@@ -48,10 +48,9 @@ Route::group(['middleware' => ['AuthMiddle']], function () {
     Route::get('sml_admin/accessories', 'AccessoryController@selectAll');
     Route::get('sml_admin/albummanagers','AlbumController@selectAll');
     Route::get('sml_admin/albummanagers/view/{id}','AlbumController@getImageOfAlbum');
-    Route::get('sml_admin/plans',function(){
-        return view('admin.plan');
-    });
+    Route::get('sml_admin/plans','PlanController@selectAllPlan');
     Route::get('sml_admin/plans/insert','PlanController@selectAll')->name('insertplan');
+    Route::get('sml_admin/plans/update/{id}','PlanController@getDetailPlan');
 });
 Route::get('errors', function () {
     return view('errors.503');

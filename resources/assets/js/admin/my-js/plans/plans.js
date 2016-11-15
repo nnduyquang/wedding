@@ -88,3 +88,8 @@ $('#formInsertPlan').submit(function (e) {
     });
 });
 
+$(".viewDetailPlan").click(function(){
+    var id_album=$(this).data('id');
+    window.location="plans/update/"+id_album;
+});
+

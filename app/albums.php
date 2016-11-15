@@ -29,4 +29,7 @@ class albums extends Model
     public function keywords(){
         return $this->belongsToMany('App\keywords','keywordsofalbums','id_album','id_keyword')->withTimestamps();
     }
+    public function albumfolders(){
+        return $this->hasOne('App\albumfolders','id_folder');
+    }
 }
