@@ -71,6 +71,7 @@
                             </thead>
                             <tbody>
                             @foreach($data as $row)
+
                                 <tr>
                                     <td><input name="checkbox[]" type="checkbox" value="{{$row->id_album}}"></td>
                                     <td>{{$row->name}}</td>

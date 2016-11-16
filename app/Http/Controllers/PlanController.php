@@ -22,6 +22,8 @@ class PlanController extends Controller
                 return $this->getTags();
             case 'insertPlan':
                 return $this->insertPlan($request);
+            case 'updatePlan':
+                return $this->updatePlan($request);
         }
     }
 
@@ -40,14 +42,15 @@ class PlanController extends Controller
         return view('admin.plan.insertplan')->with('data', $data);
     }
 
-    public function getTags(){
-        $tags=\App\keywords::all();
-        $result=array();
-        foreach ($tags as $tag){
-            $result[]=$tag->name;
+    public function getTags()
+    {
+        $tags = \App\keywords::all();
+        $result = array();
+        foreach ($tags as $tag) {
+            $result[] = $tag->name;
         }
         return Response::json([
-            'options'=>$result
+            'options' => $result
         ]);
     }
 
@@ -64,15 +67,15 @@ class PlanController extends Controller
             'idFolderAlbum' => 'numeric'
         ], $messages);
         $idLocations = Input::has('locations');
-        if(!$idLocations){
-            $validator->after(function($validator){
+        if (!$idLocations) {
+            $validator->after(function ($validator) {
                 $validator->errors()->add('locations', 'Vui Lòng Chọn Địa Điểm');
             });
         }
         $accessoryMains = json_decode($request['accessoryMain'], true);
         foreach ($accessoryMains as $accessoryMain) {
-            if($accessoryMain['description']===""){
-                $id=$accessoryMain['idAccessory'];
+            if ($accessoryMain['description'] === "") {
+                $id = $accessoryMain['idAccessory'];
                 $validator->after(function ($validator) {
                     $validator->errors()->add('accessoryMain', 'Vui Lòng Nhập Không Để Trống');
                 });
@@ -103,27 +106,66 @@ class PlanController extends Controller
             foreach ($accessorySubs as $accessorySub) {
                 $album->accessories()->attach($accessorySub);
             }
-            $services=json_decode($request['services'], true);
+            $services = json_decode($request['services'], true);
             foreach ($services as $service) {
                 $album->services()->attach($service['idService'], ['description' => $service['description'], 'has_servive' => false]);
             }
-            $keywords=Input::get('taglist');
+            $keywords = Input::get('taglist');
             $keywords = explode(",", $keywords);
             //dd($keywords);
             foreach ($keywords as $keyword) {
-                $tag=\App\keywords::where('name',$keyword)->get();
-                if($tag->isEmpty()){
-                    $tag= new \App\keywords;
-                    $tag->name=$keyword;
+                $tag = \App\keywords::where('name', $keyword)->get();
+               // dd($tag->toArray());
+                if ($tag->isEmpty()) {
+                    $tag = new \App\keywords;
+                    $tag->name = $keyword;
                     $tag->save();
                     $album->keywords()->attach($tag->id_keyword);
-                }else{
-                    $album->keywords()->attach($tag->id_keyword);
+                } else {
+                    //dd($tag[0]->id_keyword);
+                    $album->keywords()->attach($tag[0]->id_keyword);
                 }
             }
             return response()->json([
                 'success' => true
             ]);
+        }
+    }
+    public function updatePlan($request){
+
+        $messages = array(
+            'nameAlbum.required' => 'Tên Album Không Để Trống',
+            'descriptionAlbum.required' => 'Vui Lòng Nhập Mô Tả Album',
+            'idFolderAlbum.numeric' => 'Vui Lòng Chọn Album'
+        );
+        $validator = Validator::make($request->all(), [
+            'nameAlbum' => 'required',
+            'descriptionAlbum' => 'required',
+            'idFolderAlbum' => 'numeric'
+        ], $messages);
+        $idLocations = Input::has('locations');
+        if (!$idLocations) {
+            $validator->after(function ($validator) {
+                $validator->errors()->add('locations', 'Vui Lòng Chọn Địa Điểm');
+            });
+        }
+        $accessoryMains = json_decode($request['accessoryMain'], true);
+        foreach ($accessoryMains as $accessoryMain) {
+            if ($accessoryMain['description'] === "") {
+                $id = $accessoryMain['idAccessory'];
+                $validator->after(function ($validator) {
+                    $validator->errors()->add('accessoryMain', 'Vui Lòng Nhập Không Để Trống');
+                });
+                break;
+            }
+        }
+        if ($validator->fails()) {
+            return response()->json([
+                'success' => false,
+                'errors' => $validator->errors()->toArray()
+            ]);
+        }else{
+
         }
     }
 
@@ -133,22 +175,38 @@ class PlanController extends Controller
         return view('admin.plan')->with('data', $data);
 
     }
+
     public function getDetailPlan($id)
     {
-        $location = \App\locations::leftJoin('albumsatlocations', 'locations.id_location','=','albumsatlocations.id_location')->get();
-        $accessories = \App\accessories::leftJoin('accessoriesofalbums', 'accessories.id_accessory','=','accessoriesofalbums.id_accessory')->get();
-        $services = \App\services::leftJoin('servicesofalbums', 'services.id_service','=','servicesofalbums.id_service')->get();
+        $location = \App\locations::leftJoin('albumsatlocations', function ($leftJoin) use ($id) {
+            $leftJoin->on('locations.id_location', '=', 'albumsatlocations.id_location')->where('albumsatlocations.id_album', $id);
+        })->get();
+        $accessories = \App\accessories::leftJoin('accessoriesofalbums', function ($leftJoin) use ($id) {
+            $leftJoin->on('accessories.id_accessory', '=', 'accessoriesofalbums.id_accessory')->where('accessoriesofalbums.id_album', $id);
+        })->get();
+        $services = \App\services::leftJoin('servicesofalbums', function ($leftJoin) use ($id) {
+            $leftJoin->on('services.id_service', '=', 'servicesofalbums.id_service')->where('servicesofalbums.id_album', $id);
+        })->get();
         $albumfolders = \App\albumfolders::all();
-        $albums=\App\albums::where('id_album', $id)->first();
-        $keywords=\App\keywords::select('name')->leftJoin('keywordsofalbums', 'keywords.id_keyword','=','keywordsofalbums.id_keyword')->get();
-        dd($keywords->toArray());
-        //implode(",", $liveInfo['players'])
+        $albums = \App\albums::where('id_album', $id)->first();
+        $keywords = \App\keywords::leftJoin('keywordsofalbums', function ($leftJoin) use ($id) {
+            $leftJoin->on('keywords.id_keyword', '=', 'keywordsofalbums.id_keyword')->where('keywordsofalbums.id_album', $id);
+        })->get();
+        //dd($keywords->toArray());
+        $arrayKeywords = [];
+        foreach ($keywords as $keyword) {
+            if (!empty($keyword->id_album))
+                $arrayKeywords[] = $keyword->name;
+        }
+        $stringKeywords = implode(",", $arrayKeywords);
         $data = Response::json([
+            'id_album'=>$id,
             'locations' => $location,
             'accessories' => $accessories,
             'services' => $services,
             'albumfolders' => $albumfolders,
-            'albums'=>$albums
+            'albums' => $albums,
+            'keywords' => $stringKeywords
         ]);
         return view('admin.plan.updateplan')->with('data', $data);
     }

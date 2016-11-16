@@ -61,7 +61,9 @@
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
-                        {!! Form::open(array('id'=>'formInsertPlan','url'=>'sml_admin/plans','method'=>'POST')) !!}
+                        {!! Form::open(array('id'=>'formUpdatePlan','url'=>'sml_admin/plans','method'=>'POST')) !!}
+                        <input class="form-control" type="hidden" id="idAlbum"
+                               value="{{json_decode($data->content())->id_album}}">
                         <div class="form-group row">
                             <label for="example-text-input" class="col-xs-2 col-form-label">Tên Kế Hoạch</label>
                             <div class="col-xs-10">
@@ -83,10 +85,17 @@
                         <div class="form-group row">
                             <label for="example-search-input" class="col-xs-2 col-form-label">Chọn Album</label>
                             <div class="col-xs-10">
+                                {{--@php--}}
+                                    {{--dd(json_decode($data->content())->albums);--}}
+                                {{--@endphp--}}
                                 <select class="custom-select" id="folderChoose">
                                     <option>Chọn Album Hình</option>
+
                                     @foreach(json_decode($data->content())->albumfolders as $key)
                                         @if (json_decode($data->content())->albums->id_album==$key->id_folder)
+                                            {{--@php--}}
+                                                {{--dd(json_decode($data->content())->albums);--}}
+                                            {{--@endphp--}}
                                             <option selected value="{{$key->id_folder}}">{{$key->name}}</option>
                                         @else
                                             <option value="{{$key->id_folder}}">{{$key->name}}</option>
@@ -222,12 +231,12 @@
                         <div class="form-group row">
                             <label for="example-text-input" class="col-xs-2 col-form-label">Tags</label>
                             <div class="col-xs-10">
-                                <input class="form-control" type="text" id="tags">
+                                <input class="form-control" type="text" id="tags" value="{{json_decode($data->content())->keywords}}">
                             </div>
                         </div>
 
                         <div class="col-md-12 text-center">
-                            <button id="insertplan" class="btn btn-primary">Thêm</button>
+                            <button id="insertplan" class="btn btn-primary">Cập Nhật</button>
                             <button id="" type="submit" class="btn btn-primary">Xóa</button>
                             {{-- Modal --}}
                         </div>
