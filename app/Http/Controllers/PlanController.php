@@ -140,6 +140,9 @@ class PlanController extends Controller
         $services = \App\services::leftJoin('servicesofalbums', 'services.id_service','=','servicesofalbums.id_service')->get();
         $albumfolders = \App\albumfolders::all();
         $albums=\App\albums::where('id_album', $id)->first();
+        $keywords=\App\keywords::select('name')->leftJoin('keywordsofalbums', 'keywords.id_keyword','=','keywordsofalbums.id_keyword')->get();
+        dd($keywords->toArray());
+        //implode(",", $liveInfo['players'])
         $data = Response::json([
             'locations' => $location,
             'accessories' => $accessories,
