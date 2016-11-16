@@ -135,17 +135,18 @@ class PlanController extends Controller
     }
     public function getDetailPlan($id)
     {
-        $location = \App\locations::all();
-        $accessories = \App\accessories::all();
-        $services = \App\services::all();
+        $location = \App\locations::leftJoin('albumsatlocations', 'locations.id_location','=','albumsatlocations.id_location')->get();
+        $accessories = \App\accessories::leftJoin('accessoriesofalbums', 'accessories.id_accessory','=','accessoriesofalbums.id_accessory')->get();
+        $services = \App\services::leftJoin('servicesofalbums', 'services.id_service','=','servicesofalbums.id_service')->get();
         $albumfolders = \App\albumfolders::all();
+        $albums=\App\albums::where('id_album', $id)->first();
         $data = Response::json([
             'locations' => $location,
             'accessories' => $accessories,
             'services' => $services,
-            'albumfolders' => $albumfolders
+            'albumfolders' => $albumfolders,
+            'albums'=>$albums
         ]);
-        //return $data;
         return view('admin.plan.updateplan')->with('data', $data);
     }
 }
