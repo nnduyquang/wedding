@@ -360,7 +360,7 @@ $('#formUpdatePlan').submit(function (e) {
         success: function (data) {
             if (data.success) {
                 //alert('zo data success');
-                window.location.href='../plans';
+                window.location.href=data.redirect;
             } else {
                 showError('formUpdatePlan', 'errtxtnameAlbum', data.errors.nameAlbum);
                 showError('formUpdatePlan', 'errtxtdescriptionAlbum', data.errors.descriptionAlbum);

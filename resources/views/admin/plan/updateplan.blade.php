@@ -90,12 +90,8 @@
                                 {{--@endphp--}}
                                 <select class="custom-select" id="folderChoose">
                                     <option>Chọn Album Hình</option>
-
                                     @foreach(json_decode($data->content())->albumfolders as $key)
-                                        @if (json_decode($data->content())->albums->id_album==$key->id_folder)
-                                            {{--@php--}}
-                                                {{--dd(json_decode($data->content())->albums);--}}
-                                            {{--@endphp--}}
+                                        @if (json_decode($data->content())->albums->id_folder==$key->id_folder)
                                             <option selected value="{{$key->id_folder}}">{{$key->name}}</option>
                                         @else
                                             <option value="{{$key->id_folder}}">{{$key->name}}</option>

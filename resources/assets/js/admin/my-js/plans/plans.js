@@ -97,8 +97,8 @@ $('#formUpdatePlan').submit(function (e) {
     var idFolderAlbum = $("#formUpdatePlan option:selected").val();
     var data = new FormData($(this).get(0));
     var locations = [];
-    $.each($("#formUpdatePlan input[name='locations']").files, function (i, locaiton) {
-        data.append(locations, locaiton);
+    $.each($("#formUpdatePlan input[name='locations']").files, function (i, location) {
+        data.append(locations, location);
     });
     var accessoryMain = [];
     var infoAccessoryMain;
@@ -146,7 +146,7 @@ $('#formUpdatePlan').submit(function (e) {
         success: function (data) {
             if (data.success) {
                 //alert('zo data success');
-                window.location.href='../plans';
+                window.location.href=data.redirect;
             } else {
                 showError('formUpdatePlan', 'errtxtnameAlbum', data.errors.nameAlbum);
                 showError('formUpdatePlan', 'errtxtdescriptionAlbum', data.errors.descriptionAlbum);

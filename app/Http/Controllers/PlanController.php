@@ -115,7 +115,7 @@ class PlanController extends Controller
             //dd($keywords);
             foreach ($keywords as $keyword) {
                 $tag = \App\keywords::where('name', $keyword)->get();
-               // dd($tag->toArray());
+                // dd($tag->toArray());
                 if ($tag->isEmpty()) {
                     $tag = new \App\keywords;
                     $tag->name = $keyword;
@@ -131,7 +131,9 @@ class PlanController extends Controller
             ]);
         }
     }
-    public function updatePlan($request){
+
+    public function updatePlan($request)
+    {
 
         $messages = array(
             'nameAlbum.required' => 'Tên Album Không Để Trống',
@@ -164,7 +166,48 @@ class PlanController extends Controller
                 'success' => false,
                 'errors' => $validator->errors()->toArray()
             ]);
-        }else{
+        } else {
+            $album = \App\albums::find($request['idAlbum']);
+            $album->name = $request['nameAlbum'];
+            $album->description = $request['descriptionAlbum'];
+            $album->id_folder = $request['idFolderAlbum'];
+            $album->id = Auth::user()->id;
+            $album->save();
+            $idLocations = (array)Input::get('locations');
+            $album->locations()->sync($idLocations);
+            $accessoryMains = json_decode($request['accessoryMain'], true);
+            $syncAccessoryMains = [];
+            foreach ($accessoryMains as $accessoryMain) {
+                $syncAccessoryMains[$accessoryMain['idAccessory']]=array('description' => $accessoryMain['description']);
+            }
+            $album->accessories()->sync($syncAccessoryMains);
+            $accessorySubs =(array) Input::get('accessorySubs');
+            $album->accessories()->sync($accessorySubs,false);
+            $services = json_decode($request['services'], true);
+            $syncServices = [];
+            foreach ($services as $service) {
+                $syncServices[$service['idService']]=array('description' => $service['description']);
+            }
+            $album->services()->sync($syncServices);
+            $keywords = Input::get('taglist');
+            $keywords = explode(",", $keywords);
+            $syncKey=[];
+            foreach ($keywords as $keyword) {
+                $tag = \App\keywords::where('name', $keyword)->get();
+                if ($tag->isEmpty()) {
+                    $tag = new \App\keywords;
+                    $tag->name = $keyword;
+                    $tag->save();
+                    $syncKey[]=$tag->id_keyword;
+                } else {
+                    $syncKey[]=$tag[0]->id_keyword;
+                }
+            }
+            $album->keywords()->sync($syncKey);
+            return response()->json([
+                'success' => true,
+                'redirect' => url('/sml_admin/plans')
+            ]);
 
         }
     }
@@ -178,13 +221,15 @@ class PlanController extends Controller
 
     public function getDetailPlan($id)
     {
-        $location = \App\locations::leftJoin('albumsatlocations', function ($leftJoin) use ($id) {
+        $location = \App\locations::select('name', 'locations.id_location', 'albumsatlocations.id_album')->leftJoin('albumsatlocations', function ($leftJoin) use ($id) {
             $leftJoin->on('locations.id_location', '=', 'albumsatlocations.id_location')->where('albumsatlocations.id_album', $id);
         })->get();
-        $accessories = \App\accessories::leftJoin('accessoriesofalbums', function ($leftJoin) use ($id) {
+        //dd($location->toArray());
+        $accessories = \App\accessories::select('accessories.id_accessory', 'name', 'type', 'description', 'accessoriesofalbums.id_album')->leftJoin('accessoriesofalbums', function ($leftJoin) use ($id) {
             $leftJoin->on('accessories.id_accessory', '=', 'accessoriesofalbums.id_accessory')->where('accessoriesofalbums.id_album', $id);
         })->get();
-        $services = \App\services::leftJoin('servicesofalbums', function ($leftJoin) use ($id) {
+        //dd($accessories->toArray());
+        $services = \App\services::select('services.id_service','name','description','servicesofalbums.id_album')->leftJoin('servicesofalbums', function ($leftJoin) use ($id) {
             $leftJoin->on('services.id_service', '=', 'servicesofalbums.id_service')->where('servicesofalbums.id_album', $id);
         })->get();
         $albumfolders = \App\albumfolders::all();
@@ -200,7 +245,7 @@ class PlanController extends Controller
         }
         $stringKeywords = implode(",", $arrayKeywords);
         $data = Response::json([
-            'id_album'=>$id,
+            'id_album' => $id,
             'locations' => $location,
             'accessories' => $accessories,
             'services' => $services,
