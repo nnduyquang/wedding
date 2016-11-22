@@ -170,7 +170,6 @@ class AlbumController extends Controller
 
     }
     public function deleteAlbumFolder($request){
-//        dd($request['infoFolders']);
         foreach($request['infoFolders'] as $infoFolder){
             $folderAlbum = \App\albums::where('id_folder', $infoFolder['id_folder'])->get();
             if($folderAlbum->isEmpty()){
