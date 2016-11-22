@@ -49,6 +49,7 @@
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
+                        <input name="idFolder" type="hidden" value="{{json_decode($data->content())->id_folder}}">
                         <script>
                             setTimeout(function () {
                                 $('#notice').fadeOut('fast');
@@ -70,28 +71,43 @@
                                 <th><input class="text-center" id="checkAll" type="checkbox"></th>
                                 <th>Hình</th>
                                 <th>Tên Hình</th>
+                                <th>Hình Chính</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
 
                             @foreach(json_decode($data->content())->images as $key)
-                            <tr>
-                                <td><input name="checkbox[]" type="checkbox" data-name="{{$key[1]}}" data-folder="{{json_decode($data->content())->name }}"></td>
-                                <td>{{ Html::image($key[0], '',array('width' => 200,'height' => 150)) }}</td>
-                                <td>{{$key[1]}}</td>
-                                <td>
-                                    <button id="deleteImageInfolder" class="deleteImageInfolder btn btn-primary" data-name="{{$key[1]}}" data-folder="{{json_decode($data->content())->name }}" class="btn btn-primary">Xóa</button>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td><input name="checkbox[]" type="checkbox" data-name="{{$key[1]}}"
+                                               data-folder="{{json_decode($data->content())->name }}"></td>
+                                    <td>{{ Html::image($key[0], '',array('width' => 200,'height' => 150)) }}</td>
+                                    <td>{{$key[1]}}</td>
+                                    @if($key[1]==json_decode($data->content())->mainImage)
+                                        <td><input name="mainImage" type="radio" value="{{$key[1]}}" checked><br></td>
+                                    @else
+                                        <td><input name="mainImage" type="radio" value="{{$key[1]}}"><br></td>
+                                    @endif
+                                    <td>
+                                        <button id="deleteImageInfolder" class="deleteImageInfolder btn btn-primary"
+                                                data-name="{{$key[1]}}"
+                                                data-folder="{{json_decode($data->content())->name }}"
+                                                class="btn btn-primary">Xóa
+                                        </button>
+                                    </td>
+                                </tr>
                             @endforeach
                             </tfoot>
                         </table>
 
                         <div class="col-md-12 text-center">
-{{--                            @include('admin.modal.albums.addalbummodal')--}}
+                            {{--                            @include('admin.modal.albums.addalbummodal')--}}
                             @include('admin.modal.albums.insertimagetoalbummodal')
-                            <button id="insertImageToAlbum" data-target="submit-confirm-insert-image-to-album" data-name="{{json_decode($data->content())->name }}" class="btn btn-primary">Thêm Hình Vào Album</button>
+                            <button id="insertImageToAlbum" data-target="submit-confirm-insert-image-to-album"
+                                    data-name="{{json_decode($data->content())->name }}" class="btn btn-primary">Thêm
+                                Hình Vào Album
+                            </button>
+                            <button id="updateMainImage" class="btn btn-primary">Cập Nhật Hình Chủ Đề</button>
                             <button id="deleteService" type="submit" class="btn btn-primary">Xóa</button>
                             {{-- Modal --}}
                         </div>

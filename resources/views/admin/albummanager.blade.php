@@ -15,7 +15,7 @@
     <script>
         $(function () {
 
-            $('#example1').DataTable({
+            $('#viewAlbumFolder').DataTable({
                 "paging": true,
                 "lengthChange": false,
                 "searching": true,
@@ -60,7 +60,7 @@
                         @endif
                         {{--<form action="{{ route('services') }}" method="post">--}}
                         {{ csrf_field() }}
-                        <table id="example1" class="table table-bordered table-striped">
+                        <table id="viewAlbumFolder" class="table table-bordered table-striped">
                             <thead>
                             <tr>
                                 <th><input class="text-center" id="checkAll" type="checkbox"></th>
@@ -74,7 +74,7 @@
                             <tbody>
                             @foreach($data as $row)
                                 <tr>
-                                    <td><input name="checkbox[]" type="checkbox" value="{{$row->id_folder}}"></td>
+                                    <td><input name="checkbox" data-name="{{$row->name}}" type="checkbox" value="{{$row->id_folder}}"></td>
                                     <td>{{$row->name}}</td>
                                     <td>{{$row->main_image}}</td>
                                     <td>{{$row->users->name}}</td>
@@ -89,7 +89,7 @@
                             @include('admin.modal.albums.addalbummodal')
 
                             <button id="openModalCreateAlbum" class="btn btn-primary">Thêm Album</button>
-                            <button id="deleteService" type="submit" class="btn btn-primary">Xóa</button>
+                            <button id="deleteAlbumFolder" type="submit" class="btn btn-primary">Xóa Album</button>
                             {{-- Modal --}}
                         </div>
                         {{--</form>--}}

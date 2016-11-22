@@ -240,8 +240,8 @@ $('#formInsertPlan').submit(function (e) {
     var idFolderAlbum = $("#formInsertPlan option:selected").val();
     var data = new FormData($(this).get(0));
     var locations = [];
-    $.each($("#formInsertPlan input[name='locations']").files, function (i, locaiton) {
-        data.append(locations, locaiton);
+    $.each($("#formInsertPlan input[name='locations']").files, function (i, location) {
+        data.append(locations, location);
     });
     var accessoryMain = [];
     var infoAccessoryMain;
@@ -311,8 +311,8 @@ $('#formUpdatePlan').submit(function (e) {
     var idFolderAlbum = $("#formUpdatePlan option:selected").val();
     var data = new FormData($(this).get(0));
     var locations = [];
-    $.each($("#formUpdatePlan input[name='locations']").files, function (i, locaiton) {
-        data.append(locations, locaiton);
+    $.each($("#formUpdatePlan input[name='locations']").files, function (i, location) {
+        data.append(locations, location);
     });
     var accessoryMain = [];
     var infoAccessoryMain;
@@ -497,4 +497,61 @@ $('#forminsertimagetoalbumsummit').submit(function (e) {
     });
 });
 
-// });
+$('#updateMainImage').click(function(){
+    var idFolder=$('input[name=idFolder]').val();
+    var mainImage=$('input[name=mainImage]:checked').val();
+    $.ajax({
+        type: "POST",
+        url: getBaseURL() + "sml_admin/albums",
+        dataType: 'json',
+        data: {
+            '_token': token,
+            'data': 'updateMainImage',
+            'id':idFolder,
+            'mainImage':mainImage
+        },
+        success:function(data){
+            if(data.success){
+                 location.reload();
+            }else{
+                alert(data.errors.mainImage)
+            }
+        },
+        error:function(data){
+            alert('zo error');
+        }
+    });
+});
+
+$('#deleteAlbumFolder').click(function(){
+    var infoFolders=[];
+    $('table#viewAlbumFolder input[name="checkbox"]:checked').each(function(){
+        var id_folder=this.value;
+        var nameFolder=$(this).data('name');
+        infoFolder = {
+            'id_folder': id_folder,
+            'nameFolder': nameFolder
+        };
+        infoFolders.push(infoFolder);
+    });
+    $.ajax({
+        type: "POST",
+        url: getBaseURL() + "sml_admin/albums",
+        dataType: 'json',
+        data: {
+            '_token': token,
+            'data': 'deleteAlbumFolder',
+            'infoFolders':infoFolders
+        },
+        success:function(data){
+            if(data.success){
+                location.reload();
+            }else{
+                alert(data.errors.mainImage)
+            }
+        },
+        error:function(data){
+            alert('zo error');
+        }
+    });
+});

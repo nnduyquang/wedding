@@ -26,6 +26,10 @@ class AlbumController extends Controller
                 return $this->getListImage($request);
             case 'deleteImageInFolder':
                 return $this->deleteImageInFolder($request);
+            case 'updateMainImage':
+                return $this->updateMainImage($request);
+            case 'deleteAlbumFolder':
+                return $this->deleteAlbumFolder($request);
         }
     }
 
@@ -52,6 +56,10 @@ class AlbumController extends Controller
             $file = Input::file('uploadfile');
             if ($file) {
                 $name_folder = $request['albumname'];
+                $name_folder=str_replace(' ', '-', $name_folder);
+                $name_folder = preg_replace('/[^A-Za-z0-9\-]/', '', $name_folder);
+                $name_folder=preg_replace('/-+/', '', $name_folder);
+                $name_folder=$name_folder.'_'.round(microtime(true) * 1000);
                 if ($request['type'] == 'create') {
                     $album_folder = new \App\albumfolders;
                     $album_folder->name = $name_folder;
@@ -61,9 +69,15 @@ class AlbumController extends Controller
 
                 $target = "public/images/albums/" . $name_folder;
                 foreach ($file as $oneFile) {
-                    $ran = str_random(10);
+                    $ran = round(microtime(true) * 1000);
                     $filename = $oneFile->getClientOriginalName();
                     $filename = str_replace('.' . $oneFile->getClientOriginalExtension(), '', $filename);
+                    $filename=str_replace(' ', '-', $filename);
+                    $filename = preg_replace('/[^A-Za-z0-9\-]/', '', $filename);
+                    $filename=preg_replace('/-+/', '',$filename);
+                    if(strlen($filename)>15){
+                        $filename=substr($filename,0,15);
+                    }
                     $filename = $filename . '_' . $ran . '.' . $oneFile->getClientOriginalExtension();
                     $oneFile->move($target, $filename);
                 }
@@ -105,7 +119,7 @@ class AlbumController extends Controller
         return $images;
     }
 
-    public function getImageOfAlbum($id)
+    public function getImagesOfAlbum($id)
     {
         $album_folder = \App\albumfolders::where('id_folder', $id)->first();
         $images = array();
@@ -115,6 +129,7 @@ class AlbumController extends Controller
         }
         $data = Response::json([
             'name' => $album_folder->name,
+            'mainImage'=>$album_folder->main_image,
             'images' => $images,
             'id_folder' => $album_folder->id_folder,
         ]);
@@ -130,6 +145,44 @@ class AlbumController extends Controller
             File::delete(public_path() . '/images/albums/' . $info['folder'] . '/' . $info['name']);
         }
         return Response::json(['success' => true]);
+    }
+    public function updateMainImage($request){
+        $messages = array(
+            'mainImage.required' => 'Bạn Chưa Chọn Hình Chủ Đề',
+        );
+        $validator = Validator::make($request->all(), [
+            'mainImage' => 'required',
+        ], $messages);
+        if($validator->fails()){
+            return response()->json([
+                'success' => false,
+                'errors' => $validator->errors()->toArray()
+            ]);
+        }else{
+            $album_folder = \App\albumfolders::where('id_folder', $request['id'])->first();
+            $album_folder->main_image=$request['mainImage'];
+            $album_folder->save();
+            return response()->json([
+                'success' => true
+            ]);
+        }
+
+
+    }
+    public function deleteAlbumFolder($request){
+//        dd($request['infoFolders']);
+        foreach($request['infoFolders'] as $infoFolder){
+            $folderAlbum = \App\albums::where('id_folder', $infoFolder['id_folder'])->get();
+            if($folderAlbum->isEmpty()){
+                $path='public/images/albums/' . $infoFolder['nameFolder'];
+                \App\albumfolders::where('id_folder', $infoFolder['id_folder'])->delete();
+                File::deleteDirectory($path);
+            }
+        }
+        return response()->json([
+            'success' => true
+        ]);
+
     }
 
 }

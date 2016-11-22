@@ -26,8 +26,8 @@ $('#formInsertPlan').submit(function (e) {
     var idFolderAlbum = $("#formInsertPlan option:selected").val();
     var data = new FormData($(this).get(0));
     var locations = [];
-    $.each($("#formInsertPlan input[name='locations']").files, function (i, locaiton) {
-        data.append(locations, locaiton);
+    $.each($("#formInsertPlan input[name='locations']").files, function (i, location) {
+        data.append(locations, location);
     });
     var accessoryMain = [];
     var infoAccessoryMain;
